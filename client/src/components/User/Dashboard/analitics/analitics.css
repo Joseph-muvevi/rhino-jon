@@ -1,0 +1,32 @@
+.analitics{
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90vw;
+}
+
+.analitics-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.analitics-graph-left{
+    width: 59vw;
+    height: 50vh;
+    background-color: #202020;
+    color: #FF9C25;
+    filter: drop-shadow(2px 4px 5px black);
+    border-radius: 2px;
+    font-family: Monda;
+}
+
+.analitics-graph-right{
+    width: 29vw;
+    height: 50vh;
+    background-color: #202020;
+    border-radius: 2px;
+    filter: drop-shadow(2px 4px 5px black);
+    color: #FF9C25;
+    font-family: Monda;
+}

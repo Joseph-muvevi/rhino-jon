@@ -99,10 +99,10 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="footer-bottom">
-          <FontAwesomeIcon icon={faCopyright} />
-          Copyright jonPrimeMetals 2021
-        </div>
+      </div>
+      <div className="footer-bottom">
+        <FontAwesomeIcon icon={faCopyright} />
+        Copyright Rhino Jon Prime Metals 2021
       </div>
     </div>
   );

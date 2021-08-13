@@ -9,6 +9,8 @@ import Auth from './components/Auth/auth';
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './components/User/Dashboard/dashboard';
 import Signup from './components/User/Signup/signup';
+import NotFound from './components/404/404';
+import AddShipment from './components/User/addShipment/addShipment';
 
 function App() {
   return (
@@ -22,9 +24,11 @@ function App() {
           <Route path="/trucking" component={Trucking}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/auth" component={Auth}/>
-          <Route path="/me" component={Dashboard}/>
+          <Route path="/dashboard" component={Dashboard}/>
           <Route path="/signup" component={Signup}/>
+          <Route path="/addshipment" component={AddShipment}/>
           {/* <Route path="/me/reset" component={Reset}/>  */}
+          <Route component={NotFound}/>
         </Switch>
       </Router>
     </div>

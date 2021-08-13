@@ -1,0 +1,21 @@
+.auth-content{
+    width: 90vw;
+    margin: auto;;
+    height: 100%;
+    text-align: left;
+}
+
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 75%;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

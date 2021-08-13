@@ -1,7 +1,7 @@
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import welcomeImg from "../../../assets/truck.jpg"
+import welcomeImg from "../../../assets/gold1.jpg"
 import "./welcome.css"
 
 const Welcome = () => {

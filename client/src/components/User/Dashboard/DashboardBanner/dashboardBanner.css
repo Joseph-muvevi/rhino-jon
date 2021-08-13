@@ -1,16 +1,20 @@
-.auth-banner{
+.dashboard-banner{
     height: 40vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../assets/ship2.jpg);
-    background-attachment: fixed;
+    background-color: #202020;
+    /* background-attachment: fixed;
     background-size: cover;
-    background-position: bottom;
+    background-position: bottom; */
     position: relative;
     bottom: 20px;
     z-index: 15;
+    width: 90vw;
+    filter: drop-shadow(2px 4px 5px black);
+    border-radius: 2px;
+    margin: auto;
+    padding: 10px;
 }
 
-.auth-banner-content{
-    width: 90vw;
+.dashboard-banner-content{
     margin: auto;
     text-align: left;
     display: flex;
@@ -19,14 +23,14 @@
     height: 100%;
 }
 
-.auth-banner-h3{
+.dashboard-banner-h3{
     font-size: 45px;
     font-family: Monda;
     color: #FF9C25;
     text-decoration: underline;
 }
 
-.auth-banner-p{
+.dashboard-banner-p{
     font-size: 24px;
     color: #FF9C25;
 }

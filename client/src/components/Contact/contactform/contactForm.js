@@ -21,7 +21,7 @@ const ContactForm = () => {
         },
         validationSchema: Yup.object().shape({
             fullname: Yup.string()
-            .required("This fullname fied is required")
+            .required("This fullname field is required")
             .min(6, "Minimum characters allowed are 4")
             .max(200, "maximum characters allowed are 200"),
         email: Yup.string()
@@ -33,17 +33,17 @@ const ContactForm = () => {
             .min(6, "Minimum characters allowed are 4")
             .max(100, "Maximum characters allowed are 100"),
         telephone: Yup.string()
-            .required("This message fied is required")
+            .required("This message field is required")
             .min(5, "Minimum characters allowed are 5")
             .max(30, "Maximum characters allowed are 30"),
         message: Yup.string()
-            .required("This message fied is required")
+            .required("This message field is required")
             .min(20, "Minimum characters allowed are 20")
             .max(2000, "Maximum characters allowed are 2000"),
         }),
         onSubmit: (message) => {
             alert(JSON.stringify(message, null, 2));
-            console.log(message)
+            alert("Your message has been sent successfully...")
           },
     })
 
