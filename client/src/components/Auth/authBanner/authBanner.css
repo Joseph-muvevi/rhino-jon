@@ -1,0 +1,16 @@
+.signup-banner{
+    height: 30vh;
+    background-color: #202020;
+    color: #FF9C25;
+    position: relative;
+    bottom: 5px;
+}
+
+.signup-banner-content{
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: baseline;
+}

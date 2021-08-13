@@ -1,0 +1,64 @@
+.banner{
+    max-width: 100vw;
+    height: 90vh;
+    background-color: #202020;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 20px;
+    z-index: 10;
+}
+
+.banner-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    margin: auto;
+    height: 100%;
+}
+
+.banner-main-content{
+    height: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.banner-left{
+    width: 40vw;
+    margin: auto;
+    text-align: left;
+}
+
+.banner-left-h3{
+    font-size: 40px
+}
+
+.banner-left-p{
+    color: #FF9C25;
+    font-size: 18px
+}  
+
+.banner-right{
+    width: 40vw;
+}
+
+.home-gold{
+    width: 400px;
+}
+
+.banner-social-media{
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+}
+
+.fontawesome-icon:hover{
+    color: #FF9C25;
+    cursor: pointer
+  }

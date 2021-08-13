@@ -1,0 +1,36 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 5px 0px;
+    position: relative;
+    z-index: 30;
+}
+
+.navbar-logo{
+    color: #FF9C25;
+}
+
+.navbar-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    margin: auto;
+}
+
+.navbar-ul{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-li{
+    text-decoration: none;
+    color: #FF9C25;
+    list-style: none;
+    font-family: Monda;
+    font-size: 18px;
+}

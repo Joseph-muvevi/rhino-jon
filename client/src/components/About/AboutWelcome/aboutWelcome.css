@@ -1,0 +1,56 @@
+.about-welcome{
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #333232 50%, #202020 40%);
+    position: relative;
+    bottom: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.about-welcome-content{
+    margin: auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.about-welcome-content-top-h3{
+    font-size: 40px;
+    color: #FF9C25;
+    text-decoration: underline;
+    font-family: Monda;
+    text-align: left;
+}
+
+.about-welcome-content-top-p{
+    font-size: 18px;
+}
+
+.about-welcome-content-bottom{
+    text-align: left;
+    width: 100%;
+}
+
+.about-welcome-content-bottom-h3{
+    font-size: 40px;
+    color: #FF9C25;
+    text-decoration: underline;
+    font-family: Monda;
+    text-align: left;
+}
+
+.about-welcome-content-values-h3{
+    font-size: 30px;
+    color: #FF9C25;
+}
+
+.about-welcome-content-values-p{
+    font-size: 18px;
+    font-family: Monda;
+}

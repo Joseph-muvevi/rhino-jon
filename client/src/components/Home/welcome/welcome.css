@@ -1,0 +1,89 @@
+.welcome{
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #333232 50%, #202020 40%);
+    position: relative;
+    bottom: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-content{
+    margin: auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-content-top{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+}
+
+.welcome-content-top-header{
+    font-family: Monda;
+    font-size: 40px;
+}
+
+.welcome-content-top-p{
+    color: #FF9C25;
+    font-family: 'Titillium Web', sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.welcome-content-main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.welcome-content-main-top-content{
+    font-size: 18px;
+    color: #FF9C25;
+}
+
+.welcome-content-main-bottom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.welcome-button{
+    /* margin-right: ; */
+    text-align: center;
+}
+
+.welcome-content-fontawesome-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.welcome-icons{
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    background-color: #FF9C25;
+    padding: 20px;
+    width: 100px;
+}
+
+.welcome-bottom-item-txt{
+    font-size: 18px;
+}
+
+.welcome-image{
+    width: 320px;
+    height: 300px;
+}
