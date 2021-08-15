@@ -3,6 +3,7 @@ const mongoose = require("mongoose")
 // creating the database module
 module.exports = connection = async () => {
     try {
+        // throw new Error("Something went wrong")
         const connectionParams = {
             useNewUrlParser: true,
             useUnifiedTopology: true,
