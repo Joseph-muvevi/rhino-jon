@@ -11,6 +11,9 @@ import Dashboard from './components/User/Dashboard/dashboard';
 import Signup from './components/User/Signup/signup';
 import NotFound from './components/404/404';
 import AddShipment from './components/User/addShipment/addShipment';
+import Quotation from './components/User/quotation/quotation';
+import Reset from './components/User/Reset/reset';
+import Shipment from './components/shipment/shipment';
 
 function App() {
   return (
@@ -27,7 +30,9 @@ function App() {
           <Route path="/dashboard" component={Dashboard}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/addshipment" component={AddShipment}/>
-          {/* <Route path="/me/reset" component={Reset}/>  */}
+          <Route path="/shipment" component={Shipment}/>
+          <Route path="/quotation" component={Quotation}/>
+          <Route path="/reset" component={Reset}/> 
           <Route component={NotFound}/>
         </Switch>
       </Router>

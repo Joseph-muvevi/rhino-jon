@@ -1,4 +1,4 @@
-.authform{
+.resetform{
     min-height: 80vh;
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     background-color: #202020;
 }
 
-.auth-content{
+.reset-content{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,19 +15,19 @@
     margin: auto;
 }
 
-.auth-left{
+.reset-left{
     width: 35vw;
     height: 75vh;
 }
 
-.auth-form-image{
+.reset-form-image{
     border-radius: 5px;
     min-height: 40vh;
     height: 100%;
     width: 100%;
 }
 
-.auth-form{
+.reset-form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;

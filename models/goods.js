@@ -4,47 +4,63 @@ const Schema = mongoose.Schema
 
 // creating the goodsschema
 const goodsSchema = new Schema({
-    number : {
-        type: Number,
-        dafault: 1
-    }, 
-    goodsTitle: {
-        type: String,
-        required: true,
-        minlength: 5,
-        maxlength: 255
-    },
-    to: {
-        type: String,
-        required: true,
-        minlength: 5,
-        maxlength: 255
-    },
-    from: {
-        type: String,
-        required: true,
-        minlength: 5,
-        maxlength: 255
-    },
-    currentLocation: {
-        type: String,
-        minlength: 5,
-        maxlength: 255
-    },
     quantity: {
         type: Number,
         required: true,
         min: 1
     },
-    ETD: {
-        // I will change to date though
-        type: Number,
+    title: {
+        type: String,
         required: true,
+        minlength: 5,
+        maxlength: 255
+    },
+    departure: {
+        type: String,
+        required: true,
+        minlength: 6,
+        maxlength: 200
+    },
+    departuredate: {
+        type: String,
+        required: true,
+        minlength: 6,
+        maxlength: 200
+    },
+    destination: {
+        type: String,
+        required: true,
+        minlength: 5,
+        maxlength: 255
+    },
+    destinationdate: {
+        type: String,
+        required: true,
+        minlength: 5,
+        maxlength: 255
+    },
+    currentlocation: {
+        type: String,
+        minlength: 5,
+        maxlength: 255
+    },
+    eta: {
+        // I will change to date though
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        minlength: 20,
+        maxlength: 2000,
+        required: true
     },
     date: {
         type: Date,
         default: Date.now
     }
+}, {
+    timestamps: true
 })
 
 // the goods model
@@ -53,13 +69,15 @@ const Goods = mongoose.model("goods", goodsSchema)
 // input validation
 const validate = (goods) => {
     const schema = Joi.object({
-        number: Joi.number(),
-        goodsTitle: Joi.string().min(5).max(255).required(),
-        to: Joi.string().min(5).max(255).required(),
-        from: Joi.string().min(5).max(255).required(),
-        currentLocation: Joi.string().min(5).max(255),
-        quantity: Joi.number().min(1).required(),
-        ETD: Joi.number().min(1).required()
+        title: Joi.string().min(6).max(200).required(),
+        departure: Joi.string().min(6).max(200).required(),
+        departuredate: Joi.string().min(6).max(200).required(),
+        currentlocation: Joi.string().min(6).max(200),
+        destination: Joi.string().min(6).max(200).required(),
+        destinationdate: Joi.string().min(6).max(200).required(),
+        quantity: Joi.number().min(1).max(1000000).required(),
+        description: Joi.string().min(20).max(2000).required(),
+        eta: Joi.string().min(1).required()
     })
 
     return schema.validate(goods)

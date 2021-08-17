@@ -18,35 +18,58 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import logo from "../../assets/Rhino card logo - PNG.png"
 import "./footer.css"
+import axios from "axios"
+import { useFormik } from "formik";
+import * as Yup from "yup"
 
 const Footer = () => {
+
+  const formik = useFormik({
+    initialValues : {
+      email: ""
+    },
+    validationSchema: Yup.object().shape({
+      email: Yup.string().min(6).max(100)
+    }),
+    onSubmit: (value) => {
+      axios.post("http://localhost:8080/api/emails", value)
+        .then(console.log(value))
+        .catch(err => console.log(err))
+    }
+  })
+
   return (
     <div className="footer">
       <div className="footer-content">
         <div className="footer-top">
           <div className="footer-top-left">
             <div className="footer-logo">
-              LOGO
+              <img src={logo} alt="Rhino jon logo" className="f-logo"/>
               <h3 className="footer-logo-text">Jon Prime Metals</h3>
             </div>
             <div className="footer-left-content">
               <p className="footer-social-media-txt">For more follow us on</p>
               <div className="footer-social-icons">
-                <FontAwesomeIcon icon={faFacebook} />
-                <FontAwesomeIcon icon={faTwitter} />
-                <FontAwesomeIcon icon={faInstagram} />
-                <FontAwesomeIcon icon={faLinkedinIn} />
+                <FontAwesomeIcon size="2x" icon={faFacebook} />
+                <FontAwesomeIcon size="2x" icon={faTwitter} />
+                <FontAwesomeIcon size="2x" icon={faInstagram} />
+                <FontAwesomeIcon size="2x" icon={faLinkedinIn} />
               </div>
               <div className="footer-input-group">
                 <label>Subscibe to our Newsletter</label>
                 <div className="footer-inputs">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Subscribe to our Newsletter"
-                  />
-                  <button className="subscribe" >Subscribe</button>
+                  <form onSubmit={formik.handleSubmit}>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Subscribe to our Newsletter"
+                      onChange={formik.handleChange}
+                      value={formik.values.email}
+                    />
+                    <button type="submit" className="subscribe" >Subscribe</button>
+                  </form>
                 </div>
               </div>
             </div>

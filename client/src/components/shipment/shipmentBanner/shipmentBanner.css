@@ -1,6 +1,6 @@
-.signup-banner{
-    height: 40vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../assets/plane.jpg);
+.shipment-banner{
+    min-height: 30vh;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../assets/container.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
@@ -9,7 +9,7 @@
     z-index: 15;
 }
 
-.signup-banner-content{
+.shipment-banner-content{
     width: 90vw;
     margin: auto;
     text-align: left;
@@ -19,14 +19,20 @@
     height: 100%;
 }
 
-.signup-banner-h3{
+.shipment-banner-content-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shipment-banner-h3{
     font-size: 45px;
     font-family: Monda;
     color: #FF9C25;
     text-decoration: underline;
 }
 
-.signup-banner-p{
+.shipment-banner-p{
     font-size: 24px;
     color: #FF9C25;
 }

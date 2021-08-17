@@ -1,6 +1,6 @@
-.signup-banner{
+.quotation-banner{
     height: 40vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../assets/plane.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../assets/ship2.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
@@ -9,7 +9,7 @@
     z-index: 15;
 }
 
-.signup-banner-content{
+.quotation-banner-content{
     width: 90vw;
     margin: auto;
     text-align: left;
@@ -19,14 +19,14 @@
     height: 100%;
 }
 
-.signup-banner-h3{
+.quotation-banner-h3{
     font-size: 45px;
     font-family: Monda;
     color: #FF9C25;
     text-decoration: underline;
 }
 
-.signup-banner-p{
+.quotation-banner-p{
     font-size: 24px;
     color: #FF9C25;
 }

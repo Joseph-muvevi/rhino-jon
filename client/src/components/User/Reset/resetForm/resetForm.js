@@ -1,12 +1,12 @@
 import React from 'react'
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import login from "../../../assets/ship2.jpg"
-import "./authForm.css"
+import reset from "../../../../assets/ship 1.jpg"
+import "./resetForm.css"
 import { Link } from 'react-router-dom';
 
 
-const AuthForm = () => {
+const ResetForm = () => {
 
     const formik = useFormik({
         initialValues: {
@@ -27,12 +27,12 @@ const AuthForm = () => {
       });
     
     return (
-        <div className="authform">
-            <div className="auth-content">
-                <div className="auth-left">
-                    <img className="auth-form-image" src={login} alt="Rhino jon gold shippment"/>
+        <div className="resetform">
+            <div className="reset-content">
+                <div className="reset-left">
+                    <img className="reset-form-image" src={reset} alt="Rhino jon gold shippment"/>
                 </div>
-                <form onSubmit={formik.handleSubmit} className="auth-form">
+                <form onSubmit={formik.handleSubmit} className="reset-form">
                   <div className="form-group">
                       <label>Email</label>
                       <input
@@ -62,7 +62,7 @@ const AuthForm = () => {
                       ) : null}
                   </div>
                   <p className="form-alt-p">
-                    Forgot your password? <Link to="/reset">Reset now!!</Link>
+                      Dont Have an account? <Link to="/signup">Register now!!</Link>
                   </p>
                   <br/>
                   <button>Sign in</button>
@@ -72,4 +72,4 @@ const AuthForm = () => {
     )
 }
 
-export default AuthForm
+export default ResetForm
