@@ -25,8 +25,8 @@
 
 .products-content-left{
     width: 30vw;
-    height: 80vh;
-    background-image: url(../../../assets/ship2.jpg);
+    height: 85.3vh;
+    background-image: url(../../../assets/diamond\ 1.jpg);
     background-position: center;
     background-size: cover;
     border-radius:  2px;
@@ -52,7 +52,7 @@
 }
 
 .products-content-left-p{
-    color: #FF9C25;
+    color: white;
     font-family: 'Titillium Web', sans-serif;
     text-transform: uppercase;
     font-size: 24px;
@@ -78,5 +78,57 @@
     color: black;
     margin-bottom: 20px;
     border-radius: 2px;
-    filter: drop-shadow(2px 4px 5px black)
+    filter: drop-shadow(2px 4px 5px black);
+    text-decoration: none;
+}
+
+.products-card-image-metal{
+    background-image: url(../../../assets/minerals.jpg);
+    height: 40%;
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    padding: 0 !important;
+}
+
+.products-card-image-medicals{
+    background-image: url(../../../assets/medical\ 1.jpg);
+    height: 40%;
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    padding: 0 !important;
+}
+
+.products-card-image-cooling{
+    background-image: url(../../../assets/fridge.jpg);
+    height: 40%;
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    padding: 0 !important;
+}
+
+
+@media screen and (max-width: 1400px){
+    .products-content-left{
+        display: none;
+    }
+    .products-content-right{
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 990px){
+    .products-right-cards{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .products-right-cards-row{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
 }

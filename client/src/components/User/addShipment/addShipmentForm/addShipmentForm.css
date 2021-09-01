@@ -45,3 +45,20 @@
     flex-direction: column;
     text-align: left;
 }
+
+
+@media (max-width: 900px){
+    .add-shipment-left{
+        display: none;
+    }
+    .add-shipment-small-inputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .the-add-shipment-form{
+        min-width: 90vw;
+        margin: auto;
+    }
+}

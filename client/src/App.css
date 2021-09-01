@@ -26,15 +26,26 @@ input{
   padding: 10px;
   width: 350px;
   font-size: 18px;
-  border-color: #FF9C25;
+  border-color: white;
   border-width: 1;
   border-radius: 5px;
   background-color: transparent;
-  color: #FF9C25;
+  color: white;
 }
 
 input::placeholder{
   font-family: 'monda'
+}
+
+select{
+  font-family: 'Monda', sans-serif;
+  padding: 10px;
+  font-size: 18px;
+  border-color: white;
+  border-width: 1;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
 }
 
 textarea{
@@ -42,11 +53,11 @@ textarea{
   padding: 10px;
   width: 500px;
   font-size: 18px;
-  border-color: #FF9C25;
+  border-color: white;
   border-width: 1;
   border-radius: 5px;
   background-color: transparent;
-  color: #FF9C25;
+  color: white;
 }
 
 textarea::placeholder{
@@ -61,13 +72,13 @@ button {
   border-width: 0;
   border-radius: 3px;
   filter: drop-shadow(2px 3px 4px black);
-  color: #FF9C25;
+  color: white;
   font-family: Monda;
   font-size: 18px;
 }
 
 button:hover{
-  background-color: #FF9C25;
+  background-color: white;
   color: black
 }
 
@@ -89,4 +100,22 @@ iframe{
 .form-alt-p{
   font-family: Monda;
   font-size: 18px
+}
+
+@media screen and (max-width: 900px){
+  form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input{
+    width: 300px;
+    margin: auto;
+  }
+  textarea{
+    width: 300px;
+    margin: auto;
+  }
 }

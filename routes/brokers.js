@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
 // post
 router.post("/", async (req, res) => {
     const {error} = validate(req.body)
-    if (error) return res.status(404).send(error.details[0].message)
+    if (error) return res.status(400).send(error.details[0].message)
 
     let broker = new Broker(req.body)
     broker = await broker.save()
@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 // update
 router.put("/:id", async (req, res) => {
     const {error} = validate(req.body)
-    if (error) return res.status(404).send(error.details[0].message)
+    if (error) return res.status(400).send(error.details[0].message)
 
     const broker = await Broker.findByIdAndUpdate(
         req.params.id, {$set : req.body}, {new: true} 

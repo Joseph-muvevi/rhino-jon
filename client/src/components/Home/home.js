@@ -1,9 +1,10 @@
 import React from 'react'
-import Footer from '../Footer/footer'
 import Background from './Background/background'
 import Banner from './Banner/banner'
 import Products from './Products/products'
 import Welcome from './welcome/welcome'
+import Service from "./Service/Service"
+import Homefooter from './HomeFooter/Homefooter'
 
 const Home = () => {
     return (
@@ -12,7 +13,8 @@ const Home = () => {
            <Welcome/>
            <Background/>
            <Products/>
-           <Footer/>
+           <Service/>
+           <Homefooter/>
         </div>
     )
 }

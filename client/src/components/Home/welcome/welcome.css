@@ -32,7 +32,6 @@
 }
 
 .welcome-content-top-p{
-    color: #FF9C25;
     font-family: 'Titillium Web', sans-serif;
     text-transform: uppercase;
     font-size: 24px;
@@ -45,14 +44,19 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.548), rgba(0, 0, 0, 0.534)),url(../../../assets/ship\ 3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
 }
 
 .welcome-content-main-top-content{
     font-size: 18px;
-    color: #FF9C25;
+    color: #fff;
 }
 
 .welcome-content-main-bottom{
+    color: #fff;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -74,16 +78,29 @@
 
 .welcome-icons{
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background-color: #FF9C25;
+    background-color: white;
     padding: 20px;
     width: 100px;
 }
 
 .welcome-bottom-item-txt{
+    color: #fff;
     font-size: 18px;
 }
 
 .welcome-image{
     width: 320px;
     height: 300px;
+}
+
+@media screen and (max-width: 900px){
+    .welcome-content-main-bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: space-around;
+    }
+    .welcome-content-main-bottom-middle{
+        display: none;
+    }
 }

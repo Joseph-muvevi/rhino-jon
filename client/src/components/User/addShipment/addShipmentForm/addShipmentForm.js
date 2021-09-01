@@ -35,7 +35,7 @@ const AddShipmentForm = () => {
                 .required("This field is required")
                 .min(6, "Minimum characters allowed are 4")
                 .max(200, "maximum characters allowed are 200"),
-            departureDate : Yup.date()
+            departuredate : Yup.string()
                 .required("This field is required"),
                 // .min(6, "Minimum characters allowed are 4")
                 // .max(200, "maximum characters allowed are 200"),
@@ -43,15 +43,15 @@ const AddShipmentForm = () => {
                 .required("This field is required")
                 .min(6, "Minimum characters allowed are 4")
                 .max(200, "maximum characters allowed are 200"),
-            destinationDate : Yup.date()
+            destinationdate : Yup.string()
                 .required("This field is required"),
                 // .min(6, "Minimum characters allowed are 4")
                 // .max(2000, "maximum characters allowed are 2000"),
-            currentLocation : Yup.string()
+            currentlocation : Yup.string()
                 .required("This field is required")
                 .min(6, "Minimum characters allowed are 4")
                 .max(200, "maximum characters allowed are 200"),
-            eta : Yup.date()
+            eta : Yup.string()
                 .required("This field is required"),
                 // .min(6, "Minimum characters allowed are 4")
                 // .max(2000, "maximum characters allowed are 200"),
@@ -106,7 +106,7 @@ const AddShipmentForm = () => {
                         </div>
                         <div className="add-shipment-small-input-group">
                             <label>Departure Date</label>
-                            <input type="date" placeholder="Arrival date here..." name="departureDate" 
+                            <input type="text" placeholder="Arrival date here..." name="departureDate" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.departureDate} required/>
                                 {formik.touched.departureDate && formik.errors.departureDate ? (
                                     <div className="error">{formik.errors.departureDate}</div>
@@ -125,7 +125,7 @@ const AddShipmentForm = () => {
                         </div>
                         <div className="add-shipment-small-input-group">
                             <label>Destination Date</label>
-                            <input type="date" placeholder="Departure date here..." name="destinationDate" 
+                            <input type="text" placeholder="Departure date here..." name="destinationDate" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.destinationDate} required/>
                                 {formik.touched.departureDate && formik.errors.departureDate ? (
                                     <div className="error">{formik.errors.departureDate}</div>
@@ -144,7 +144,7 @@ const AddShipmentForm = () => {
                         </div>
                         <div className="add-shipment-small-input-group">
                             <label>Estimated Arrival date</label>
-                            <input type="date" placeholder="Estimated Arrival date here..." name="eta" 
+                            <input type="text" placeholder="Estimated Arrival date here..." name="eta" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.eta} required/>
                                 {formik.touched.eta && formik.errors.eta ? (
                                     <div className="error">{formik.errors.eta}</div>

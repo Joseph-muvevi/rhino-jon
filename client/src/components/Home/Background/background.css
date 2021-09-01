@@ -14,7 +14,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #FF9C25;
+    color: white;
     height: 100%;
 }
 
@@ -26,4 +26,10 @@
 .background-p{
     font-family: 'Titillium Web', sans-serif;
     font-size: 24px;
+}
+
+@media screen and (max-width: 900px){
+    .background{
+        min-height: 85vh;
+    }
 }

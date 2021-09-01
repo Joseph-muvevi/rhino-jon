@@ -45,3 +45,20 @@
     flex-direction: column;
     text-align: left;
 }
+
+
+@media (max-width: 900px){
+    .signup-left{
+        display: none;
+    }
+    .signup-small-inputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .the-signup-form{
+        min-width: 90vw;
+        margin: auto;
+    }
+}

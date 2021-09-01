@@ -52,3 +52,30 @@
     justify-content: space-around;
     text-align: left;
 }
+
+@media (max-width: 900px){
+    .contact-form-content{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: space-between;
+    }
+    .contact-map{
+        width: 100vw;
+    }
+
+    .iframe{
+        width: 300px;
+    }
+
+    .small-inputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .the-contact-form{
+        min-width: 90vw;
+        margin: auto;
+    }
+}

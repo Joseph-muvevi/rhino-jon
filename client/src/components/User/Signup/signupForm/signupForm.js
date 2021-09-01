@@ -34,7 +34,7 @@ const SignupForm = () => {
                 .required("This field is required")
                 .min(6, "Minimum characters allowed are 4")
                 .max(200, "maximum characters allowed are 200"),
-            city : Yup.date()
+            city : Yup.string()
                 .required("This field is required")
                 .min(3, "Minimum characters allowed are 5")
                 .max(100, "maximum characters allowed are 100"),

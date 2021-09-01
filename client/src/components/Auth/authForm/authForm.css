@@ -42,3 +42,20 @@
     justify-content: space-around;
     align-items: flex-start;
 }
+
+
+@media (max-width: 900px){
+    .auth-left{
+        display: none;
+    }
+    .auth-small-inputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .auth-form{
+        min-width: 90vw;
+        margin: auto;
+    }
+}

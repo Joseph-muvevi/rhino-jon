@@ -19,4 +19,17 @@
     filter: drop-shadow(2px 4px 5px black);
     background-color: #202020;
     padding: 10px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:720px){
+    .dashboard-cards-row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .dashboard-cards-item{
+        width: 300px;
+    }
 }

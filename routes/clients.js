@@ -12,14 +12,14 @@ router.get('/', async (req, res) => {
 // get by id
 router.get("/:id", async (req, res) => {
     const client = await Client.findById(req.params.id)
-    if (!client) return res.status(404).send("Client with that Id does not exist")
+    if (!client) return res.status(40).send("Client with that Id does not exist")
     res.send(client)
 })
 
 // post
 router.post("/", async (req, res) => {
     const {error} = validate(req.body)
-    if (error) return res.status(404).send(error.details[0].message)
+    if (error) return res.status(400).send(error.details[0].message)
 
     let client = new Client(req.body)
     client = await client.save()
@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
 // update
 router.put("/:id", async (req, res) => {
     const {error} = validate(req.body)
-    if (error) return res.status(404).send(error.details[0].message)
+    if (error) return res.status(400).send(error.details[0].message)
 
     const client = await Client.findByIdAndUpdate(
         req.params.id, {$set : req.body}, {new: true} 

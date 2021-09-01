@@ -1,7 +1,8 @@
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { faGlobeAfrica, faLock, faTachometerAlt, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import welcomeImg from "../../../assets/gold1.jpg"
+import { Link } from 'react-router-dom'
+// import welcomeImg from "../../../assets/gold1.jpg"
 import "./welcome.css"
 
 const Welcome = () => {
@@ -28,10 +29,13 @@ const Welcome = () => {
                             sheets containing Lorem Ipsum passages, and more recently with desktop
                             publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                         </p>
-                        <button className="welcome-button">
-                            View More
-                        </button>
+                        <Link to="/quotation">
+                            <button className="welcome-button">
+                                View More
+                            </button>
+                        </Link>
                     </div>
+                    <br/>
                     <div className="welcome-content-main-bottom">
                         <div className="welcome-content-main-bottom-left">
                             <div className="welcome-bottom-item">
@@ -47,25 +51,22 @@ const Welcome = () => {
                             </div>
                             <div className="welcome-bottom-item">
                                 <div className="welcome-content-fontawesome-title">
-                                    <FontAwesomeIcon className="welcome-icons" icon={faThumbsUp} size="2x" color="black"/>
+                                    <FontAwesomeIcon className="welcome-icons" icon={faLock} size="2x" color="black"/>
                                     <h4 className="welcome-icon-text">
-                                        Reliable
+                                        Secure
                                     </h4>
                                 </div>
                                 <p className="welcome-bottom-item-txt">
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                                 </p>
                             </div>
-                        </div>
-                        <div className="welcome-content-main-bottom-middle">
-                            <img src={welcomeImg} alt="A truck" className="welcome-image"/>
                         </div>
                         <div className="welcome-content-main-bottom-right">
                             <div className="welcome-bottom-item">
                                 <div className="welcome-content-fontawesome-title">
-                                    <FontAwesomeIcon className="welcome-icons" icon={faThumbsUp} size="2x" color="black"/>
+                                    <FontAwesomeIcon className="welcome-icons" icon={faTachometerAlt} size="2x" color="black"/>
                                     <h4 className="welcome-icon-text">
-                                        Reliable
+                                        Fast
                                     </h4>
                                 </div>
                                 <p className="welcome-bottom-item-txt">
@@ -74,9 +75,9 @@ const Welcome = () => {
                             </div>
                             <div className="welcome-bottom-item">
                                 <div className="welcome-content-fontawesome-title">
-                                    <FontAwesomeIcon className="welcome-icons" icon={faThumbsUp} size="2x" color="black"/>
+                                    <FontAwesomeIcon className="welcome-icons" icon={faGlobeAfrica} size="2x" color="black"/>
                                     <h4 className="welcome-icon-text">
-                                        Reliable
+                                        Networked
                                     </h4>
                                 </div>
                                 <p className="welcome-bottom-item-txt">

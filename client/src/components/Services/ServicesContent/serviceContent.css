@@ -42,12 +42,13 @@
     color: black;
     margin-bottom: 20px;
     border-radius: 2px;
-    filter: drop-shadow(2px 4px 5px black)
+    filter: drop-shadow(2px 4px 5px black);
+    text-decoration: none;
 }
 
 .service-content-bottom-h3{
     font-size: 40px;
-    color: #FF9C25;
+    color: white;
     text-decoration: underline;
     font-family: Monda;
     text-align: left;
@@ -55,10 +56,22 @@
 
 .service-content-values-h3{
     font-size: 30px;
-    color: #FF9C25;
+    color: white;
 }
 
 .service-content-values-p{
     font-size: 18px;
     font-family: Monda;
+}
+
+@media screen and (max-width: 900px){
+    .service-content-values-row{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .service-content-values-item{
+        width: 300px;
+    }
 }

@@ -134,6 +134,7 @@ const ContactForm = () => {
                 <div className="error">{formik.errors.message}</div>
                 ) : null}
           </div>
+          <br/>
           <button>
             Submit <FontAwesomeIcon icon={faPaperPlane} />
           </button>

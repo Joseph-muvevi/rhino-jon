@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+// import Images from "../../../assets/gold2.jpg"
 import "./serviceContent.css"
 
 const ServiceContent = () => {
@@ -21,27 +23,27 @@ const ServiceContent = () => {
                                     competive advantage
                                 </p>
                             </div>
-                            <div className="service-content-values-item">
+                            <Link to="/services-air" className="service-content-values-item">
                                 <h4 className="service-content-values-h3">
-                                    Transport
+                                    Air Logistics
                                 </h4>
                                 <p className="service-content-values-p">
-                                    Our fleet of individually owned , leased and chartered aircraŌs ensure effective
+                                    Our fleet of individually owned , leased and chartered aircrafts ensure effective
                                     and timely delivery of the precious cargo .Our clients enjoy Goods in Transit
                                     insurance from a “AAA” rated insurance company 
                                 </p>
-                            </div>
-                            <div className="service-content-values-item">
+                            </Link>
+                            <Link to="/services-ocean" className="service-content-values-item">
                                 <h4 className="service-content-values-h3">
-                                    Sercurity
+                                    Ocean Logistics
                                 </h4>
                                 <p className="service-content-values-p">
-                                    With support from leading logistics and security companies such
-                                    as Brinks, Malca Amit, G4S and Trans guard, we securely pick and
-                                    deliver your valuable cargo anywhere in the world
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                                    1500s, when an unknown printer took a galley of type and scrambled...
                                 </p>
-                            </div>
-                            <div className="service-content-values-item">
+                            </Link>
+                            <Link to="/services-linkages" className="service-content-values-item">
                                 <h4 className="service-content-values-h3">
                                     Linkages
                                 </h4>
@@ -51,11 +53,12 @@ const ServiceContent = () => {
                                     we are able to provide access to these networks
                                     at an agreed fee.
                                 </p>
-                            </div>
+                            </Link>
                         </div>
                         
                         <div className="service-content-values-row">
-                            <div className="service-content-values-item">
+                            <Link to="/services-brokerage" className="service-content-values-item">
+                                
                                 <h4 className="service-content-values-h3">
                                     Custom Brokarage
                                 </h4>
@@ -65,7 +68,7 @@ const ServiceContent = () => {
                                     with dedicated professionals that provide full processing
                                     of customs documents and clearance of goods.
                                 </p>
-                            </div>
+                            </Link>
                             <div className="service-content-values-item">
                                 <h4 className="service-content-values-h3">
                                     Trade on Behalf
@@ -84,7 +87,7 @@ const ServiceContent = () => {
                                     team on agreed terms
                                 </p>
                             </div>
-                            <div className="service-content-values-item">
+                            <Link to="/services-advisory" className="service-content-values-item">
                                 <h4 className="service-content-values-h3">
                                     Advisory
                                 </h4>
@@ -92,7 +95,7 @@ const ServiceContent = () => {
                                     We have a team of experts who diligently address any challenges you are facing in the value
                                     chain including but not limited to testing, market research and quality control.
                                 </p>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

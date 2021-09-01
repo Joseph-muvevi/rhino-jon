@@ -42,3 +42,19 @@
     justify-content: space-around;
     align-items: flex-start;
 }
+
+@media (max-width: 900px){
+    .reset-left{
+        display: none;
+    }
+    .reset-small-inputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .the-reset-form{
+        min-width: 90vw;
+        margin: auto;
+    }
+}

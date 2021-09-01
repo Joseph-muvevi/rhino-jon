@@ -1,14 +1,14 @@
 import React from 'react'
-import Footer from '../Footer/footer'
 import ServicesBanner from './servicesBanner/servicesBanner'
 import ServiceContent from './ServicesContent/serviceContent'
+import ServiceFooter from './ServicesFooter/ServiceFooter'
 
 const Service = () => {
     return (
         <div className="service">
             <ServicesBanner/>
             <ServiceContent/>
-            <Footer/>
+            <ServiceFooter/>
         </div>
     )
 }

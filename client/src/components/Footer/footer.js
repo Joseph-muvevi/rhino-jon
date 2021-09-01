@@ -4,7 +4,7 @@ import {
   faLinkedinIn,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCopyright, faMap } from "@fortawesome/free-regular-svg-icons";
+import { faCopyright} from "@fortawesome/free-regular-svg-icons";
 import {
   faAddressBook,
   faHouseUser,
@@ -13,7 +13,6 @@ import {
   faMapMarkerAlt,
   faPhoneAlt,
   faShippingFast,
-  faTrailer,
   faWarehouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -78,7 +77,7 @@ const Footer = () => {
             <h3 className="footer-title">Contacts</h3>
             <ul className="footer-ul">
               <li className="footer-li">
-                <FontAwesomeIcon icon={faMapMarkerAlt} /> Addess 1
+                <FontAwesomeIcon icon={faMapMarkerAlt} /> Riverside drive Nairobi,  Kenya
               </li>
               <li className="footer-li">
                 <FontAwesomeIcon icon={faMapMarkerAlt} />
@@ -86,18 +85,19 @@ const Footer = () => {
               </li>
               <li className="footer-li">
                 <FontAwesomeIcon icon={faPhoneAlt} />
-                Tel 1
+                +254 753 999 444
               </li>
               <li className="footer-li">
                 <FontAwesomeIcon icon={faPhoneAlt} />
                 Tel 2
               </li>
               <li className="footer-li">
-                <FontAwesomeIcon icon={faMailBulk} /> Email 1
+                <FontAwesomeIcon icon={faMailBulk} /> 
+                  info@rhinojonprimemetals.com
               </li>
               <li className="footer-li">
                 <FontAwesomeIcon icon={faMailBulk} />
-                Email 2
+                  info@rhinojonprimemetals.com
               </li>
             </ul>
           </div>

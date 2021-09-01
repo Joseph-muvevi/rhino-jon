@@ -1,24 +1,30 @@
 .banner{
     max-width: 100vw;
-    height: 90vh;
-    background-color: #202020;
+    min-height: 90vh;
+    /* background-color: #202020; */
     background-attachment: fixed;
-    background-position: center;
+    background-position: cover;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     bottom: 20px;
     z-index: 10;
+    display: flex;
+    justify-content: space-between;
 }
 
 .banner-content{
+    background-image: linear-gradient(to bottom, rgba(33, 33, 33, 0.774), rgba(32, 32, 32, 0.808)), url('../../../assets/blackworldmap2.jpg');
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
-    width: 90vw;
+    width: 50vw;
     margin: auto;
-    height: 100%;
+    height: 90vh;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 .banner-main-content{
@@ -34,31 +40,83 @@
     text-align: left;
 }
 
+.products-button{
+    width: 200px !important
+}
+
 .banner-left-h3{
     font-size: 40px
 }
 
 .banner-left-p{
-    color: #FF9C25;
+    color: white;
     font-size: 18px
 }  
 
 .banner-right{
-    width: 40vw;
+    width: 50vw;
+    height: 100vh !important;
+    background-position: center;
+    /* background-attachment: fixed; */
+    background-image: url(../../../assets/gold1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
 }
 
 .home-gold{
-    width: 400px;
+    width: 40vw;
+    height: 80vh;
+}
+
+.banner-social{
+    display: flex;
+    width: 40vw;
+    margin: auto;
+    justify-content: flex-start;
 }
 
 .banner-social-media{
-    width: 30vw;
     display: flex;
     justify-content: space-around;
-    align-self: center;
+    align-items: center;
+    width: 300px;
 }
 
 .fontawesome-icon:hover{
-    color: #FF9C25;
-    cursor: pointer
+    color: white;
+    cursor: pointer;
   }
+
+.right-image{
+    background-image: url(../../../assets/gold2.jpg);
+    background-attachment: fixed;
+    width: 50vw;
+    /* height: 100vw; */
+}
+
+@media screen and (max-width: 900px){
+    .banner{
+        min-height: 80vh;
+        max-width: 100vw;
+    }
+    .banner-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: left;
+        margin-top: 50px;
+    }
+    .banner-main-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        height: 100%;
+    }
+    .banner-left{
+        width: 90vw;
+    }
+    .banner-right{
+        display: none;
+    }
+}

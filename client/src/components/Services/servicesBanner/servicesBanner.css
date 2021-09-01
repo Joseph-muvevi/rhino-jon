@@ -21,11 +21,17 @@
 .services-banner-h3{
     font-size: 45px;
     font-family: Monda;
-    color: #FF9C25;
+    color: white;
     text-decoration: underline;
 }
 
 .services-banner-p{
     font-size: 24px;
-    color: #FF9C25;
+    color: white;
+}
+
+@media screen and (max-width: 900px){
+    .services-banner{
+        height: 80vh;
+    }
 }

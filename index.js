@@ -22,6 +22,7 @@ const emails = require("./routes/emails")
 connection()
 
 // middlewares
+app.use(cors())
 app.use(express.json())
 app.use("/api/signup", signup)
 app.use("/api/login", login)
@@ -32,7 +33,6 @@ app.use("/api/brokers", brokers)
 app.use("/api/clients", clients)
 app.use("/api/quotation", quotes)
 app.use("/api/emails", emails)
-app.use(cors())
 
 // port 
 const port = process.env.PORT || 8080
