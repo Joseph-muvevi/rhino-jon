@@ -20,6 +20,10 @@ const ProductQuotationForm = () => {
             city: "",
             product : "",
             quantity: "",
+            packaging: "",
+            unit: "",
+            weight: "",
+            email: "",
             description: ""
         },
         validationSchema: Yup.object().shape({
@@ -53,6 +57,12 @@ const ProductQuotationForm = () => {
                 .required("This field is required")
                 .min(6, "Minimum characters allowed are 6")
                 .max(100, "maximum characters allowed are 100"),
+            quantity : Yup.number()
+                .required("This field is required")
+                .min(1, "Minimum product allowed allowed is 1")
+                .max(2000000, "maximum characters allowed are 2000000"),
+            packaging : Yup.string()
+                .required("This field is required"),
             unit : Yup.string()
                 .required("This field is required"),
             weight : Yup.number()
@@ -86,7 +96,8 @@ const ProductQuotationForm = () => {
                             <label>Your Title</label>
                                 <select type="text" placeholder="Arrival city here..." name="title" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.title} required>
-                                    <option value="mr" label="Mr." selected/>
+                                    <option value="" label="Please select an option..." />
+                                    <option value="mr" label="Mr."/>
                                     <option value="mrs" label="Mrs."/>
                                     <option value="miss" label="Miss."/>
                                 </select>
@@ -115,6 +126,30 @@ const ProductQuotationForm = () => {
                         </div>
 
                         <div className="product-quotation-small-input-group">
+                            <label>Your email</label>
+                            <input type="email" placeholder="email" name="email" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} required/>
+                                {formik.touched.email && formik.errors.email ? (
+                                    <div className="error">{formik.errors.email}</div>
+                                ) : null}
+                        </div>
+                    </div>
+
+                    <div className="product-quotation-small-inputs">
+                        <div className="product-quotation-small-input-group">
+                            <label>Packaging type</label>
+                                <select type="text" placeholder="Packaging type..." name="packaging" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.packaging} required>
+                                    <option value="" label="Please select an option..." />
+                                    <option value="heap" label="Heap"/>
+                                    <option value="container" label="Container"/>
+                                </select>
+                                {formik.touched.packaging && formik.errors.packaging ? (
+                                    <div className="error">{formik.errors.packaging}</div>
+                                ) : null}
+                        </div>
+
+                        <div className="product-quotation-small-input-group">
                             <label>Your position</label>
                             <input type="text" placeholder="Eg CEO, CTO, Manager, etc..." name="position" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.position} required/>
@@ -129,7 +164,8 @@ const ProductQuotationForm = () => {
                             <label>Weight Unit</label>
                                 <select type="text"  name="unit" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.unit} required>
-                                    <option value="kilograms" label="Kilograms" selected/>
+                                    <option value="" disabled label="Please select an option"/>
+                                    <option value="kilograms" label="Kilograms" defaultValue/>
                                     <option value="pounds" label="pounds"/>
                                     <option value="grams" label="grams"/>
                                 </select>
