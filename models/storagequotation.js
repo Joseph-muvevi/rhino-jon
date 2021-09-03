@@ -7,7 +7,7 @@ const storageQuotationSchema = new Schema({
     title: {
         type: String,
         required: true,
-        minLength: 3,
+        minLength: 2,
         maxLength: 100
     },
     fullnames: {
@@ -108,7 +108,7 @@ const StorageQuotation = mongoose.model("Storage Quotation", storageQuotationSch
 // validation
 const validate = (storagequotation) => {
     const schema = Joi.object({
-        title: Joi.string().min(3).max(100).required(),
+        title: Joi.string().min(2).max(100).required(),
         fullnames: Joi.string().min(3).max(100).required(),
         company: Joi.string().min(3).max(100).required(),
         position: Joi.string().min(3).max(100).required(),

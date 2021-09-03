@@ -30,6 +30,8 @@ const StorageQuotationForm = () => {
         },
         validationSchema: Yup.object().shape({
             title : Yup.string()
+                .min(2)
+                .max(100)
                 .required("This field is required"),
             fullnames : Yup.string()
                 .required("This field is required")

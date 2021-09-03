@@ -46,7 +46,7 @@ const LogisticsQuotationForm = () => {
                 .max(100),
             title : Yup.string()
                 .required()
-                .min(3)
+                .min(2)
                 .max(100),
             company : Yup.string()
                 .required()

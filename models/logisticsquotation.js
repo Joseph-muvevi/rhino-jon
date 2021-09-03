@@ -4,6 +4,12 @@ const Schema = mongoose.Schema
 
 // the logisticsQuotationSchema
 const logisticsQuotationSchema = new Schema({
+    title : {
+        type: String,
+        required: true,
+        minLength: 2,
+        maxLength: 100
+    },
     firstname: {
         type: String,
         required: true,
@@ -129,7 +135,7 @@ const validate = (logisticsquotation) => {
         firstname: Joi.string().min(3).max(100).required(),
         lastname: Joi.string().min(3).max(100).required(),
         email: Joi.string().min(3).max(100).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org', 'ke'] } }),
-        title: Joi.string().min(3).max(100).required(),
+        title: Joi.string().min(2).max(100).required(),
         company:  Joi.string().min(3).max(100).required(),
         position: Joi.string().min(3).max(100).required(),
         unit: Joi.string().min(3).max(100).required(),

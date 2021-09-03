@@ -19,7 +19,7 @@ const productQuotationSchema = new Schema({
     title: {
         type: String,
         required: true,
-        minLength: 3,
+        minLength: 2,
         maxLength: 100
     },
     position: {
@@ -98,7 +98,7 @@ const validate = (productquotation) => {
     const schema = Joi.object({
         company: Joi.string().min(3).max(100).required(),
         fullnames: Joi.string().min(3).max(100).required(),
-        title: Joi.string().min(3).max(100).required(),
+        title: Joi.string().min(2).max(100).required(),
         email: Joi.string().min(3).max(100).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org', 'ke'] } }),
         position: Joi.string().min(3).max(100).required(),
         city: Joi.string().min(3).max(100).required(),
