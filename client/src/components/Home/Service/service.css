@@ -136,9 +136,16 @@
     padding: 0 !important;
 }
 
+.link-cards{
+    display: none;
+}
+
 @media screen and (max-width: 1400px){
     .home-service-content-left{
         display: none;
+    }
+    .link-cards{
+        display: flex;
     }
     .home-service-content-right{
         width: 90vw;

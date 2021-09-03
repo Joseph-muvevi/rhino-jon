@@ -30,6 +30,8 @@ import Product from './components/Product/product';
 import ProductQuotation from './components/Forms/ProductQuotation/ProductQuotation';
 import ServiceType from './components/Forms/ServiceQuotation/ServiceType/ServiceType';
 import ServiceQuotation from './components/Forms/ServiceQuotation/ServiceQuotation';
+import LogisticsQuotation from './components/Forms/LogisticsQuotation/LogisticsQuotation';
+import StorageForms from './components/User/UserForms/StorageForms/StorageForms';
 
 function App() {
   return (
@@ -65,6 +67,8 @@ function App() {
           <Route path="/services-ocean" component={Ocean}/>
           <Route path="/product-quotation" component={ProductQuotation}/>
           <Route path="/storage-quotation" component={ServiceQuotation}/>
+          <Route path="/logistics-quotation" component={LogisticsQuotation}/>
+          <Route path="/storage-form" component={StorageForms}/>
           <Route component={NotFound}/>
         </Switch>
       </Router>

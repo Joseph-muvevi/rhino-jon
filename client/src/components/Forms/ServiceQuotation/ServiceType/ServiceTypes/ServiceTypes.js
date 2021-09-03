@@ -36,9 +36,11 @@ const ServiceTypes = () => {
                             <p className="service-types-card-p">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting
                             </p>
-                            <button className="services-types-card-button">
-                                Request a quote
-                            </button>
+                            <Link to="/logistics-quotation">
+                                <button className="services-types-card-button">
+                                    Request a quote
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

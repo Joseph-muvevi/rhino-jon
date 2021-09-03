@@ -61,9 +61,10 @@ const AddShipmentForm = () => {
                 .max(2000, "maximum characters allowed are 200"),
         }),
         onSubmit: (values) => {
-            axios.post("http://localhost:8080/api/goods", values)
-                .then(console.log(values))
-                .catch(err => console.log(err))
+            // axios.post("http://localhost:8080/api/goods", values)
+            //     .then(console.log(values))
+            //     .catch(err => console.log(err))
+            alert(JSON.stringify(values, null, 2))
         }
     })
 

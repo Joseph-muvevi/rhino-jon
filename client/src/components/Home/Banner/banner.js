@@ -35,22 +35,26 @@ const Banner = () => {
             <div className="banner-social-media">
               <FontAwesomeIcon
                 className="fontawesome-icon"
+                color ="#4267B2"
                 icon={faFacebookSquare}
                 size="2x"
               />
               <FontAwesomeIcon
                 className="fontawesome-icon"
+                color ="#00acee"
                 icon={faTwitterSquare}
                 size="2x"
               />
               <FontAwesomeIcon
                 className="fontawesome-icon"
                 icon={faInstagramSquare}
+                color ="#bc2a8d"
                 size="2x"
-              />
+                />
               <FontAwesomeIcon
                 className="fontawesome-icon"
                 icon={faLinkedin}
+                color ="#0077b5"
                 size="2x"
               />
             </div>

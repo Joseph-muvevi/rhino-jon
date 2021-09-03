@@ -32,6 +32,7 @@ input{
   border-radius: 5px;
   background-color: transparent;
   color: white;
+  margin-bottom: 10px;
 }
 
 input::placeholder{
@@ -39,6 +40,7 @@ input::placeholder{
 }
 
 select{
+  width: 370px;
   font-family: 'Monda', sans-serif;
   padding: 10px;
   font-size: 18px;
@@ -75,13 +77,13 @@ button {
   background-color: black;
   padding: 10px;
   width: 140px;
-  border-color: 0;
   border-width: 0;
   border-radius: 3px;
   filter: drop-shadow(2px 3px 4px black);
   color: white;
   font-family: Monda;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
 button:hover{
@@ -124,5 +126,8 @@ iframe{
   textarea{
     width: 300px;
     margin: auto;
+  }
+  select{
+    width: 350px
   }
 }
