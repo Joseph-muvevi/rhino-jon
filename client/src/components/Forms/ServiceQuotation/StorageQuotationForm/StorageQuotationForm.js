@@ -5,7 +5,7 @@ import * as Yup from "yup"
 import React from 'react'
 import golden from "../../../../assets/gold1.jpg"
 import "../ServiceQuotation.css"
-// import axios from "axios"
+import axios from "axios"
 
 
 const StorageQuotationForm = () => {
@@ -29,40 +29,20 @@ const StorageQuotationForm = () => {
             description: ""
         },
         validationSchema: Yup.object().shape({
-            company : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum character allowed is 2")
-                .max(100, "maximum characters allowed are 100"),
+            title : Yup.string()
+                .required("This field is required"),
             fullnames : Yup.string()
                 .required("This field is required")
                 .min(6, "Minimum characters allowed are 6")
                 .max(200, "maximum characters allowed are 200"),
-            title : Yup.string()
-                .required("This field is required"),
+            company : Yup.string()
+                .required("This field is required")
+                .min(3, "Minimum character allowed is 2")
+                .max(100, "maximum characters allowed are 100"),
             position : Yup.string()
-                .required("This field is required"),
-                // .min(6, "Minimum characters allowed are 4")
-                // .max(200, "maximum characters allowed are 200"),
-            country : Yup.string()
                 .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
-            city : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
-            quantity : Yup.number()
-                .required("This field is required")
-                .min(1, "Minimum characters allowed are 1")
-                .max(5000000, "maximum characters allowed are 5000000"),
-            storagecity : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
-            storagecountry : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .min(3, "Minimum characters allowed are 3")
+                .max(100, "maximum characters allowed are 100"),
             email : Yup.string()
                 .required("This field is required")
                 .min(6, "Minimum characters allowed are 6")
@@ -72,24 +52,45 @@ const StorageQuotationForm = () => {
             weight : Yup.number()
                 .required("This field is required")
                 .min(1, "Minimum product allowed allowed is 1")
-                .max(2000000000, "maximum characters allowed are 2000000000"),
+                .max(50000, "maximum characters allowed are 50000"),
+            country : Yup.string()
+                .required("This field is required")
+                .min(4, "Minimum characters allowed are 4")
+                .max(50, "maximum characters allowed are 50"),
+            city : Yup.string()
+                .required("This field is required")
+                .min(4, "Minimum characters allowed are 4")
+                .max(50, "maximum characters allowed are 50"),
             productname : Yup.string()
                 .required("This field is required")
                 .min(6, "Minimum characters allowed are 6")
                 .max(200, "maximum characters allowed are 200"),
+            quantity : Yup.number()
+                .required("This field is required")
+                .min(1, "Minimum characters allowed are 1")
+                .max(5000000, "maximum characters allowed are 5000000"),
             producttype : Yup.string()
                 .required("This field is required"),
+            storagecity : Yup.string()
+                .required("This field is required")
+                .min(4, "Minimum characters allowed are 4")
+                .max(50, "maximum characters allowed are 50"),
+            storagecountry : Yup.string()
+                .required("This field is required")
+                .min(4, "Minimum characters allowed are 4")
+                .max(50, "maximum characters allowed are 50"),
             description : Yup.string()
                 .required("This field is required")
                 .min(20, "Minimum characters allowed are 4")
                 .max(2000, "maximum characters allowed are 200"),
         }),
-        onSubmit: (values) => {
-            // axios.post("http://localhost:8080/api/goods", values)
-            //     .then(console.log(values))
-            //     .catch(err => console.log(err))
+        onSubmit: (values, {resetForm}) => {
+            axios.post("http://localhost:8080/api/storagequotation", values)
+                .then(console.log(values))
+                .catch(err => console.log(err))
             alert(JSON.stringify(values, null, 2))
             console.log(values)
+            resetForm({values : ""})
         }
     })
 

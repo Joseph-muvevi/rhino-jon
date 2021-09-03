@@ -41,9 +41,10 @@ const ContactForm = () => {
                 .min(20, "Minimum characters allowed are 20")
                 .max(2000, "Maximum characters allowed are 2000"),
         }),
-        onSubmit: (message) => {
+        onSubmit: (message, {resetForm}) => {
             alert(JSON.stringify(message, null, 2));
             alert("Your message has been sent successfully...")
+            resetForm({message: ""})
           },
     })
 

@@ -16,6 +16,9 @@ const brokers = require("./routes/brokers")
 const clients = require("./routes/clients")
 const quotes = require("./routes/quotes")
 const emails = require("./routes/emails")
+const productquotation = require("./routes/productquotation")
+const storagequotation = require("./routes/storagequotation")
+const logisticsquotation = require("./routes/logisticsquotation")
 // const register = require("./controllers/signup")
 
 // the database
@@ -33,6 +36,9 @@ app.use("/api/brokers", brokers)
 app.use("/api/clients", clients)
 app.use("/api/quotation", quotes)
 app.use("/api/emails", emails)
+app.use("/api/productquotation", productquotation)
+app.use("/api/storagequotation", storagequotation)
+app.use("/api/logisticsquotation", logisticsquotation)
 
 // port 
 const port = process.env.PORT || 8080

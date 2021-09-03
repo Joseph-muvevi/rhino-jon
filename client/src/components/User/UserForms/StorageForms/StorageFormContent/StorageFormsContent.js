@@ -68,17 +68,26 @@ const StorageFormsContent = () => {
                 .required()
                 .min(1, "Minimum product allowed allowed is 1")
                 .max(50000, "maximum characters allowed are 50000"),
+            dateout: Yup.string()
+                .required()
+                .min(1, "Minimum product allowed allowed is 1")
+                .max(50000, "maximum characters allowed are 50000"),
+            dateout: Yup.string()
+                .required()
+                .min(1, "Minimum product allowed allowed is 1")
+                .max(50000, "maximum characters allowed are 50000"),
             notes : Yup.string()
                 .required("This field is required")
                 .min(20, "Minimum characters allowed are 4")
                 .max(2000, "maximum characters allowed are 200"),
         }),
-        onSubmit: (values) => {
+        onSubmit: (values, {resetForm}) => {
             // axios.post("http://localhost:8080/api/goods", values)
             //     .then(console.log(values))
             //     .catch(err => console.log(err))
             alert(JSON.stringify(values, null, 2))
             console.log(values)
+            resetForm({values: ""})
         }
     })
 
@@ -213,6 +222,26 @@ const StorageFormsContent = () => {
                                 {formik.touched.warehousetype && formik.errors.warehousetype ? (
                                     <div className="error">{formik.errors.warehousetype}</div>
                                 ) : null}  
+                        </div>
+                    </div>
+
+                    <div className="logistics-quotation-small-inputs">
+
+                        <div className="logistics-quotation-small-input-group">
+                            <label>Date out</label>
+                            <input type="date" placeholder="Date in..." name="dateout" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.dateout} required/>
+                                {formik.touched.dateout && formik.errors.dateout ? (
+                                    <div className="error">{formik.errors.dateout}</div>
+                                ) : null}
+                        </div>
+                        <div className="logistics-quotation-small-input-group">
+                            <label>Time out</label>
+                            <input type="time" placeholder="Time in..." name="timeout" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.timeout} required/>
+                                {formik.touched.timeout && formik.errors.timeout ? (
+                                    <div className="error">{formik.errors.timeout}</div>
+                                ) : null}
                         </div>
                     </div>
 

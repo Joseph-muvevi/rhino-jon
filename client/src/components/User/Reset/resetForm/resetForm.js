@@ -21,8 +21,9 @@ const ResetForm = () => {
             .required("This email field is required"),
           password: Yup.string().min(8).max(150).required(),
         }),
-        onSubmit: (values) => {
+        onSubmit: (values, {resetForm}) => {
           alert(JSON.stringify(values, null, 2));
+          resetForm({values: ""})
         },
       });
     

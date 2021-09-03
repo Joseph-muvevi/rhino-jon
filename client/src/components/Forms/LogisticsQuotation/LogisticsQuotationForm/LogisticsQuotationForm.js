@@ -4,10 +4,10 @@ import { useFormik } from 'formik'
 import * as Yup from "yup"
 import React from 'react'
 import "../LogisticsQuotation.css"
-// import axios from "axios"
+import axios from "axios"
 
 
-const StorageQuotationForm = () => {
+const LogisticsQuotationForm = () => {
 
     const formik = useFormik({
         initialValues : {
@@ -33,80 +33,89 @@ const StorageQuotationForm = () => {
         },
         validationSchema: Yup.object().shape({
             firstname : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             lastname : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             email : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             title : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(100),
             company : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum character allowed is 2")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
             position : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
             unit : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(100),
             weight : Yup.number()
-                .required("This field is required")
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(5000, "maximum characters allowed are 5000"),
+                .required()
+                .min(1)
+                .max(5000),
             producttype : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(100),
             fromcity : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             fromcountry : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             pieces: Yup.number()
                 .required()
-                .min(1, "the minimum value shuld be 1")
-                .max(50000, "Maximum value should me 50000"),
+                .min(1)
+                .max(50000),
             productname : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             quantity: Yup.number()
                 .required()
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(50000, "maximum characters allowed are 50000"),
+                .min(1)
+                .max(50000),
             merchandise: Yup.string()
                 .required()
-                .min(1, "the minimum value shuld be 1")
-                .max(50000, "Maximum value should me 50000"),
+                .min(3)
+                .max(100),
             logisticstype : Yup.string()
-                .required(),
+                .required()
+                .min(3)
+                .max(100),
             tocountry : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             tocity : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             description : Yup.string()
-                .required("This field is required")
-                .min(20, "Minimum characters allowed are 4")
-                .max(2000, "maximum characters allowed are 200"),
+                .required()
+                .min(20)
+                .max(2000),
         }),
-        onSubmit: (values) => {
-            // axios.post("http://localhost:8080/api/goods", values)
-            //     .then(console.log(values))
-            //     .catch(err => console.log(err))
+        onSubmit: (values, {resetForm}) => {
+            axios.post("http://localhost:8080/api/logisticsquotation", values)
+                .then(console.log(values))
+                .catch(err => console.log(err))
             alert(JSON.stringify(values, null, 2))
             console.log(values)
+            resetForm({values: ""})
         }
     })
 
@@ -323,4 +332,4 @@ const StorageQuotationForm = () => {
     )
 }
 
-export default StorageQuotationForm
+export default LogisticsQuotationForm

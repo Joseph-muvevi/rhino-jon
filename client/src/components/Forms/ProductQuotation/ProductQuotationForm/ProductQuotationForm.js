@@ -5,7 +5,7 @@ import * as Yup from "yup"
 import React from 'react'
 import golden from "../../../../assets/gold1.jpg"
 import "../ProductQuotation.css"
-// import axios from "axios"
+import axios from "axios"
 
 
 const ProductQuotationForm = () => {
@@ -28,57 +28,64 @@ const ProductQuotationForm = () => {
         },
         validationSchema: Yup.object().shape({
             company : Yup.string()
-                .required("This field is required")
+                .required()
                 .min(3, "Minimum character allowed is 2")
                 .max(100, "maximum characters allowed are 100"),
             fullnames : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 6")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3, "Minimum characters allowed are 3")
+                .max(100, "maximum characters allowed are 100"),
             title : Yup.string()
-                .required("This field is required"),
+                .required(),
             position : Yup.string()
-                .required("This field is required"),
-                // .min(6, "Minimum characters allowed are 4")
-                // .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3, "Minimum characters allowed are 3")
+                .max(100, "maximum characters allowed are 100"),
             country : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
+                .required()
+                .min(3, "Minimum characters allowed are 3")
                 .max(50, "maximum characters allowed are 50"),
             city : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
+                .required()
+                .min(3, "Minimum characters allowed are 3")
                 .max(50, "maximum characters allowed are 50"),
             product : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 6")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3, "Minimum characters allowed are 3")
+                .max(100, "maximum characters allowed are 100"),
             email : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 6")
+                .required()
+                .min(5, "Minimum characters allowed are 5")
                 .max(100, "maximum characters allowed are 100"),
             quantity : Yup.number()
-                .required("This field is required")
+                .required()
                 .min(1, "Minimum product allowed allowed is 1")
-                .max(2000000, "maximum characters allowed are 2000000"),
+                .max(50000, "maximum characters allowed are 50000"),
             packaging : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3, "Minimum characters allowed are 3")
+                .max(100, "maximum characters allowed are 100"),
             unit : Yup.string()
-                .required("This field is required"),
+                .required(),
             weight : Yup.number()
-                .required("This field is required")
+                .required()
                 .min(1, "Minimum product allowed allowed is 1")
-                .max(2000000000, "maximum characters allowed are 2000000000"),
+                .max(50000, "maximum characters allowed are 50000"),
             description : Yup.string()
-                .required("This field is required")
-                .min(20, "Minimum characters allowed are 4")
-                .max(2000, "maximum characters allowed are 200"),
+                .required()
+                .min(20, "Minimum characters allowed are 20")
+                .max(2000, "maximum characters allowed are 2000"),
         }),
-        onSubmit: (values) => {
-            // axios.post("http://localhost:8080/api/goods", values)
-            //     .then(console.log(values))
-            //     .catch(err => console.log(err))
-            alert(JSON.stringify(values, null, 2))
+        onSubmit: (values, {resetForm}) => {
+            try {
+                alert(JSON.stringify(values, null, 2))
+                axios.post("http://localhost:8080/api/productquotation", values)
+                .then(console.log(values))
+                .catch(err => console.log(err))
+                resetForm({values: ""})
+            } catch (err) {
+                console.log(err)
+            }
         }
     })
 
