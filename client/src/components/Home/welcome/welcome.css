@@ -68,8 +68,13 @@
     text-align: center;
 }
 
-.welcome-content-fontawesome-title{
+.welcome-button-item{
     display: flex;
+    background-color: #1f1f1f;
+}
+
+.welcome-content-fontawesome-title{
+    display: flex !important;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
