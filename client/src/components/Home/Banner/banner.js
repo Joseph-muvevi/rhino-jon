@@ -1,20 +1,21 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faFacebook,
+//   faInstagram,
+//   faTwitter,
+//   faLinkedin,
+// } from "@fortawesome/free-brands-svg-icons";
 import "./banner.css";
 // import gold from "../../../assets/gold2.jpg"
 import { Link } from "react-router-dom";
+import video from "../../../assets/compressed background image.mp4"
 
 const Banner = () => {
   return (
     <div className="the-banner">
       <div className="banner">
-        <div className="banner-content">
+        {/* <div className="banner-content">
           <div className="banner-main-content">
             <div className="banner-left">
               <h3 className="banner-left-h3">
@@ -69,7 +70,8 @@ const Banner = () => {
             </div>
           </div>
           <br />
-        </div>
+        </div> */}
+        <iframe autoplay loop controls title="Rhinojohn background video" className="banner-video" type="video/mp4" src={video}/>
       </div>
     </div>
   );

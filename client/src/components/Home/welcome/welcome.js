@@ -18,74 +18,35 @@ const Welcome = () => {
                     </p>
                 </div>
                 <div className="welcome-content-main">
-                    <div className="welcome-content-main-top">
-                        <p className="welcome-content-main-top-content">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            Lorem Ipsum has been the industry's standard dummy text ever since the
-                            1500s, when an unknown printer took a galley of type and scrambled it to
-                            make a type specimen book. It has survived not only five centuries, but
-                            also the leap into electronic typesetting, remaining essentially
-                            unchanged. It was popularised in the 1960s with the release of Letraset
-                            sheets containing Lorem Ipsum passages, and more recently with desktop
-                            publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
+                    <div className="welcome-content-main-bottom">
+                        <div className="about-welcome-content-top">
+                            <p className="welcome-content-top-text">
+                                Rhinojohn Prime Metal International Limited is a global company that has grown to become 
+                                one of the leading players in the precious metals and stones value chain. We focus on trading, 
+                                safekeeping, logistics and delivery of these valuable products.
+                            </p>
+                            <p className="welcome-content-top-text">
+                                Our team of globally exposed experts have a combined experience of more than 20 years in this trade 
+                                and guarantee continous transactions. They will link you to the right actors and dealers in the trade; 
+                                from Miners (Artisanal and Industrial), Buyers, Sellers, Intermediaries, Refiners and Gemologist.
+                            </p>
+                            <p className="welcome-content-top-text">
+                                We source our precious metals and gemstones from countries rich in mineral
+                                resources around the world especially in Africa and Asia. We work with artisanal miners and registered 
+                                small mining companies from Kenya, Tanzania, the Democratic Republic of Congo, Ghana, Liberia, Sierra Leone, Bukinafaso, 
+                                Botswana, Angola, Zimbabwe, South Sudan, Central African Republic, Namibia and Papua New Guinea.
+                            </p>
+                            <p className="welcome-content-top-text">
+                                Our trading policy comply with international standards with regard to tracability and accountability.
+                            </p>
+                        </div>
+                    </div>
                         <Link to="/quotation">
                             <button className="welcome-button">
                                 View More
                             </button>
                         </Link>
-                    </div>
                     <br/>
-                    <div className="welcome-content-main-bottom">
-                        <div className="welcome-content-main-bottom-left">
-                            <div className="welcome-bottom-item">
-                                <div className="welcome-content-fontawesome-title">
-                                    <FontAwesomeIcon className="welcome-icons" icon={faThumbsUp} size="2x" color="black"/>
-                                    <h4 className="welcome-icon-text">
-                                        Reliable
-                                    </h4>
-                                </div>
-                                <p className="welcome-bottom-item-txt">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                </p>
-                            </div>
-                            <div className="welcome-bottom-item">
-                                <div className="welcome-content-fontawesome-title">
-                                    <FontAwesomeIcon className="welcome-icons" icon={faLock} size="2x" color="black"/>
-                                    <h4 className="welcome-icon-text">
-                                        Secure
-                                    </h4>
-                                </div>
-                                <p className="welcome-bottom-item-txt">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                </p>
-                            </div>
-                        </div>
-                        <div className="welcome-content-main-bottom-right">
-                            <div className="welcome-bottom-item">
-                                <div className="welcome-content-fontawesome-title">
-                                    <FontAwesomeIcon className="welcome-icons" icon={faTachometerAlt} size="2x" color="black"/>
-                                    <h4 className="welcome-icon-text">
-                                        Fast
-                                    </h4>
-                                </div>
-                                <p className="welcome-bottom-item-txt">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                </p>
-                            </div>
-                            <div className="welcome-bottom-item">
-                                <div className="welcome-content-fontawesome-title">
-                                    <FontAwesomeIcon className="welcome-icons" icon={faGlobeAfrica} size="2x" color="black"/>
-                                    <h4 className="welcome-icon-text">
-                                        Networked
-                                    </h4>
-                                </div>
-                                <p className="welcome-bottom-item-txt">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

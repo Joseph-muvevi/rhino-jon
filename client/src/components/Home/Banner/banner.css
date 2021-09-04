@@ -13,9 +13,9 @@
     justify-content: space-between;
 }
 
-.the-banner-video{
-    position: relative;
-    z-index: -30;
+.banner-video{
+    width: 100vw !important;
+    height: 100vh !important;
 }
 
 .banner-content{

@@ -37,7 +37,7 @@ const productContent = () => {
                                         Symbol: <span style={{color: "#636267", fontWeight: "bolder", fontSize: "18px"}}>Ag</span> 
                                     </li>
                                     <li className="produict0content-values-li">
-                                        Atomin Number: <span style={{color: "#636267", fontWeight: "bolder", fontSize: "18px"}}>79</span> 
+                                        Atomin Number: <span style={{color: "#636267", fontWeight: "bolder", fontSize: "18px"}}>109</span> 
                                     </li>
                                 </ul>
                             </div>
@@ -50,10 +50,10 @@ const productContent = () => {
                                 </h5>
                                 <ul className="product-content-values-p">
                                     <li className="produict0content-values-li">
-                                        Symbol: <span style={{color: "#81281b", fontWeight: "bolder", fontSize: "18px"}}>cu</span> 
+                                        Symbol: <span style={{color: "#81281b", fontWeight: "bolder", fontSize: "18px"}}>Cu</span> 
                                     </li>
                                     <li className="produict0content-values-li">
-                                        Atomin Number: <span style={{color: "#81281b", fontWeight: "bolder", fontSize: "18px"}}>79</span> 
+                                        Atomin Number: <span style={{color: "#81281b", fontWeight: "bolder", fontSize: "18px"}}>29</span> 
                                     </li>
                                 </ul>
                             </Link>
@@ -64,10 +64,14 @@ const productContent = () => {
                                 <h5 className="product-content-values-h3">
                                     Diamond
                                 </h5>
-                                <p className="product-content-values-p">
-                                    Our fleet of individually owned , leased and chartered aircrafts ensure effective
-                                    and timely delivery of the precious cargo ...
-                                </p>
+                                <ul className="product-content-values-p">
+                                    <li className="produict0content-values-li">
+                                        Symbol: <span style={{color: "#c4c6c3", fontWeight: "bolder", fontSize: "18px"}}>Cu</span> 
+                                    </li>
+                                    <li className="produict0content-values-li">
+                                        Atomin Number: <span style={{color: "#c4c6c3", fontWeight: "bolder", fontSize: "18px"}}>29</span> 
+                                    </li>
+                                </ul>
                             </Link>
                         </div>
                         

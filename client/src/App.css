@@ -15,20 +15,21 @@ p{
 
 label{
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 18px;
   font-family: Monda;
-  font-weight: 700;
+  font-weight: 300;
   text-transform: capitalize;
   color: white;
 }
 
 input{
   font-family: 'Monda', sans-serif;
-  padding: 10px;
+  padding: 6px;
   width: 350px;
   font-size: 18px;
-  border-color: white;
-  border-width: 1;
+  border-color: whitesmoke;
+  border-width: 0.6px;
+  box-shadow: 0;
   border-radius: 5px;
   background-color: transparent;
   color: white;
@@ -42,25 +43,28 @@ input::placeholder{
 select{
   width: 370px;
   font-family: 'Monda', sans-serif;
-  padding: 10px;
+  padding: 6px;
   font-size: 18px;
   border-color: white;
   border-width: 1;
   border-radius: 5px;
   background-color: transparent;
-  color: white;
+  color: rgb(153, 153, 153);
+
 }
 
 option{
   background-color: #202020;
   border-radius: 2px;
   box-shadow: 2px 4px 5px black;
+  color: rgb(153, 153, 153);
 }
 
 textarea{
   font-family: 'Monda', sans-serif;
   padding: 10px;
   width: 500px;
+  height: 250px;
   font-size: 18px;
   border-color: white;
   border-width: 1;

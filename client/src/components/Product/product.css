@@ -1,10 +1,10 @@
 /* =======Banner======= */
 .product-banner{
     height: 40vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../assets/guns2.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../assets/mining\ trucks.png);
     background-attachment: fixed;
     background-size: cover;
-    background-position: bottom;
+    background-position: right;
     position: relative;
     bottom: 20px;
 }
@@ -108,7 +108,7 @@
 }
 
 .product-content-card-image-two{
-    background-image: url(../../assets/diamond\ 1.jpg);
+    background-image: url(../../assets/naturaldiamond.png);
     background-size: cover;
     background-position: center;
     height: 40%;
@@ -176,7 +176,7 @@
 /* =========product footer=========== */
 .product-footer{
     min-height: 70vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.885)),url(../../assets/guns2.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.885)),url(../../assets/mining\ trucks.png);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
