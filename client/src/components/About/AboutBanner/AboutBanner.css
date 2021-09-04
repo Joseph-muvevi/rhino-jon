@@ -19,10 +19,22 @@
 }
 
 .about-banner-h3{
-    font-size: 45px;
+    font-size: 30px;
     font-family: Monda;
     color: white;
     text-decoration: underline;
+}
+
+.about-welcome-content-bottom-h3{
+    font-size: 25px;
+    font-family: Monda;
+    color: white;
+}
+
+.about-welcome-content-values-h3{
+    font-size: 23px;
+    font-family: Monda;
+    color: white;
 }
 
 .about-banner-p{

@@ -4,7 +4,7 @@ const {Quote, validate} = require("../models/quote")
 
 // get
 router.get("/", async (req, res) => {
-    const quotes = await Quote.find().sort()
+    const quotes = await Quote.find().sort("-date")
     res.send(quotes)
 })
 

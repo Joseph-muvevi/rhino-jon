@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 // get
 router.get("/", async (req, res) => {
-  const users = await User.find().sort();
+  const users = await User.find().sort("-date");
   if (!users) return res.status(404).send("No users available");
   res.send(users);
 });

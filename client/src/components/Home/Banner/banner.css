@@ -13,13 +13,18 @@
     justify-content: space-between;
 }
 
+.the-banner-video{
+    position: relative;
+    z-index: -30;
+}
+
 .banner-content{
     background-image: linear-gradient(to bottom, rgba(33, 33, 33, 0.774), rgba(32, 32, 32, 0.808)), url('../../../assets/blackworldmap2.jpg');
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 50vw;
+    width: 100vw;
     margin: auto;
     height: 90vh;
     background-attachment: fixed;
@@ -35,7 +40,7 @@
 }
 
 .banner-left{
-    width: 40vw;
+    width: 90vw;
     margin: auto;
     text-align: left;
 }
@@ -45,7 +50,8 @@
 }
 
 .banner-left-h3{
-    font-size: 40px
+    font-size: 45px;
+    font-family: Monda
 }
 
 .banner-left-p{

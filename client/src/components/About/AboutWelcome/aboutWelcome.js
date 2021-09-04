@@ -6,62 +6,73 @@ const AboutWelcome = () => {
         <div className="about-welcome">
             <div className="about-welcome-content">
                 <div className="about-welcome-content-top">
-                    <h3 className="about-welcome-content-top-h3">
-                        Who we are
-                    </h3>
                     <p className="about-welcome-content-top-p">
-                        Rhino Jon Prime Metals Internatonal Limited is a global company that has grown to become
-                        one of the leading players in the precious metals &stones value chain. We
-                        focus on trading, custody, logisocs and delivery of these valuable products
+                        Rhinojohn Prime Metal Internatonal Limited is a global company that has grown to become 
+                        one of the leading players in the precious metals and stones value chain. We focus on trading, 
+                        safekeeping, logistics and delivery of these valuable products
                     </p>
                     <p className="about-welcome-content-top-p">
-                        Our team of globally exposed experts have a combined experience of more
-                        than 20years in this trade and guarantee seamless transactons. They will
-                        link you to the who is who in the trade; from Buyers, Sellers, Refiners,
-                        Gemmologist you name it. We've got your back.
+                        Our team of globally exposed experts have a combined experience of more than 20 years in this trade 
+                        and guarantee continous transactions. They will link you to the right actors and dealers in the trade; 
+                        from Miners (Artisanal and Industrial), Buyers, Sellers, Intermediaries, Refiners and Gemologist.
+                    </p>
+                    <p className="about-welcome-content-top-p">
+                        We source our precious metals and gemstones from countries rich in mineral
+                        resources around the world especially in Africa and Asia. We work with artisanal miners and registered 
+                        small mining companies from Kenya, Tanzania, the Democratic Republic of Congo, Ghana, Liberia, Sierra Leone, Bukinafaso, 
+                        Botswana, Angola, Zimbabwe, South Sudan, Central African Republic, Namibia and Papua New Guinea.
+                    </p>
+                    <p className="about-welcome-content-top-p">
+                        Our trading policy comply with international standards with regard to tracability and accountability.
                     </p>
                 </div>
                 <div className="about-welcome-content-bottom">
-                    <h3 className="about-welcome-content-bottom-h3">
-                        Our Values
-                    </h3>
+                    <h5 className="about-welcome-content-bottom-h3">
+                        We observe the following values: 
+                    </h5>
                     <div className="about-welcome-content-values">
                         <div className="about-welcome-content-values-item">
-                            <h4 className="about-welcome-content-values-h3">
-                                Trust and integrity
-                            </h4>
+                                <div className="about-welcome-content-values-h3">
+                                    <div className="about-welcome-start">
+
+                                    </div>
+                                    <h5 className="about-welcome-content-values-header">
+                                        Trust and integrity
+                                    </h5>
+                                </div>
                             <p className="about-welcome-content-values-p">
                                 Our promises are backed up by actions and we strive to earn
                                 and maintain trust with all our stakeholders from the time of
-                                introduction throughout to the end of our transaction
+                                introduction to the end of our transaction.
                             </p>
                         </div>
                         <div className="about-welcome-content-values-item">
-                            <h4 className="about-welcome-content-values-h3">
-                                Confidentiality
-                            </h4>
+                                <div className="about-welcome-content-values-h3">
+                                    <div className="about-welcome-start">
+
+                                    </div>
+                                    <h5 className="about-welcome-content-values-header">
+                                        Confidentiality
+                                    </h5>
+                                </div>
                             <p className="about-welcome-content-values-p">
-                                Due to the nature of this business, the transaction
-                                and client details are never revealed to any third
-                                parties whatsoever.
+                                Due to the nature of business, the transaction and client details are never
+                                revealed to any third parties whatsoever.
                             </p>
                         </div>
                         <div className="about-welcome-content-values-item">
-                            <h4 className="about-welcome-content-values-h3">
-                                Accountability
-                            </h4>
+                                <div className="about-welcome-content-values-h3">
+                                    <div className="about-welcome-start">
+
+                                    </div>
+                                    <h5 className="about-welcome-content-values-header">
+                                        Accountability
+                                    </h5>
+                                </div>
                             <p className="about-welcome-content-values-p">
-                                Accountability breeds responsibility and we at Rhino Jon Prime Metals
+                                Accountability breeds responsibility, and we at Rhinojohn Prime Metal
                                 International Limited hold ourselves accountable for
-                                everything we promise to do at all times.
-                            </p>
-                        </div>
-                        <div className="about-welcome-content-values-item">
-                            <h4 className="about-welcome-content-values-h3">
-                                Trust and integrity
-                            </h4>
-                            <p className="about-welcome-content-values-p">
-                                We have consistently made it a priority to meet our clients' needs.
+                                everything we do.
                             </p>
                         </div>
                     </div>

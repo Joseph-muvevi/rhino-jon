@@ -4,7 +4,7 @@ const router = express.Router()
 
 // get
 router.get('/', async (req, res) => {
-    const brokers = await Broker.find().sort()
+    const brokers = await Broker.find().sort("-date")
     res.send(brokers)
 })
 

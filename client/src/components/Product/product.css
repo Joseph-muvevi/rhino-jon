@@ -20,16 +20,12 @@
 }
 
 .product-banner-h3{
-    font-size: 45px;
+    font-size: 30px;
     font-family: Monda;
     color: white;
     text-decoration: underline;
 }
 
-.product-banner-p{
-    font-size: 24px;
-    color: white;
-}
 
 @media screen and (max-width: 900px){
     .product-banner{
@@ -87,7 +83,7 @@
 }
 
 .product-content-bottom-h3{
-    font-size: 40px;
+    font-size: 20px;
     color: white;
     text-decoration: underline;
     font-family: Monda;
@@ -95,17 +91,17 @@
 }
 
 .product-content-values-h3{
-    font-size: 30px;
+    font-size: 20px;
     color: white;
 }
 
 .product-content-values-p{
-    font-size: 18px;
+    font-size: 16px;
     font-family: Monda;
 }
 
 .product-content-card-image-one{
-    background-image: url(../../assets/military1.jpg);
+    background-image: url(../../assets/naturalgold1.jpg);
     background-size: cover;
     background-position: center;
     height: 40%;
@@ -119,7 +115,7 @@
 }
 
 .product-content-card-image-three{
-    background-image: url(../../assets/medical.jpg);
+    background-image: url(../../assets/coppercathode.jfif);
     background-size: cover;
     background-position: center;
     height: 40%;
@@ -147,7 +143,7 @@
 }
 
 .product-content-card-image-seven{
-    background-image: url(../../assets/military1.jpg);
+    background-image: url(../../assets/naturalsilver.jpg);
     background-size: cover;
     background-position: center;
     height: 40%;

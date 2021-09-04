@@ -4,7 +4,7 @@ const {StorageShipment, validate} = require("../models/storageshipment")
 
 // get
 router.get("/", async (req, res) => {
-    const storageshipment = await StorageShipment.find().sort()
+    const storageshipment = await StorageShipment.find().sort("-date")
     res.send(storageshipment)
 })
 

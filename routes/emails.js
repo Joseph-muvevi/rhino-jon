@@ -4,7 +4,7 @@ const {Email, validate} = require("../models/email")
 
 // get
 router.get("/", async (req, res) => {
-    const emails = await Email.find().sort()
+    const emails = await Email.find().sort({createdAt: -1})
     res.send(emails)
 })
 

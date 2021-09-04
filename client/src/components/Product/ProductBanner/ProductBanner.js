@@ -6,11 +6,8 @@ const ProductBanner = () => {
         <div className="product-banner">
             <div className="product-banner-content">
                 <h3 className="product-banner-h3">
-                    What we offer
+                    Our Products
                 </h3>
-                <p className="product-banner-p">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                </p>
             </div>
         </div>
     )

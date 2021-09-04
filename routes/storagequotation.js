@@ -4,7 +4,7 @@ const {StorageQuotation, validate} = require("../models/storagequotation")
 
 // get
 router.get("/", async (req, res) => {
-    const storagequotation = await StorageQuotation.find().sort()
+    const storagequotation = await StorageQuotation.find().sort("-date")
     res.send(storagequotation)
 })
 

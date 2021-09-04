@@ -40,7 +40,7 @@ const ShipmentTable = () => {
                         </p>
                     </div> 
                 )}
-            {console.log(shipment)}
+            {/* {console.log(shipment, "This is from the shipment data")} */}
         </div>
     )
 }

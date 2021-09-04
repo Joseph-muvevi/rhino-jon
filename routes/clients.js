@@ -4,7 +4,7 @@ const {Client, validate} = require('../models/client')
 
 // get
 router.get('/', async (req, res) => {
-    const clients = await Client.find().sort()
+    const clients = await Client.find().sort("-date")
     if (!clients) return res.status(404).send("No Clients yet, Register one?")
     res.send(clients)
 })

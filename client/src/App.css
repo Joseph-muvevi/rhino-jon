@@ -121,6 +121,14 @@ th, td{
   padding: 10px;
 }
 
+p{
+  color: whitesmoke;
+}
+
+li{
+  color: whitesmoke
+}
+
 .error{
   color: red;
   font-family: Monda

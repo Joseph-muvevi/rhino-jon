@@ -8,9 +8,6 @@ const AboutBanner = () => {
                 <h3 className="about-banner-h3">
                     About us
                 </h3>
-                <p className="about-banner-p">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                </p>
             </div>
         </div>
     )

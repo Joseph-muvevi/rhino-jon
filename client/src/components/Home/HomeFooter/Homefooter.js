@@ -4,7 +4,7 @@ import {
   faLinkedinIn,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCopyright} from "@fortawesome/free-regular-svg-icons";
+import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import {
   faAddressBook,
   faHouseUser,
@@ -17,27 +17,32 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import logo from "../../../assets/Rhino card logo - PNG.png"
-import "./HomeFooter.css"
-import axios from "axios"
+import logo from "../../../assets/Rhino card logo - PNG.png";
+import "./HomeFooter.css";
+import axios from "axios";
 import { useFormik } from "formik";
-import * as Yup from "yup"
+import * as Yup from "yup";
 
 const Homefooter = () => {
-
   const formik = useFormik({
-    initialValues : {
-      email: ""
+    initialValues: {
+      email: "",
     },
     validationSchema: Yup.object().shape({
-      email: Yup.string().min(6).max(100)
+      email: Yup.string().min(6).max(100),
     }),
-    onSubmit: (value) => {
-      axios.post("http://localhost:8080/api/emails", value)
-        .then(console.log(value))
-        .catch(err => console.log(err))
-    }
-  })
+    onSubmit: (value, { resetForm }) => {
+      try {
+        axios
+          .post("http://localhost:8080/api/emails", value)
+          .then(console.log(value))
+          .catch((err) => console.log(err));
+        resetForm({ initialValues: "" });
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  });
 
   return (
     <div className="homefooter">
@@ -45,11 +50,13 @@ const Homefooter = () => {
         <div className="homefooter-top">
           <div className="homefooter-top-left">
             <div className="homefooter-logo">
-              <img src={logo} alt="Rhino jon logo" className="f-logo"/>
+              <img src={logo} alt="Rhino jon logo" className="f-logo" />
               <h3 className="homefooter-logo-text">Jon Prime Metals</h3>
             </div>
             <div className="homefooter-left-content">
-              <p className="homefooter-social-media-txt">For more follow us on</p>
+              <p className="homefooter-social-media-txt">
+                For more follow us on
+              </p>
               <div className="homefooter-social-icons">
                 <FontAwesomeIcon size="2x" icon={faFacebook} />
                 <FontAwesomeIcon size="2x" icon={faTwitter} />
@@ -67,7 +74,9 @@ const Homefooter = () => {
                       onChange={formik.handleChange}
                       value={formik.values.email}
                     />
-                    <button type="submit" className="subscribe" >Subscribe</button>
+                    <button type="submit" className="subscribe">
+                      Subscribe
+                    </button>
                   </form>
                 </div>
               </div>
@@ -77,7 +86,8 @@ const Homefooter = () => {
             <h3 className="homefooter-title">Contacts</h3>
             <ul className="homefooter-ul">
               <li className="homefooter-li">
-                <FontAwesomeIcon icon={faMapMarkerAlt} /> Riverside drive Nairobi,  Kenya
+                <FontAwesomeIcon icon={faMapMarkerAlt} /> Riverside drive
+                Nairobi, Kenya
               </li>
               <li className="homefooter-li">
                 <FontAwesomeIcon icon={faMapMarkerAlt} />
@@ -92,12 +102,12 @@ const Homefooter = () => {
                 Tel 2
               </li>
               <li className="homefooter-li">
-                <FontAwesomeIcon icon={faMailBulk} /> 
-                  info@rhinojonprimemetals.com
+                <FontAwesomeIcon icon={faMailBulk} />
+                info@rhinojonprimemetals.com
               </li>
               <li className="homefooter-li">
                 <FontAwesomeIcon icon={faMailBulk} />
-                  info@rhinojonprimemetals.com
+                info@rhinojonprimemetals.com
               </li>
             </ul>
           </div>

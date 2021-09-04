@@ -4,7 +4,7 @@ const {ProductQuotation, validate} = require("../models/productquotation")
 
 // get
 router.get("/", async (req, res) => {
-    const productquotation = await ProductQuotation.find().sort()
+    const productquotation = await ProductQuotation.find().sort("-date")
     res.send(productquotation)
 })
 

@@ -4,7 +4,7 @@ const router = express.Router();
 
 // get all goods
 router.get("/", async (req, res) => {
-  const goods = await Goods.find().sort();
+  const goods = await Goods.find().sort({createdAt: -1});
   if (goods) return res.status(404).send("No goods yet, Mind adding one?");
   res.send(goods);
 });
