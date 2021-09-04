@@ -1,7 +1,7 @@
 /* =======Banner======= */
 .product-banner{
     height: 40vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../assets/ship2.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../assets/guns2.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
@@ -104,6 +104,67 @@
     font-family: Monda;
 }
 
+.product-content-card-image-one{
+    background-image: url(../../assets/military1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+}
+
+.product-content-card-image-two{
+    background-image: url(../../assets/diamond\ 1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+}
+
+.product-content-card-image-three{
+    background-image: url(../../assets/medical.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+}
+
+.product-content-card-image-four{
+    background-image: url(../../assets/guns1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+}
+
+.product-content-card-image-five{
+    background-image: url(../../assets/military1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+}
+
+.product-content-card-image-six{
+    background-image: url(../../assets/military1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+}
+
+.product-content-card-image-seven{
+    background-image: url(../../assets/military1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+}
+
+.product-content-card-image-eight{
+    background-image: url(../../assets/military1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+}
+
+.product-content-button{
+    width: 200px
+}
+
+
 @media screen and (max-width: 900px){
     .product-content-values-row{
         display: flex;
@@ -119,7 +180,7 @@
 /* =========product footer=========== */
 .product-footer{
     min-height: 70vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.885)),url(../../assets/ship2.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.885)),url(../../assets/guns2.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -243,6 +304,7 @@
 .subscribe{
     margin-top: 20px;
 }
+
 
 @media screen and (max-width: 900px){
     .product-footer-top{

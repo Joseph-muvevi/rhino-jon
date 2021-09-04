@@ -4,7 +4,7 @@ import { useFormik } from 'formik'
 import * as Yup from "yup"
 import React from 'react'
 import "../StorageForms.css"
-// import axios from "axios"
+import axios from "axios"
 
 
 const StorageFormsContent = () => {
@@ -22,72 +22,89 @@ const StorageFormsContent = () => {
             producttype: "",
             pieces: "",
             datein: "",
-            timein: "",
+            intime: "",
+            dateout: "",
+            outtime: "",
+            storetrackno: "",
             notes: ""
         },
         validationSchema: Yup.object().shape({
             fullnames : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             email : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             company : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum character allowed is 2")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
             storagecity : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             storagecountry : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             warehousetype : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(50),
             weight : Yup.number()
-                .required("This field is required")
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(5000, "maximum characters allowed are 5000"),
+                .required()
+                .min(1)
+                .max(50000),
             weightunit : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(50),
             producttype : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(50),
             pieces: Yup.number()
                 .required()
-                .min(1, "the minimum value shuld be 1")
-                .max(50000, "Maximum value should me 50000"),
+                .min(1)
+                .max(50000),
             datein : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
-            timein: Yup.string()
                 .required()
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(50000, "maximum characters allowed are 50000"),
+                .min(3)
+                .max(100),
+            intime: Yup.string()
+                .required()
+                .min(3)
+                .max(100),
             dateout: Yup.string()
                 .required()
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(50000, "maximum characters allowed are 50000"),
-            dateout: Yup.string()
+                .min(3)
+                .max(100),
+            outtime : Yup.string()
                 .required()
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(50000, "maximum characters allowed are 50000"),
+                .min(3)
+                .max(100),
+            storetrackno : Yup.string()
+                .required()
+                .min(3)
+                .max(100),
             notes : Yup.string()
-                .required("This field is required")
-                .min(20, "Minimum characters allowed are 4")
-                .max(2000, "maximum characters allowed are 200"),
+                .required()
+                .min(20)
+                .max(2000),
         }),
         onSubmit: (values, {resetForm}) => {
-            // axios.post("http://localhost:8080/api/goods", values)
-            //     .then(console.log(values))
-            //     .catch(err => console.log(err))
-            alert(JSON.stringify(values, null, 2))
-            console.log(values)
-            resetForm({values: ""})
+            try {
+                axios.post("http://localhost:8080/api/storageshipment", values)
+                .then(console.log(values))
+                .catch(err => console.log(err))
+                alert(JSON.stringify(values, null, 2))
+                console.log(values)
+                resetForm({values: ""})
+            } catch (err) {
+                console.log(err)
+            }
         }
     })
 
@@ -202,10 +219,10 @@ const StorageFormsContent = () => {
                         </div>
                         <div className="logistics-quotation-small-input-group">
                             <label>Time in</label>
-                            <input type="time" placeholder="Time in..." name="timein" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.timein} required/>
-                                {formik.touched.timein && formik.errors.timein ? (
-                                    <div className="error">{formik.errors.timein}</div>
+                            <input type="time" placeholder="Time in..." name="intime" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.intime} required/>
+                                {formik.touched.intime && formik.errors.intime ? (
+                                    <div className="error">{formik.errors.intime}</div>
                                 ) : null}
                         </div>
                         <div className="logistics-quotation-small-input-group">
@@ -213,8 +230,8 @@ const StorageFormsContent = () => {
                             <select type="text"  name="warehousetype" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.warehousetype} required>
                                     <option value="" disabled label="Please select an option" />
-                                    <option value="distribution" label="Solid" defaultValue/>
-                                    <option value="climatecontrolled" label="Liquid"/>
+                                    <option value="distribution" label="Distribution" defaultValue/>
+                                    <option value="climatecontrolled" label="Climate controlled"/>
                                     <option value="public" label="Public"/>
                                     <option value="private" label="Private"/>
                                     <option value="bonded" label="Bonded"/>
@@ -237,10 +254,18 @@ const StorageFormsContent = () => {
                         </div>
                         <div className="logistics-quotation-small-input-group">
                             <label>Time out</label>
-                            <input type="time" placeholder="Time in..." name="timeout" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.timeout} required/>
-                                {formik.touched.timeout && formik.errors.timeout ? (
-                                    <div className="error">{formik.errors.timeout}</div>
+                            <input type="time" placeholder="Time in..." name="outtime" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.outtime} required/>
+                                {formik.touched.outtime && formik.errors.outtime ? (
+                                    <div className="error">{formik.errors.outtime}</div>
+                                ) : null}
+                        </div>
+                        <div className="logistics-quotation-small-input-group">
+                            <label>Store track number</label>
+                            <input type="text" placeholder="Store truck number" name="storetrackno" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.storetrackno} required/>
+                                {formik.touched.storetrackno && formik.errors.storetrackno ? (
+                                    <div className="error">{formik.errors.storetrackno}</div>
                                 ) : null}
                         </div>
                     </div>

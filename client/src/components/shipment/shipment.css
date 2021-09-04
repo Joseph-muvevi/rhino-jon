@@ -1,6 +1,7 @@
+/* =======shipment banner========= */
 .shipment-banner{
     min-height: 30vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../assets/container.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../assets/container.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
@@ -41,4 +42,33 @@
     .shipment-banner{
         height: 80vh;
     }
+}
+
+/* =======shipment table=========== */
+.shipment-table{
+    min-height: 100vh;
+    background: linear-gradient(to right bottom, #333232 50%, #202020 40%);
+    background-attachment: fixed;
+    position: relative;
+    bottom: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.shipment-table-content{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: white;
+    font-family: Monda;
+}
+
+.shipment-table-header{
+   
 }

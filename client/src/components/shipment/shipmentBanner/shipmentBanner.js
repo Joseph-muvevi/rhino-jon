@@ -1,5 +1,5 @@
 import React from 'react'
-import "./shipmentBanner.css"
+import "../shipment.css"
 
 const ShipmentBanner = () => {
     return (

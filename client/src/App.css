@@ -101,6 +101,26 @@ iframe{
   min-height: 50vh;
 }
 
+thead{
+  color: white;
+  font-family: Monda;
+  font-size: 20px;
+}
+tbody{
+  color: aliceblue;
+  font-family: Monda;
+  font-size: 20px;
+}
+
+table, th, td{
+  border: 1px solid white;
+  border-radius: 2px 4px 5px black;
+}
+
+th, td{
+  padding: 10px;
+}
+
 .error{
   color: red;
   font-family: Monda
@@ -110,6 +130,7 @@ iframe{
   font-family: Monda;
   font-size: 18px
 }
+
 
 @media screen and (max-width: 900px){
   form{

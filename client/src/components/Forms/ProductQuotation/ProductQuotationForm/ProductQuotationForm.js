@@ -92,9 +92,6 @@ const ProductQuotationForm = () => {
     return (
         <div className="product-quotation-form">
             <div className="product-quotation-form-content">
-                <div className="product-quotation-left">
-                    <img className="product-quotation-form-image" src={golden} alt="Rhino jon gold shippment"/>
-                </div>
 
                 <form onSubmit={formik.handleSubmit} className="the-product-quotation-form">
 
@@ -120,9 +117,6 @@ const ProductQuotationForm = () => {
                                     <div className="error">{formik.errors.fullnames}</div>
                                 ) : null}
                         </div>
-                    </div>
-
-                    <div className="product-quotation-small-inputs">
                         <div className="product-quotation-small-input-group">
                             <label>Your company</label>
                             <input type="text" placeholder="Your company name here..." name="company" 
@@ -131,7 +125,9 @@ const ProductQuotationForm = () => {
                                     <div className="error">{formik.errors.company}</div>
                                 ) : null}
                         </div>
+                    </div>
 
+                    <div className="product-quotation-small-inputs">
                         <div className="product-quotation-small-input-group">
                             <label>Your email</label>
                             <input type="email" placeholder="email" name="email" 
@@ -140,9 +136,6 @@ const ProductQuotationForm = () => {
                                     <div className="error">{formik.errors.email}</div>
                                 ) : null}
                         </div>
-                    </div>
-
-                    <div className="product-quotation-small-inputs">
                         <div className="product-quotation-small-input-group">
                             <label>Packaging type</label>
                                 <select type="text" placeholder="Packaging type..." name="packaging" 
@@ -188,17 +181,6 @@ const ProductQuotationForm = () => {
                                     <div className="error">{formik.errors.weight}</div>
                                 ) : null}
                         </div>
-                    </div>
-                    
-                    <div className="product-quotation-small-inputs">
-                        <div className="product-quotation-small-input-group">
-                            <label>Country</label>
-                            <input type="text" placeholder="What is your country..." name="country" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.country} required/>
-                                {formik.touched.country && formik.errors.country ? (
-                                    <div className="error">{formik.errors.country}</div>
-                                ) : null}                            
-                        </div>
                         <div className="product-quotation-small-input-group">
                             <label>City</label>
                             <input type="text" placeholder="What is your city..." name="city" 
@@ -210,6 +192,14 @@ const ProductQuotationForm = () => {
                     </div>
 
                     <div className="product-quotation-small-inputs">
+                        <div className="product-quotation-small-input-group">
+                            <label>Country</label>
+                            <input type="text" placeholder="What is your country..." name="country" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.country} required/>
+                                {formik.touched.country && formik.errors.country ? (
+                                    <div className="error">{formik.errors.country}</div>
+                                ) : null}                            
+                        </div>
                         <div className="product-quotation-small-input-group">
                             <label>Your Product</label>
                             <input type="text" placeholder="The product you want eg gold, metal, etc" name="product" 

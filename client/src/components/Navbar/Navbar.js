@@ -15,6 +15,7 @@ const Navbar = () => {
                     <NavLink className="navbar-li" to="/about">About</NavLink>
                     <NavLink className="navbar-li" to="/products">Products</NavLink>
                     <NavLink className="navbar-li" to="/services">Services</NavLink>
+                    <NavLink className="navbar-li" to="/shipment">Track</NavLink>
                     <NavLink className="navbar-li" to="/contact">Contact</NavLink>
                     <NavLink className="navbar-li" to="/auth"><FontAwesomeIcon icon={faLock}/> Login</NavLink>
                 </ul>

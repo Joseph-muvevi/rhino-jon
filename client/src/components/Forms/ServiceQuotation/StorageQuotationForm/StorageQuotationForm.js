@@ -87,12 +87,16 @@ const StorageQuotationForm = () => {
                 .max(2000, "maximum characters allowed are 200"),
         }),
         onSubmit: (values, {resetForm}) => {
-            axios.post("http://localhost:8080/api/storagequotation", values)
+            try {
+                axios.post("http://localhost:8080/api/storagequotation", values)
                 .then(console.log(values))
                 .catch(err => console.log(err))
-            alert(JSON.stringify(values, null, 2))
-            console.log(values)
-            resetForm({values : ""})
+                alert(JSON.stringify(values, null, 2))
+                console.log(values)
+                resetForm({values : ""})
+            } catch (err) {
+                console.log("An error occured", err)
+            }
         }
     })
 
@@ -159,6 +163,7 @@ const StorageQuotationForm = () => {
                                     <option value="pounds" label="Pounds"/>
                                     <option value="grams" label="Grams"/>
                                     <option value="litres" label="Litres"/>
+                                    <option value="tonnes" label="Tonnes"/>
                                 </select>
                                 {formik.touched.unit && formik.errors.unit ? (
                                     <div className="error">{formik.errors.unit}</div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import ShipmentBanner from './shipmentBanner/shipmentBanner'
+import ShipmentBanner from './shipmentBanner/ShipmentBanner'
 import ShipmentTable from './shipmentTable/ShipmentTable'
 
 const Shipment = () => {

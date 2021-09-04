@@ -1,9 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebookSquare,
-  faInstagramSquare,
-  faTwitterSquare,
+  faFacebook,
+  faInstagram,
+  faTwitter,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import "./banner.css";
@@ -36,18 +36,18 @@ const Banner = () => {
               <FontAwesomeIcon
                 className="fontawesome-icon"
                 color ="#4267B2"
-                icon={faFacebookSquare}
+                icon={faFacebook}
                 size="2x"
               />
               <FontAwesomeIcon
                 className="fontawesome-icon"
                 color ="#00acee"
-                icon={faTwitterSquare}
+                icon={faTwitter}
                 size="2x"
               />
               <FontAwesomeIcon
                 className="fontawesome-icon"
-                icon={faInstagramSquare}
+                icon={faInstagram}
                 color ="#bc2a8d"
                 size="2x"
                 />

@@ -58,7 +58,7 @@
     height: 100vh !important;
     background-position: center;
     /* background-attachment: fixed; */
-    background-image: url(../../../assets/gold1.jpg);
+    background-image: url(../../../assets/military1.jpg);
     background-size: cover;
     background-repeat: no-repeat; 
 }
@@ -87,12 +87,12 @@
     cursor: pointer;
   }
 
-.right-image{
-    background-image: url(../../../assets/diamond.jpg);
+/* .right-image{
+    background-image: url(../../../assets/);
     background-attachment: fixed;
-    width: 50vw;
+    width: 50vw; */
     /* height: 100vw; */
-}
+/* } */
 
 @media screen and (max-width: 900px){
     .banner{
