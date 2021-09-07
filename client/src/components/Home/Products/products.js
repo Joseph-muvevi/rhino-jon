@@ -16,10 +16,7 @@ const Products = () => {
                 </div> */}
                 <div className="products-content-content">
                     <div className="products-content-left">
-                        <div className="products-content-left-txt">
-                            <p className="products-content-left-p">
-                                What we offer
-                            </p>     
+                        <div className="products-content-left-txt">    
                             <h3 className="products-content-left-header">
                                 Our products
                             </h3>

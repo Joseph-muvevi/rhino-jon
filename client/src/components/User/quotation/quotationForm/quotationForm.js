@@ -21,38 +21,43 @@ const QuotationForm = () => {
         },
         validationSchema: Yup.object().shape({
             fullnames : Yup.string()
-                .required("This field is required")
-                .min(5, "Minimum number allowed is 6")
-                .max(100, "maximum characters allowed are 100"),
-            email : Yup.string()
-                .required("This field is required")
-                .min(5, "Minimum characters allowed are 6")
-                .max(100, "maximum characters allowed are 100"),
-            telephone : Yup.string()
-                .required("This field is required")
-                .min(8, "Minimum characters allowed are 8")
-                .max(30, "maximum characters allowed are 30"),
-            city : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 6")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
             company : Yup.string()
-                .required("This field is required")
-                .min(5, "Minimum characters allowed are 6")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
+            email : Yup.string()
+                .required()
+                .min(3)
+                .max(100),
+            telephone : Yup.string()
+                .required()
+                .min(8)
+                .max(30),
+            city : Yup.string()
+                .required()
+                .min(3)
+                .max(100),
             country : Yup.string()
-                .required("This field is required")
-                .min(5, "Minimum characters allowed are 6")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             message : Yup.string()
-                .required("This field is required")
-                .min(20, "Minimum characters allowed are 20")
-                .max(2000, "maximum characters allowed are 2000"),
+                .required()
+                .min(20)
+                .max(2000),
         }),
-        onSubmit: (values) => {
-            axios.post("http://localhost:8080/api/quotation", values)
+        onSubmit: (values, {resetForm}) => {
+            try {
+                axios.post("http://localhost:8080/api/quotation", values)
                 .then(console.log(values))
                 .catch(err => console.log(err))
+                resetForm({initialValues: ""})
+            } catch (err) {
+                console.log(err)
+            }
         }
     })
 
@@ -76,7 +81,7 @@ const QuotationForm = () => {
                         </div>
                         <div className="quotation-small-input-group">
                             <label>Email</label>
-                            <input type="text" placeholder="Goods email here..." name="email" 
+                            <input type="email" placeholder="Goods email here..." name="email" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} required/>
                                 {formik.touched.email && formik.errors.email ? (
                                     <div className="error">{formik.errors.email}</div>

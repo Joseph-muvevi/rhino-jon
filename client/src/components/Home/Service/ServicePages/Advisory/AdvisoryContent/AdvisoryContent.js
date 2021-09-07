@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Advisory.css"
+import {Link} from "react-router-dom"
 
 const AdvisoryContent = () => {
     return (
@@ -16,39 +17,35 @@ const AdvisoryContent = () => {
                 <div className="advisory-content-content-content">
                     <div className="advisory-content-content-left">
                         <div className="advisory-content-content-left-txt">
-                            <p className="advisory-content-content-left-p">
+                            {/* <p className="advisory-content-content-left-p">
                                 What we offer
-                            </p>     
-                            <h3 className="advisory-content-content-left-header">
-                                Our advisory-content
-                            </h3>
+                            </p>      */}
+                           
                         </div>              
                     </div>
                     <div className="advisory-content-content-right">
                         <div className="advisory-content-right-cards">
                             <p className="advisory-content-right-cards-row">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the
-                                1500s, when an unknown printer took a galley of type and scrambled it to
-                                make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially
-                                unchanged. It was popularised in the 1960s with the release of Letraset
-                                sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                We have succeeded in establishing, over the years, a system of partnership with 
+                                the various actors and stakeholders in the mining sector in Africa, mainly those
+                                 operating in countries with significant mining reserves and operating mines. 
+                                 Among these actors, we find artisanal miners, small and medium scale production 
+                                 mines and mining cooperatives. The other players are traders and commission agents.
+
                             </p>
                             <p className="advisory-content-right-cards-row">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the
-                                1500s, when an unknown printer took a galley of type and scrambled it to
-                                make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially
-                                unchanged. It was popularised in the 1960s with the release of Letraset
-                                sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                We organized ourselves and gained notoriety as an agency for facilitating 
+                                commercial contracts between sellers and buyers of mining products.
                             </p>
-                            <button className="advisory-content-button">
-                                Request a quote
-                            </button>
+                            <p className="advisory-content-right-cards-row">
+                                At a reasonable pre-negotiated fee we source, inspect, transport and
+                                refine precious stones on behalf of private investors.
+                            </p>
+                            <Link to="/product-quotation-form">
+                                <button className="advisory-content-button">
+                                    Request a quote
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 .home-service{
     display: none;
     min-height: 100vh;
-    /* background-color: #202020; */
-    background: linear-gradient(to right bottom, #131313 50%, #202020 40%);
+    background-color: #202020;
+    /* background: linear-gradient(to right bottom, #131313 50%, #202020 40%); */
     background-attachment: fixed;
     display: flex;
     justify-content: center;

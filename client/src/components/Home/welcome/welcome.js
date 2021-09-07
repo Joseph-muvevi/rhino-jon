@@ -10,9 +10,6 @@ const Welcome = () => {
         <div className="welcome">
             <div className="welcome-content">
                 <div className="welcome-content-top">
-                    <h3 className="welcome-content-top-header">
-                        Header Topic
-                    </h3>
                     <p className="welcome-content-top-p">
                         About us
                     </p>

@@ -127,10 +127,19 @@ th, td{
 
 p{
   color: whitesmoke;
+  text-align: justify;
 }
 
 li{
   color: whitesmoke
+}
+
+NavLink:active{
+  color: red
+}
+
+NavLink:focus{
+  color: red
 }
 
 .error{
@@ -140,7 +149,13 @@ li{
 
 .form-alt-p{
   font-family: Monda;
-  font-size: 18px
+  font-size: 16px
+}
+
+.lower-button-group{
+  min-width: 60vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 

@@ -88,6 +88,12 @@ const storageShipmentSchema = new Schema({
         minLength: 3,
         maxLength: 100
     },
+    storetrackno: {
+        type: String,
+        required: true,
+        minLength: 3,
+        maxLength: 100
+    },
     notes: {
         type: String,
         required: true,

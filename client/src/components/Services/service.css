@@ -1,6 +1,6 @@
 /* =======service banner======== */
 .services-banner{
-    height: 40vh;
+    height: 50vh;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../assets/container.jpg);
     background-attachment: fixed;
     background-size: cover;
@@ -20,15 +20,16 @@
 }
 
 .services-banner-h3{
-    font-size: 45px;
+    font-size: 30px;
     font-family: Monda;
     color: white;
     text-decoration: underline;
 }
 
 .services-banner-p{
-    font-size: 24px;
+    font-size: 18px;
     color: white;
+    text-align: justify;
 }
 
 @media screen and (max-width: 900px){
@@ -65,6 +66,7 @@
 .service-content-bottom{
     text-align: left;
     width: 100%;
+    padding-top: 20px;
 }
 
 .service-content-values-row{
@@ -87,7 +89,7 @@
 }
 
 .service-content-bottom-h3{
-    font-size: 40px;
+    font-size: 30px;
     color: white;
     text-decoration: underline;
     font-family: Monda;
@@ -95,17 +97,17 @@
 }
 
 .service-content-values-h3{
-    font-size: 30px;
+    font-size:25px;
     color: white;
 }
 
 .service-content-values-p{
-    font-size: 18px;
+    font-size: 16px;
     font-family: Monda;
 }
 
 .service-content-card-image-one{
-    background-image: url(../../assets/shipments.jpg);
+    background-image: url(../../assets/tradingbuysell.jpg);
     background-size: cover;
     background-position: center;
     height: 40%;
@@ -133,14 +135,14 @@
 }
 
 .service-content-card-image-five{
-    background-image: url(../../assets/military1.jpg);
+    background-image: url(../../assets/customs.jpg);
     background-size: cover;
     background-position: center;
     height: 40%;
 }
 
 .service-content-card-image-six{
-    background-image: url(../../assets/military1.jpg);
+    background-image: url(../../assets/vault.jpg);
     background-size: cover;
     background-position: center;
     height: 40%;
@@ -161,6 +163,9 @@
 }
 
 @media screen and (max-width: 900px){
+    .services-banner{
+        min-height: 150vh;
+    }
     .service-content-values-row{
         display: flex;
         flex-direction: column;
@@ -211,14 +216,13 @@
     align-items: flex-start;
 }
 
-.service-footer-left
--content{
+.service-footer-left-content{
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .f-logo{

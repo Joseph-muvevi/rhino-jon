@@ -64,11 +64,14 @@ const ProductQuotationForm = () => {
                 .min(20, "Minimum characters allowed are 20")
                 .max(2000, "maximum characters allowed are 2000"),
         }),
-        onSubmit: (values) => {
+        onSubmit: (values, {resetForm}) => {
             // axios.post("http://localhost:8080/api/goods", values)
             //     .then(console.log(values))
             //     .catch(err => console.log(err))
             alert(JSON.stringify(values, null, 2))
+            resetForm({
+                initialValues: ""
+            })
         }
     })
 

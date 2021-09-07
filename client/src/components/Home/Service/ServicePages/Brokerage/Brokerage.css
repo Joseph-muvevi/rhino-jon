@@ -19,7 +19,7 @@
 }
 
 .brokerage-banner-h3{
-    font-size: 45px;
+    font-size: 30px;
     font-family: Monda;
     color: white;
     text-decoration: underline;
@@ -65,7 +65,7 @@
 .brokerage-content-content-left{
     width: 30vw;
     height: 80vh;
-    background-image: url(../../../../../assets/ship2.jpg);
+    background-image: url(../../../../../assets/customs.jpg);
     background-position: center;
     background-size: cover;
     border-radius:  2px;

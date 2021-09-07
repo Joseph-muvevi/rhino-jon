@@ -1,11 +1,12 @@
-import React from 'react'
-import "../Ocean.css"
+import React from "react";
+import { Link } from "react-router-dom";
+import "../Ocean.css";
 
 const OceanContent = () => {
-    return (
-        <div className="ocean-content">
-            <div className="ocean-content-content">
-                {/* <div className="ocean-content-content-top">
+  return (
+    <div className="ocean-content">
+      <div className="ocean-content-content">
+        {/* <div className="ocean-content-content-top">
                     <p className="ocean-content-content-left-p">
                         What we offer
                     </p>     
@@ -13,48 +14,44 @@ const OceanContent = () => {
                         Header Topic
                     </h3>
                 </div> */}
-                <div className="ocean-content-content-content">
-                    <div className="ocean-content-content-left">
-                        <div className="ocean-content-content-left-txt">
-                            <p className="ocean-content-content-left-p">
-                                What we offer
-                            </p>     
-                            <h3 className="ocean-content-content-left-header">
-                                Our ocean-content
-                            </h3>
-                        </div>              
-                    </div>
-                    <div className="ocean-content-content-right">
-                        <div className="ocean-content-right-cards">
-                            <p className="ocean-content-right-cards-row">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the
-                                1500s, when an unknown printer took a galley of type and scrambled it to
-                                make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially
-                                unchanged. It was popularised in the 1960s with the release of Letraset
-                                sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <p className="ocean-content-right-cards-row">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the
-                                1500s, when an unknown printer took a galley of type and scrambled it to
-                                make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially
-                                unchanged. It was popularised in the 1960s with the release of Letraset
-                                sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                            </p>
-                            <button className="ocean-content-button">
-                                Request a quote
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+        <div className="ocean-content-content-content">
+          <div className="ocean-content-content-left"></div>
+          <div className="ocean-content-content-right">
+            <div className="ocean-content-right-cards">
+              <p className="ocean-content-right-cards-row">
+                We offer ocean freight services for several destinations in the
+                world and for each volume, both LCL (Less Than Container Load)
+                as FCL (Full Container Load).
+              </p>
+              <p className="ocean-content-right-cards-row">
+                Our international sea freight service will assist you get your
+                product where it needs to be by covering not only freight
+                movement of your product, but also customs clearance with our
+                in-house team of freight specialists.
+              </p>
+              <p className="ocean-content-right-cards-row">
+                With our online portal, our clients are fully informed of the
+                ocean freight movement by the real time tracking technology.
+              </p>
 
-export default OceanContent
+              <div className="lower-button-group">
+                <Link to="/service-type">
+                  <button className="storage-content-button">
+                    Request a quote
+                  </button>
+                </Link>
+                <Link to="/quotation">
+                  <button className="storage-content-button">
+                    Make enquiry
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default OceanContent;

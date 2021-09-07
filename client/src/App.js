@@ -32,12 +32,13 @@ import ServiceType from './components/Forms/ServiceQuotation/ServiceType/Service
 import ServiceQuotation from './components/Forms/ServiceQuotation/ServiceQuotation';
 import LogisticsQuotation from './components/Forms/LogisticsQuotation/LogisticsQuotation';
 import StorageForms from './components/User/UserForms/StorageForms/StorageForms';
+import LogisticsForms from './components/User/UserForms/LogisticsForms/LogisticsForms';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Switch>
           <Route path="/" exact component={Home}/>
           <Route path="/about" component={About}/>
@@ -69,6 +70,7 @@ function App() {
           <Route path="/storage-quotation" component={ServiceQuotation}/>
           <Route path="/logistics-quotation" component={LogisticsQuotation}/>
           <Route path="/storage-form" component={StorageForms}/>
+          <Route path="/logistics-form" component={LogisticsForms}/>
           <Route component={NotFound}/>
         </Switch>
       </Router>

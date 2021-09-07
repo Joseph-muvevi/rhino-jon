@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "../Logistics.css"
+
 
 const LogisticsContent = () => {
     return (
@@ -15,40 +17,35 @@ const LogisticsContent = () => {
                 </div> */}
                 <div className="logistics-content-content-content">
                     <div className="logistics-content-content-left">
-                        <div className="logistics-content-content-left-txt">
-                            <p className="logistics-content-content-left-p">
-                                What we offer
-                            </p>     
-                            <h3 className="logistics-content-content-left-header">
-                                Our logistics-content
-                            </h3>
+                        <div className="logistics-content-content-left-txt"> 
                         </div>              
                     </div>
                     <div className="logistics-content-content-right">
                         <div className="logistics-content-right-cards">
                             <p className="logistics-content-right-cards-row">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the
-                                1500s, when an unknown printer took a galley of type and scrambled it to
-                                make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially
-                                unchanged. It was popularised in the 1960s with the release of Letraset
-                                sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                We have teams of freight forwarders and road transport 
+                                service providers experienced with good knowledge and experience.
                             </p>
                             <p className="logistics-content-right-cards-row">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                Lorem Ipsum has been the industry's standard dummy text ever since the
-                                1500s, when an unknown printer took a galley of type and scrambled it to
-                                make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially
-                                unchanged. It was popularised in the 1960s with the release of Letraset
-                                sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                Through our strong partnership network in Africa, we provide sustainable road 
+                                and rail transport solutions for mining products from their places of extraction and production to places of transit and their final destinations.
+                               
                             </p>
-                            <button className="logistics-content-button">
-                                Request a quote
-                            </button>
+                            <p className="logistics-content-right-cards-row">
+                                Our coverage extends from West Africa to South Africa through East and Central Africa.
+                            </p>
+                            <div className="lower-button-group">
+                                <Link to="/service-type">
+                                    <button className="storage-content-button">
+                                        Request a quote
+                                    </button>
+                                </Link>
+                                <Link to="/quotation">
+                                    <button className="storage-content-button">
+                                        Make enquiry
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

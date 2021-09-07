@@ -19,7 +19,7 @@
 }
 
 .linkages-banner-h3{
-    font-size: 45px;
+    font-size: 30px;
     font-family: Monda;
     color: white;
     text-decoration: underline;
@@ -65,7 +65,7 @@
 .linkages-content-content-left{
     width: 30vw;
     height: 80vh;
-    background-image: url(../../../../../assets/ship2.jpg);
+    background-image: url(../../../../../assets/truck4.jpg);
     background-position: center;
     background-size: cover;
     border-radius:  2px;

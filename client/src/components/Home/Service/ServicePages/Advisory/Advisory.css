@@ -19,7 +19,7 @@
 }
 
 .advisory-banner-h3{
-    font-size: 45px;
+    font-size: 30px;
     font-family: Monda;
     color: white;
     text-decoration: underline;
@@ -65,8 +65,8 @@
 .advisory-content-content-left{
     width: 30vw;
     height: 80vh;
-    background-image: url(../../../../../assets/ship2.jpg);
-    background-position: center;
+    background-image: url(../../../../../assets/goldtrading.jpg);
+    background-position: left;
     background-size: cover;
     border-radius:  2px;
     filter: drop-shadow(2px 4px 5px black);

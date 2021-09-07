@@ -27,7 +27,7 @@
 }
 
 .shipment-banner-h3{
-    font-size: 45px;
+    font-size: 30px;
     font-family: Monda;
     color: white;
     text-decoration: underline;
@@ -45,6 +45,11 @@
 }
 
 /* =======shipment table=========== */
+.shipping {
+    display: flex;
+    flex-direction: column
+}
+
 .shipment-table{
     min-height: 100vh;
     background: linear-gradient(to right bottom, #333232 50%, #202020 40%);
@@ -69,6 +74,6 @@
     font-family: Monda;
 }
 
-.shipment-table-header{
-   
+.the-table{
+    margin-left: 20px;
 }

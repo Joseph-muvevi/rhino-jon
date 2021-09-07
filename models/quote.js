@@ -7,19 +7,19 @@ const quoteSchema = new Schema({
     fullnames: {
         type : String,
         required: true,
-        minlength: 5,
+        minlength: 3,
         maxlength: 100
     },
     company: {
         type : String,
         required: true,
-        minlength: 5,
+        minlength: 3,
         maxlength: 100
     },
     email: {
         type : String,
         required: true,
-        minlength: 5,
+        minlength: 3,
         maxlength: 100
     },
     telephone: {
@@ -37,7 +37,7 @@ const quoteSchema = new Schema({
     country: {
         type : String,
         required: true,
-        minlength: 5,
+        minlength: 3,
         maxlength: 100
     },
     message: {
@@ -50,6 +50,8 @@ const quoteSchema = new Schema({
         type: Date,
         default: Date.now
     }
+}, {
+    timestamps: true
 })
 
 // the model
@@ -58,12 +60,12 @@ const Quote = mongoose.model('quote', quoteSchema)
 // validation
 const validate = (quote) => {
     const schema = Joi.object({
-        fullnames: Joi.string().min(5).max(100).required(),
-        company: Joi.string().min(5).max(100).required(),
-        email: Joi.string().min(5).max(100).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org', 'ke'] } }),
+        fullnames: Joi.string().min(3).max(100).required(),
+        company: Joi.string().min(3).max(100).required(),
+        email: Joi.string().min(3).max(100).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org', 'ke'] } }),
         telephone: Joi.string().min(8).max(30).required(),
-        city: Joi.string().min(5).max(100).required(),
-        country: Joi.string().min(5).max(100).required(),
+        city: Joi.string().min(3).max(100).required(),
+        country: Joi.string().min(3).max(100).required(),
         message: Joi.string().min(20).max(2000).required()
     })
 

@@ -9,7 +9,7 @@ import React from "react";
 import "./banner.css";
 // import gold from "../../../assets/gold2.jpg"
 import { Link } from "react-router-dom";
-import video from "../../../assets/compressed background image.mp4"
+import video from "../../../assets/compressed background image.mp4";
 
 const Banner = () => {
   return (
@@ -71,7 +71,9 @@ const Banner = () => {
           </div>
           <br />
         </div> */}
-        <iframe autoplay loop controls title="Rhinojohn background video" className="banner-video" type="video/mp4" src={video}/>
+        <video autoPlay loop  className="banner-video">
+          <source type="video/mp4" src={video} />
+        </video>
       </div>
     </div>
   );

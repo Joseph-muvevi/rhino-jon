@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useFormik } from 'formik'
 import * as Yup from "yup"
 import React from 'react'
-import "../StorageForms.css"
-// import axios from "axios"
+import "../LogisticsForms.css"
+import axios from "axios"
 
 
-const StorageFormsContent = () => {
+const LogisticsFormsContent = () => {
 
     const formik = useFormik({
         initialValues : {
@@ -23,73 +23,98 @@ const StorageFormsContent = () => {
             weightunit: "",
             producttype: "",
             pieces: "",
-            datein: "",
-            timein: "",
+            departuredate: "",
+            departuretime: "",
+            arrivaldate: "",
+            arrivaltime: "",
+            logisticstrackno: "",
             notes: ""
         },
         validationSchema: Yup.object().shape({
             fullnames : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             email : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
             company : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum character allowed is 2")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
             departurecity : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             departurecountry : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             arrivalcity : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             arrivalcountry : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(3)
+                .max(50),
             logisticstype : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(50),
             weight : Yup.number()
-                .required("This field is required")
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(5000, "maximum characters allowed are 5000"),
+                .required()
+                .min(1)
+                .max(50000),
             weightunit : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(50),
             producttype : Yup.string()
-                .required("This field is required"),
+                .required()
+                .min(3)
+                .max(50),
             pieces: Yup.number()
                 .required()
-                .min(1, "the minimum value shuld be 1")
-                .max(50000, "Maximum value should me 50000"),
-            datein : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(200, "maximum characters allowed are 200"),
-            timein: Yup.string()
+                .min(1)
+                .max(50000),
+            departuredate : Yup.string()
                 .required()
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(50000, "maximum characters allowed are 50000"),
+                .min(3)
+                .max(100),
+            departuretime: Yup.string()
+                .required()
+                .min(3)
+                .max(100),
+            arrivaldate : Yup.string()
+                .required()
+                .min(3)
+                .max(100),
+            arrivaltime: Yup.string()
+                .required()
+                .min(3)
+                .max(100),
+            logisticstrackno : Yup.string()
+                .required()
+                .min(3)
+                .max(100),
             notes : Yup.string()
-                .required("This field is required")
-                .min(20, "Minimum characters allowed are 4")
-                .max(2000, "maximum characters allowed are 200"),
+                .required()
+                .min(20)
+                .max(2000),
         }),
         onSubmit: (values, {resetForm}) => {
-            // axios.post("http://localhost:8080/api/goods", values)
-            //     .then(console.log(values))
-            //     .catch(err => console.log(err))
-            alert(JSON.stringify(values, null, 2))
-            console.log(values)
-            resetForm({values: ""})
+            try {
+                axios.post("http://localhost:8080/api/logisticsrecords", values)
+                    .then(console.log(values))
+                    .catch(err => console.log(err))
+                alert(JSON.stringify(values, null, 2))
+                console.log(values)
+                resetForm({values: ""})
+            } catch (err) {
+                console.log(err)
+            }
         }
     })
 
@@ -183,6 +208,22 @@ const StorageFormsContent = () => {
                                 ) : null}                            
                         </div>
                         <div className="logistics-quotation-small-input-group">
+                            <label>Departure city</label>
+                            <input type="text" placeholder="What is your city..." name="arrivalcity" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.arrivalcity} required/>
+                                {formik.touched.arrivalcity && formik.errors.arrivalcity ? (
+                                    <div className="error">{formik.errors.arrivalcity}</div>
+                                ) : null}            
+                        </div>
+                        <div className="logistics-quotation-small-input-group">
+                            <label>Departure country</label>
+                            <input type="text" placeholder="What is your country..." name="arrivalcountry" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.arrivalcountry} required/>
+                                {formik.touched.arrivalcountry && formik.errors.arrivalcountry ? (
+                                    <div className="error">{formik.errors.arrivalcountry}</div>
+                                ) : null}                            
+                        </div>
+                        <div className="logistics-quotation-small-input-group">
                             <label> Pieces </label>
                             <input type="number" placeholder="pieces" name="pieces" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.pieces} required/>
@@ -195,28 +236,27 @@ const StorageFormsContent = () => {
                     <div className="logistics-quotation-small-inputs">
 
                         <div className="logistics-quotation-small-input-group">
-                            <label>Date in</label>
-                            <input type="date" placeholder="Date in..." name="datein" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.datein} required/>
-                                {formik.touched.datein && formik.errors.datein ? (
-                                    <div className="error">{formik.errors.datein}</div>
+                            <label>DEparture date</label>
+                            <input type="date" placeholder="DEparture date..." name="departuredate" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.departuredate} required/>
+                                {formik.touched.departuredate && formik.errors.departuredate ? (
+                                    <div className="error">{formik.errors.departuredate}</div>
                                 ) : null}
                         </div>
                         <div className="logistics-quotation-small-input-group">
                             <label>Time in</label>
-                            <input type="time" placeholder="Time in..." name="timein" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.timein} required/>
-                                {formik.touched.timein && formik.errors.timein ? (
-                                    <div className="error">{formik.errors.timein}</div>
+                            <input type="time" placeholder="Time in..." name="departuretime" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.departuretime} required/>
+                                {formik.touched.departuretime && formik.errors.departuretime ? (
+                                    <div className="error">{formik.errors.departuretime}</div>
                                 ) : null}
                         </div>
                         <div className="logistics-quotation-small-input-group">
-                            <label> Logistics type </label>
+                            <label> Warehouse Type </label>
                             <select type="text"  name="logisticstype" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.logisticstype} required>
                                     <option value="" disabled label="Please select an option" />
-                                    <option value="road" label="Road" defaultValue/>
-                                    <option value="rail" label="Rail"/>
+                                    <option value="land" label="Land" defaultValue/>
                                     <option value="sea" label="Sea"/>
                                     <option value="air" label="Air"/>
                                 </select>
@@ -225,22 +265,32 @@ const StorageFormsContent = () => {
                                 ) : null}  
                         </div>
                     </div>
+
                     <div className="logistics-quotation-small-inputs">
+
                         <div className="logistics-quotation-small-input-group">
-                            <label>Departure city</label>
-                            <input type="text" placeholder="What is your city..." name="arrivalcity" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.arrivalcity} required/>
-                                {formik.touched.arrivalcity && formik.errors.arrivalcity ? (
-                                    <div className="error">{formik.errors.arrivalcity}</div>
-                                ) : null}            
+                            <label>Arrival date</label>
+                            <input type="date" placeholder="Arrival date..." name="arrivaldate" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.arrivaldate} required/>
+                                {formik.touched.arrivaldate && formik.errors.arrivaldate ? (
+                                    <div className="error">{formik.errors.arrivaldate}</div>
+                                ) : null}
                         </div>
                         <div className="logistics-quotation-small-input-group">
-                            <label>Arrival country</label>
-                            <input type="text" placeholder="What is your country..." name="arrivalcountry" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.arrivalcountry} required/>
-                                {formik.touched.arrivalcountry && formik.errors.arrivalcountry ? (
-                                    <div className="error">{formik.errors.arrivalcountry}</div>
-                                ) : null}                            
+                            <label>Arrival time</label>
+                            <input type="time" placeholder="Arrival time..." name="arrivaltime" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.arrivaltime} required/>
+                                {formik.touched.arrivaltime && formik.errors.arrivaltime ? (
+                                    <div className="error">{formik.errors.arrivaltime}</div>
+                                ) : null}
+                        </div>
+                        <div className="logistics-quotation-small-input-group">
+                            <label>Track number</label>
+                            <input type="text" placeholder="Track number" name="logisticstrackno" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.logisticstrackno} required/>
+                                {formik.touched.logisticstrackno && formik.errors.logisticstrackno ? (
+                                    <div className="error">{formik.errors.logisticstrackno}</div>
+                                ) : null}
                         </div>
                     </div>
 
@@ -263,4 +313,4 @@ const StorageFormsContent = () => {
     )
 }
 
-export default StorageFormsContent
+export default LogisticsFormsContent
