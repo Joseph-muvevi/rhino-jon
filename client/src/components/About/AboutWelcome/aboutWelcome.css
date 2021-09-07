@@ -1,6 +1,6 @@
 .about-welcome{
     min-height: 100vh;
-    background: linear-gradient(to right bottom, #333232 50%, #202020 40%);
+    background-color: #333232;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

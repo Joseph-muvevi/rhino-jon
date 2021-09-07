@@ -46,13 +46,17 @@ const ShipmentTable = () => {
 
   useEffect(() => {
     try {
-      axios.get(`http://localhost:8080/api/${tracktype}`)
+      axios.get(`http://localhost:8080/api/${tracktype}`,{
+        params: {
+          _id: "track"
+        }
+      })
       .then(res => setShipment(res.data))
       .then(console.log(shipment))
     } catch (err) {
       console.log(err)
     }
-  }, [tracktype, trackno]);
+  }, [shipment]);
 
   return (
     <div className="shipping">

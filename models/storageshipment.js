@@ -88,7 +88,7 @@ const storageShipmentSchema = new Schema({
         minLength: 3,
         maxLength: 100
     },
-    storetrackno: {
+    trackno: {
         type: String,
         required: true,
         minLength: 3,
@@ -128,7 +128,7 @@ const validate = (storageShipment) => {
         intime: Joi.string().min(3).max(100).required(),
         dateout: Joi.string().min(3).max(100).required(),
         outtime: Joi.string().min(3).max(100).required(),
-        storetrackno: Joi.string().min(3).max(100).required(),
+        trackno: Joi.string().min(3).max(100).required(),
         notes: Joi.string().min(20).max(2000).required()
     })
 
