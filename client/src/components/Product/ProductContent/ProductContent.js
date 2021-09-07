@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../product.css";
 
 const productContent = () => {
@@ -100,14 +101,14 @@ const productContent = () => {
               </div>
             </div>
             <div className="lower-button-group">
-              <div to="/service-type">
+              <Link to="/product-quotation">
                 <button className="storage-content-button">
                   Request a quote
                 </button>
-              </div>
-              <div to="/quotation">
+              </Link>
+              <Link to="/quotation">
                 <button className="storage-content-button">Make enquiry</button>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

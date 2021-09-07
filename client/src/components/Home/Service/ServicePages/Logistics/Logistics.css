@@ -40,7 +40,7 @@
 .logistics-content{
     min-height: 100vh;
     /* background-color: #202020; */
-    background: linear-gradient(to right bottom, #202020 50%, #333232 40%);
+    background-color: #333232;
     display: flex;
     justify-content: center;
     align-items: center;

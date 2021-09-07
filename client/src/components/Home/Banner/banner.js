@@ -8,8 +8,7 @@ import React from "react";
 // } from "@fortawesome/free-brands-svg-icons";
 import "./banner.css";
 // import gold from "../../../assets/gold2.jpg"
-import { Link } from "react-router-dom";
-import video from "../../../assets/compressed background image.mp4";
+import video from "../../../assets/compressed.mp4";
 
 const Banner = () => {
   return (

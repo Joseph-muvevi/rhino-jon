@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "../Metals.css"
 
 const MetalsContent = () => {
@@ -46,9 +47,11 @@ const MetalsContent = () => {
                                 sheets containing Lorem Ipsum passages, and more recently with desktop
                                 publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                             </p>
-                            <button className="metals-content-button">
-                                Request a quote
-                            </button>
+                            <Link to="/product-quote">
+                                <button className="metals-content-button">
+                                    Request a quote
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
