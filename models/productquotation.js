@@ -22,6 +22,12 @@ const productQuotationSchema = new Schema({
         minLength: 2,
         maxLength: 100
     },
+    email: {
+        type: String,
+        required: true,
+        minLength: 3,
+        maxLength: 100
+    },
     position: {
         type: String,
         required: true,
@@ -41,12 +47,6 @@ const productQuotationSchema = new Schema({
         maxLength: 100
     },
     product: {
-        type: String,
-        required: true,
-        minLength: 3,
-        maxLength: 100
-    },
-    email: {
         type: String,
         required: true,
         minLength: 3,

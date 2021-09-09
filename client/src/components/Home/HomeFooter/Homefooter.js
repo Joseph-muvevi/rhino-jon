@@ -99,7 +99,7 @@ const Homefooter = () => {
               </li>
               <li className="homefooter-li">
                 <FontAwesomeIcon icon={faPhoneAlt} />
-                Tel 2
+                Tel 2: +25420 869 3000
               </li>
               <li className="homefooter-li">
                 <FontAwesomeIcon icon={faMailBulk} />

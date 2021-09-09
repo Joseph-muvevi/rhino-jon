@@ -15,6 +15,7 @@ const ProductQuotationForm = () => {
             company:  "",
             fullnames: "",
             title: "",
+            email: "",
             position: "",
             country: "",
             city: "",
@@ -23,7 +24,6 @@ const ProductQuotationForm = () => {
             packaging: "",
             unit: "",
             weight: "",
-            email: "",
             description: ""
         },
         validationSchema: Yup.object().shape({
@@ -37,6 +37,10 @@ const ProductQuotationForm = () => {
                 .max(100, "maximum characters allowed are 100"),
             title : Yup.string()
                 .required(),
+            email : Yup.string()
+                .required()
+                .min(3, "Minimum characters allowed are 5")
+                .max(100, "maximum characters allowed are 100"),
             position : Yup.string()
                 .required()
                 .min(3, "Minimum characters allowed are 3")
@@ -52,10 +56,6 @@ const ProductQuotationForm = () => {
             product : Yup.string()
                 .required()
                 .min(3, "Minimum characters allowed are 3")
-                .max(100, "maximum characters allowed are 100"),
-            email : Yup.string()
-                .required()
-                .min(5, "Minimum characters allowed are 5")
                 .max(100, "maximum characters allowed are 100"),
             quantity : Yup.number()
                 .required()

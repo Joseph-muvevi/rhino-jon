@@ -4,7 +4,7 @@ import {
   faLinkedinIn,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCopyright} from "@fortawesome/free-regular-svg-icons";
+import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 import {
   faAddressBook,
   faHouseUser,
@@ -17,27 +17,27 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import logo from "../../assets/Rhino card logo - PNG.png"
-import "./footer.css"
-import axios from "axios"
+import logo from "../../assets/Rhino card logo - PNG.png";
+import "./footer.css";
+import axios from "axios";
 import { useFormik } from "formik";
-import * as Yup from "yup"
+import * as Yup from "yup";
 
 const Footer = () => {
-
   const formik = useFormik({
-    initialValues : {
-      email: ""
+    initialValues: {
+      email: "",
     },
     validationSchema: Yup.object().shape({
-      email: Yup.string().min(6).max(100)
+      email: Yup.string().min(6).max(100),
     }),
     onSubmit: (value) => {
-      axios.post("http://localhost:8080/api/emails", value)
+      axios
+        .post("http://localhost:8080/api/emails", value)
         .then(console.log(value))
-        .catch(err => console.log(err))
-    }
-  })
+        .catch((err) => console.log(err));
+    },
+  });
 
   return (
     <div className="footer">
@@ -45,7 +45,7 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-top-left">
             <div className="footer-logo">
-              <img src={logo} alt="Rhino jon logo" className="f-logo"/>
+              <img src={logo} alt="Rhino jon logo" className="f-logo" />
               <h3 className="footer-logo-text">Jon Prime Metals</h3>
             </div>
             <div className="footer-left-content">
@@ -67,7 +67,9 @@ const Footer = () => {
                       onChange={formik.handleChange}
                       value={formik.values.email}
                     />
-                    <button type="submit" className="subscribe" >Subscribe</button>
+                    <button type="submit" className="subscribe">
+                      Subscribe
+                    </button>
                   </form>
                 </div>
               </div>
@@ -77,7 +79,8 @@ const Footer = () => {
             <h3 className="footer-title">Contacts</h3>
             <ul className="footer-ul">
               <li className="footer-li">
-                <FontAwesomeIcon icon={faMapMarkerAlt} /> Riverside drive Nairobi,  Kenya
+                <FontAwesomeIcon icon={faMapMarkerAlt} /> Riverside drive
+                Nairobi, Kenya
               </li>
               <li className="footer-li">
                 <FontAwesomeIcon icon={faMapMarkerAlt} />
@@ -89,15 +92,15 @@ const Footer = () => {
               </li>
               <li className="footer-li">
                 <FontAwesomeIcon icon={faPhoneAlt} />
-                Tel 2
-              </li>
-              <li className="footer-li">
-                <FontAwesomeIcon icon={faMailBulk} /> 
-                  info@rhinojonprimemetals.com
+                Tel 2: +25420 869 3000
               </li>
               <li className="footer-li">
                 <FontAwesomeIcon icon={faMailBulk} />
-                  info@rhinojonprimemetals.com
+                info@rhinojonprimemetals.com
+              </li>
+              <li className="footer-li">
+                <FontAwesomeIcon icon={faMailBulk} />
+                info@rhinojonprimemetals.com
               </li>
             </ul>
           </div>
