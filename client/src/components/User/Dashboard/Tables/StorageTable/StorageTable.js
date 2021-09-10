@@ -1,27 +1,29 @@
-import React, {useState, useEffect, useMemo} from 'react'
-import {useTable, useSortBy, useGlobalFilter, usePagination} from "react-table"
-import {GROUPED_LOGISTICS_COLUMNS} from "./LogisticsTableColumns"
-import {LogisticsGlobalFilter} from "./LogisticsGlobalFilter"
-import axios from "axios"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import axios from 'axios'
+import React, { useState, useEffect, useMemo } from 'react'
+import {useTable, useSortBy, useGlobalFilter, usePagination} from "react-table"
+import {StorageGlobalFilter} from "./StorageGlobalFilter"
+import {STORAGE_COLUMNS} from "./StorageTableColumns"
 
-const LogisticsTable = () => {
-    const [logistics, setLogistics] = useState([])
-    const columns = useMemo(() => GROUPED_LOGISTICS_COLUMNS, [])
-    const tableData = useMemo(() => logistics, [logistics])
+export const StorageTable = () => {
+
+    const [storage, setStorage] = useState([])
+    const columns = useMemo(() => STORAGE_COLUMNS, [] )
+    const storageData = useMemo(() => storage, [storage])
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/logisticsrecords`)
-            .then(res => setLogistics(res.data))
+        axios.get("http://localhost:8080/api/storageshipment")
+            .then(res => setStorage(res.data))
             .catch(err => console.log(err))
     }, [])
 
-    const logisticsTableInstance = useTable({
+    const storageTableInstance = useTable({
         columns: columns,
-        data: tableData
-    }, useGlobalFilter,  useSortBy, usePagination)
+        data: storageData
+    }, useGlobalFilter, useSortBy, usePagination)
 
+    
     const {
         getTableProps,
         getTableBodyProps,
@@ -36,13 +38,13 @@ const LogisticsTable = () => {
         setPageSize,
         state,
         setGlobalFilter
-    } = logisticsTableInstance
+    } = storageTableInstance
 
     const { globalFilter, pageIndex, pageSize} = state
 
     return (
-        <>
-            <LogisticsGlobalFilter filter = {globalFilter} setFilter={setGlobalFilter}/>
+       <>
+            <StorageGlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
             <table {...getTableProps()}>
                 <thead>
                     {
@@ -50,15 +52,16 @@ const LogisticsTable = () => {
                             <tr {...headerGroup.getHeaderGroupProps()}>
                                 {
                                     headerGroup.headers.map(column => (
-                                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                                            {column.render("Header")}
-                                                <span>
-                                                    {column.isSorted ? (column.isSortedDesc ? <FontAwesomeIcon icon={faSortDown}/>: <FontAwesomeIcon icon={faSortUp}/> ) : "" }
-                                                </span>
-                                        </th>
-                                    ))
+                                            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                                {column.render("Header")}
+                                                    <span>
+                                                        {column.isSorted ? (column.isSortedDesc? <FontAwesomeIcon icon={faSortDown}/> : <FontAwesomeIcon icon={faSortUp}/> ) : ""}
+                                                    </span>
+                                            </th>
+                                        ))
                                 }
                             </tr>
+
                         ))
                     }
                 </thead>
@@ -66,7 +69,7 @@ const LogisticsTable = () => {
                     {
                         page.map(row => {
                             prepareRow(row)
-                            return(
+                            return (
                                 <tr {...row.getRowProps()}>
                                     {
                                         row.cells.map(cell => {
@@ -75,7 +78,8 @@ const LogisticsTable = () => {
                                                     {
                                                         cell.render("Cell")
                                                     }
-                                                </td>)
+                                                </td>
+                                            )
                                         })
                                     }
                                 </tr>
@@ -103,8 +107,6 @@ const LogisticsTable = () => {
                 <button onClick={() => previousPage()} disabled={!canPrevousPage}>Previous</button>
                 <button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
             </div>
-        </>
+       </>
     )
 }
-
-export default LogisticsTable
