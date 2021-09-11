@@ -1,10 +1,14 @@
 import React from 'react'
-import DashboardTableData from './dashboardTableData'
+import EnquiriesTable from './EnquiriesTable/EnquiriesTable'
+import LogisticsTable from './LogisticsTable/LogisticsTable'
+import { StorageTable } from './StorageTable/StorageTable'
 
 const DashTable = () => {
     return (
-        <div>
-            <DashboardTableData/>
+        <div className="dash-table">
+            <StorageTable/>
+            <LogisticsTable/>
+            <EnquiriesTable/>
         </div>
     )
 }

@@ -43,7 +43,7 @@ export const StorageTable = () => {
     const { globalFilter, pageIndex, pageSize} = state
 
     return (
-       <>
+       <div className="dash-tables">
             <StorageGlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
             <table {...getTableProps()}>
                 <thead>
@@ -107,6 +107,6 @@ export const StorageTable = () => {
                 <button onClick={() => previousPage()} disabled={!canPrevousPage}>Previous</button>
                 <button onClick={() => nextPage()} disabled={!canNextPage}>Next</button>
             </div>
-       </>
+       </div>
     )
 }

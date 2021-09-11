@@ -105,38 +105,105 @@ iframe{
   min-height: 50vh;
 }
 
-thead{
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: #0f0f0f;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 80vw;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
   color: white;
   font-family: Monda;
-  font-size: 20px;
-}
-tbody{
-  color: aliceblue;
-  font-family: Monda;
-  font-size: 20px;
 }
 
-table {
-  border-collapse: collapse;
-  width: 90vw;
-  margin: auto;
+table * {
+  position: relative;
 }
 
 table td, table th {
-  border: 1px solid #ddd;
-  padding: 8px;
+  padding-left: 10px;
+  width: 100px
 }
 
-table tr:nth-child(even){background-color: #2b2b2b;}
+table thead tr {
+  height: 60px;
+  background: #000000;
+  font-size: 18px;
+  font-family: Monda;
+  color: whitesmoke
+}
 
-table tr:hover {background-color: #333232;}
+table tbody tr {
+  height: 48px;
+  border-bottom: 1px solid #000000;
+}
 
-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+table tbody tr:last-child {
+  border: 0;
+}
+
+table td, table th {
   text-align: left;
-  background-color: #1f1f1f;
+
+}
+
+table td.l, table th.l {
+  text-align: right;
+  width: 100px;
+}
+
+table td.c, table th.c {
+  text-align: center;
+  width: 100px;
+}
+
+table td.r, table th.r {
+  text-align: center;
+  width: 100px;
+}
+
+@media screen and (max-width: 35.5em) {
+  table {
+    display: block;
+  }
+  table > *, table tr, table td, table th {
+    display: block;
+  }
+  table thead {
+    display: none;
+  }
+  table tbody tr {
+    height: auto;
+    padding: 8px 0;
+  }
+  table tbody tr td {
+    padding-left: 45%;
+    margin-bottom: 12px;
+  }
+  table tbody tr td:last-child {
+    margin-bottom: 0;
+  }
+  table tbody tr td:before {
+    position: absolute;
+    font-weight: 700;
+    width: 40%;
+    left: 10px;
+    top: 0;
+  }
+}
+
+.table-input{
+  width: 100%;
+  display: flex;
+  justify-content: stretch
+}
+
+blockquote {
   color: white;
+  text-align: justify;
 }
 
 p{

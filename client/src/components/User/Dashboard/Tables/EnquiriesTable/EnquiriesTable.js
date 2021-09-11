@@ -1,27 +1,26 @@
 import React, {useState, useEffect, useMemo} from 'react'
 import {useTable, useSortBy, useGlobalFilter, usePagination} from "react-table"
-import {GROUPED_LOGISTICS_COLUMNS} from "./LogisticsTableColumns"
-import {LogisticsGlobalFilter} from "./LogisticsGlobalFilter"
+import {ENQUIRIES_TABLE_COLUMNS} from "./EnquiriesTableColumns"
 import axios from "axios"
+import {EnquiriesGlobalFilter} from './EnquiriesGlobalFilter'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
-import "../../dashboard.css"
 
-const LogisticsTable = () => {
-    const [logistics, setLogistics] = useState([])
-    const columns = useMemo(() => GROUPED_LOGISTICS_COLUMNS, [])
-    const tableData = useMemo(() => logistics, [logistics])
+const EnquiriesTable = () => {
+    const [enquiries, setEnquiries] = useState([])
+    const tableData = useMemo(() => enquiries, [enquiries])
+    const columns = useMemo(() => ENQUIRIES_TABLE_COLUMNS, [])
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/logisticsrecords`)
-            .then(res => setLogistics(res.data))
+        axios.get("http://localhost:8080/api/quotation")
+            .then((res) => setEnquiries(res.data))
             .catch(err => console.log(err))
-    }, [])
+    })
 
-    const logisticsTableInstance = useTable({
+    const enquiriesTableInstance = useTable({
         columns: columns,
         data: tableData
-    }, useGlobalFilter,  useSortBy, usePagination)
+    }, useGlobalFilter, useSortBy, usePagination)
 
     const {
         getTableProps,
@@ -37,13 +36,13 @@ const LogisticsTable = () => {
         setPageSize,
         state,
         setGlobalFilter
-    } = logisticsTableInstance
+    } = enquiriesTableInstance
 
     const { globalFilter, pageIndex, pageSize} = state
 
     return (
         <div className="dash-tables">
-            <LogisticsGlobalFilter filter = {globalFilter} setFilter={setGlobalFilter}/>
+            <EnquiriesGlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
             <table {...getTableProps()}>
                 <thead>
                     {
@@ -51,11 +50,11 @@ const LogisticsTable = () => {
                             <tr {...headerGroup.getHeaderGroupProps()}>
                                 {
                                     headerGroup.headers.map(column => (
-                                        <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                                        <th {...column.getHeaderProps(column.getSortByToggleProps)}>
                                             {column.render("Header")}
-                                                <span>
-                                                    {column.isSorted ? (column.isSortedDesc ? <FontAwesomeIcon icon={faSortDown}/>: <FontAwesomeIcon icon={faSortUp}/> ) : "" }
-                                                </span>
+                                            <span>
+                                                {column.isSorted ? (column.isSortedDesc ? <FontAwesomeIcon icon={faSortDown}/>: <FontAwesomeIcon icon={faSortUp}/> ) : "" }
+                                            </span>
                                         </th>
                                     ))
                                 }
@@ -69,17 +68,14 @@ const LogisticsTable = () => {
                             prepareRow(row)
                             return(
                                 <tr {...row.getRowProps()}>
-                                    {
-                                        row.cells.map(cell => {
-                                            return (
-                                                <td {...cell.getCellProps()}>
-                                                    {
-                                                        cell.render("Cell")
-                                                    }
-                                                </td>)
-                                        })
-                                    }
-                                </tr>
+                                {
+                                    row.cells.map(cell => (
+                                        <td {...cell.getCellProps()}>
+                                            {cell.render("Cell")}
+                                        </td>
+                                    ))
+                                }
+                            </tr>
                             )
                         })
                     }
@@ -94,7 +90,7 @@ const LogisticsTable = () => {
                 </span>
                 <select value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
                     {
-                        [5, 10, 20, 25].map((pageSize) => (
+                        [5, 10, 15, 20].map(pageSize => (
                             <option key={pageSize} value={pageSize}>
                                 Show {pageSize}
                             </option>
@@ -108,4 +104,4 @@ const LogisticsTable = () => {
     )
 }
 
-export default LogisticsTable
+export default EnquiriesTable
