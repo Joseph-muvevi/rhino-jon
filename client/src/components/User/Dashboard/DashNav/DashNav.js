@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from "react-router-dom"
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faHome,faChartPie, faTable, faFolderMinus} from '@fortawesome/free-solid-svg-icons'
+import { faHome,faChartPie, faTable, faPowerOff} from '@fortawesome/free-solid-svg-icons'
 import "../dashboard.css"
 
 const DashNav = () => {
@@ -26,10 +26,10 @@ const DashNav = () => {
                         Tables
                     </div>
                 </NavLink>
-                <NavLink to="/dashboard/forms" className="dash-nav-li">
+                <NavLink to="/dashboard/tables" className="dash-nav-li">
                     <div className="dash-nav-li-items">
-                        <FontAwesomeIcon icon={faFolderMinus} />
-                        Forms
+                        <FontAwesomeIcon icon={faPowerOff} />
+                        Sign Out
                     </div>
                 </NavLink>
             </div>

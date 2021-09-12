@@ -1,8 +1,8 @@
 import React from 'react'
 import "./dashboard.css"
 import Analitics from './analitics/analitics'
-import LogisticsTable from './Tables/LogisticsTable/LogisticsTable'
-import { StorageTable } from './Tables/StorageTable/StorageTable'
+import LogisticsForms from "../../User/UserForms/LogisticsForms/LogisticsForms"
+import StorageForms from "../../User/UserForms/StorageForms/StorageForms"
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import DashNav from './DashNav/DashNav'
 import DashboardHome from './DashBoardHome/DashboardHome'
@@ -21,6 +21,8 @@ const Dashboard = () => {
                 <Route path="/dashboard/analitics" component={Analitics}/>
                 <Route path="/dashboard/tables" component={DashTable}/>
                 <Route path="/dashboard/forms" component={DashForms}/>
+                <Route path="/dashboard/logistics-form" component={LogisticsForms}/>
+                <Route path="/dashboard/storage-form" component={StorageForms}/>
                 {/* <Analitics/>
                 <DashTable/>
                 <LogisticsTable/>

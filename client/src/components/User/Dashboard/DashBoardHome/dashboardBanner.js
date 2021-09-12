@@ -13,9 +13,14 @@ const DashboardBanner = () => {
                     <p className="dashboard-banner-long-content-p">
                         Lorem Ipsum is simply dummy text of the printing and typesetting
                     </p>
-                    <Link to="/">
-                        <button>Homepage</button>
-                    </Link>
+                   <div className="dashboard-banner-buttons">
+                        <Link to="/dashboard/logistics-form">
+                            <button>Add shipment</button>
+                        </Link>
+                        <Link to="/dashboard/storage-form">
+                            <button>Add storage</button>
+                        </Link>
+                   </div>
                 </div>
             </div>
             <div className="dashboard-banner-short">

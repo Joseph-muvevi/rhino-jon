@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import "../dashboard.css"
 import AnaliticsBannerLineChart from './AnaliticsBannerLineChart'
+import AnaliticsBannerRadarChart from './AnaliticsBannerRadarChart'
 
 export const AnaliticsBanner = () => {
     return (
@@ -11,7 +12,7 @@ export const AnaliticsBanner = () => {
                 <div className="analitics-banner-left-grids-long">
                     <AnaliticsBannerLineChart/>
                 </div>
-                <div className="analitics-banner-left-grids-one">
+                {/* <div className="analitics-banner-left-grids-one">
                     <div className="dashboard-card-circle">
                         <FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faShippingFast}/>
                     </div>
@@ -32,10 +33,10 @@ export const AnaliticsBanner = () => {
                     <h4 className="analitics-banner-left-grids-h4">
                         603kg
                     </h4>
-                </div>
+                </div> */}
             </div>
             <div className="analitics-banner-right">
-
+                <AnaliticsBannerRadarChart/>
             </div>
         </div>
     )
