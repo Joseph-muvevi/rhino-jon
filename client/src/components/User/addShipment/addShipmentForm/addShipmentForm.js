@@ -24,41 +24,41 @@ const AddShipmentForm = () => {
         },
         validationSchema: Yup.object().shape({
             quantity : Yup.number()
-                .required("This field is required")
-                .min(1, "Minimum number allowed is 0")
-                .max(1000000, "maximum characters allowed are 1000000"),
+                .required()
+                .min(1)
+                .max(1000000),
             title : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 4")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(6)
+                .max(200),
             departure : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 4")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(6)
+                .max(200),
             departuredate : Yup.string()
-                .required("This field is required"),
-                // .min(6, "Minimum characters allowed are 4")
-                // .max(200, "maximum characters allowed are 200"),
+                .required(),
+                // .min(6)
+                // .max(200),
             destination : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 4")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(6)
+                .max(200),
             destinationdate : Yup.string()
-                .required("This field is required"),
-                // .min(6, "Minimum characters allowed are 4")
-                // .max(2000, "maximum characters allowed are 2000"),
+                .required(),
+                // .min(6)
+                // .max(2000),
             currentlocation : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 4")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(6)
+                .max(200),
             eta : Yup.string()
-                .required("This field is required"),
-                // .min(6, "Minimum characters allowed are 4")
-                // .max(2000, "maximum characters allowed are 200"),
+                .required(),
+                // .min(6)
+                // .max(2000),
             description : Yup.string()
-                .required("This field is required")
-                .min(20, "Minimum characters allowed are 4")
-                .max(2000, "maximum characters allowed are 200"),
+                .required()
+                .min(20)
+                .max(2000),
         }),
         onSubmit: (values) => {
             // axios.post("http://localhost:8080/api/goods", values)

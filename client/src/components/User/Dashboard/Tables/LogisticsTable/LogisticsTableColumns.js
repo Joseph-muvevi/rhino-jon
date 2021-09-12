@@ -88,24 +88,8 @@ export const GROUPED_LOGISTICS_COLUMNS = [
                 accessor: "arrivalcity"
             },
             {
-                Header : "Weight Unit",
-                accessor: "weightunit"
-            },
-            {
-                Header : "Weight",
-                accessor: "weight"
-            },
-            {
-                Header : "Logistics Mode",
-                accessor: "logisticstype"
-            },
-            {
                 Header : "Pieces",
                 accessor: "pieces"
-            },
-            {
-                Header : "Notes",
-                accessor: "notes"
             },
         ]
     }

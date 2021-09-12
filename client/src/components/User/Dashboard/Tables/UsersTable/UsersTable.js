@@ -1,27 +1,29 @@
 import React, {useState, useEffect, useMemo} from 'react'
 import {useTable, useSortBy, useGlobalFilter, usePagination} from "react-table"
-import {GROUPED_LOGISTICS_COLUMNS} from "./LogisticsTableColumns"
-import {LogisticsGlobalFilter} from "./LogisticsGlobalFilter"
+import {USERS_TABLE_COLUMNS} from "./UsersTableColumns"
+import UsersTableGlobalFilter from "./UsersTableGlobalFilter"
 import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 import "../../dashboard.css"
 
-const LogisticsTable = () => {
-    const [logistics, setLogistics] = useState([])
-    const columns = useMemo(() => GROUPED_LOGISTICS_COLUMNS, [])
-    const tableData = useMemo(() => logistics, [logistics])
+
+const UsersTable = () => {
+
+    const [users, setUsers] = useState([])
+    const columns = useMemo(() => USERS_TABLE_COLUMNS, [])
+    const tableData = useMemo(() => users, [users])
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/logisticsrecords")
-            .then(res => setLogistics(res.data))
+        axios.get("http://localhost:8080/api/users")
+            .then(res => setUsers(res.data))
             .catch(err => console.log(err))
     }, [])
 
-    const logisticsTableInstance = useTable({
+    const usersTableInstance = useTable({
         columns: columns,
         data: tableData
-    }, useGlobalFilter,  useSortBy, usePagination)
+    }, useGlobalFilter, useSortBy, usePagination)
 
     const {
         getTableProps,
@@ -37,17 +39,16 @@ const LogisticsTable = () => {
         setPageSize,
         state,
         setGlobalFilter
-    } = logisticsTableInstance
+    } = usersTableInstance
 
     const { globalFilter, pageIndex, pageSize} = state
 
     return (
         <div className="dash-tables">
-            <LogisticsGlobalFilter filter = {globalFilter} setFilter={setGlobalFilter}/>
+            <UsersTableGlobalFilter filter = {globalFilter} setFilter={setGlobalFilter}/>
             <table {...getTableProps()}>
                 <thead>
-                    {
-                        headerGroups.map(headerGroup => (
+                    {   headerGroups.map(headerGroup => (
                             <tr {...headerGroup.getHeaderGroupProps()}>
                                 {
                                     headerGroup.headers.map(column => (
@@ -67,7 +68,7 @@ const LogisticsTable = () => {
                     {
                         page.map(row => {
                             prepareRow(row)
-                            return(
+                            return (
                                 <tr {...row.getRowProps()}>
                                     {
                                         row.cells.map(cell => {
@@ -76,7 +77,8 @@ const LogisticsTable = () => {
                                                     {
                                                         cell.render("Cell")
                                                     }
-                                                </td>)
+                                                </td>
+                                            )
                                         })
                                     }
                                 </tr>
@@ -89,7 +91,7 @@ const LogisticsTable = () => {
                 <span>
                     Page {" "}
                     <strong>
-                        {pageIndex + 1} of {pageOptions.length} {"  "}
+                        {pageIndex + 1} of {pageOptions.length} {" "}
                     </strong>
                 </span>
                 <select value={pageSize} onChange={e => setPageSize(Number(e.target.value))}>
@@ -108,4 +110,4 @@ const LogisticsTable = () => {
     )
 }
 
-export default LogisticsTable
+export default UsersTable

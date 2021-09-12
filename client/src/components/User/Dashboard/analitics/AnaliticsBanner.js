@@ -2,19 +2,14 @@ import { faShippingFast, faWeightHanging } from '@fortawesome/free-solid-svg-ico
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import "../dashboard.css"
+import AnaliticsBannerLineChart from './AnaliticsBannerLineChart'
 
 export const AnaliticsBanner = () => {
     return (
         <div className="analitics-banner">
             <div className="analitics-banner-left">
                 <div className="analitics-banner-left-grids-long">
-                {/* <FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faWarehouse}/> */}
-                    <h3 className="analitics-banner-left-grids-long-h3">
-                        Welcome back user
-                    </h3>
-                    <p className="analitics-banner-left-grids-long">
-                        It's happy to see you again!
-                    </p>
+                    <AnaliticsBannerLineChart/>
                 </div>
                 <div className="analitics-banner-left-grids-one">
                     <div className="dashboard-card-circle">

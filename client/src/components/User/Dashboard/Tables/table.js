@@ -2,6 +2,7 @@ import React from 'react'
 import EnquiriesTable from './EnquiriesTable/EnquiriesTable'
 import LogisticsTable from './LogisticsTable/LogisticsTable'
 import { StorageTable } from './StorageTable/StorageTable'
+import UsersTable from './UsersTable/UsersTable'
 
 const DashTable = () => {
     return (
@@ -9,6 +10,7 @@ const DashTable = () => {
             <StorageTable/>
             <LogisticsTable/>
             <EnquiriesTable/>
+            <UsersTable/>
         </div>
     )
 }

@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import DashNav from './DashNav/DashNav'
 import DashboardHome from './DashBoardHome/DashboardHome'
 import DashTable from './Tables/table'
+import DashForms from "./DashForms/DashForms"
 
 
 const Dashboard = () => {
@@ -19,6 +20,7 @@ const Dashboard = () => {
                 <Route path="/dashboard/home" component={DashboardHome}/>
                 <Route path="/dashboard/analitics" component={Analitics}/>
                 <Route path="/dashboard/tables" component={DashTable}/>
+                <Route path="/dashboard/forms" component={DashForms}/>
                 {/* <Analitics/>
                 <DashTable/>
                 <LogisticsTable/>
