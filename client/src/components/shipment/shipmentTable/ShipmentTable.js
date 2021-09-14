@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "../shipment.css";
-import { useFormik } from 'formik'
-import * as Yup from "yup"
 import axios from "axios";
-import TheTable from "./table";
+import ShipmentCard from "./ShipmentCard";
 
 const ShipmentTable = () => {
   const [tracktype, setTracktype] = useState("storageshipment");
-  const [trackno, setTrackno] = useState("")
+  const [trackNumber, setTrackNumber] = useState("")
   const [shipment, setShipment] = useState([])
 
   const handleSelect = (e) => {
@@ -15,58 +13,34 @@ const ShipmentTable = () => {
   }
   
   const handleTrackno = (e) => {
-    setTrackno(e.target.value)
+    setTrackNumber(e.target.value)
   }
 
-//   const formik = useFormik({
-//     initialValues : {
-//         tracktype: "",
-//         tracknumber: ""
-//     },
-//     validationSchema: Yup.object().shape({
-//         tracktype: Yup.string()
-//             .required()
-//             .min(3)
-//             .max(50),
-//         tracknumber: Yup.string()
-//             .required()
-//             .min(3)
-//             .max(50)
-//     }), 
-//     onSubmit: (values, {resetForm}) => {
-//         alert(JSON.stringify(values, null, 2))
-        
-//         resetForm({
-//             initialValues : ""
-//         })
-//     }
-// })
+  const trackItem = (e) => {
+    e.preventDefault()
+        // axios.get(`http://localhost:8080/api/${tracktype}/${trackNumber}`)
+        axios.get(`http://localhost:8080/api/${tracktype}`)
+        .then(res => {
+          setShipment(res.data)
+          // const result = shipment
+          console.log(trackNumber)
+        })
+        .catch(err => console.log(err))
+  }
 
-// storageshipment
+  const result = shipment.find( ({ trackno }) => trackno === trackNumber)
+  console.log("testing the object finder", result)
+
 
   useEffect(() => {
-    try {
-      axios.get(`http://localhost:8080/api/${tracktype}`,{
-        params: {
-          _id: "track"
-        }
-      })
-      .then(res => setShipment(res.data))
-      .then(console.log(shipment))
-    } catch (err) {
-      console.log(err)
-    }
-  }, [shipment]);
+    // trackItem(e)
+  }, []);
 
   return (
     <div className="shipping">
 
-      <div className="shipment-table">
-        <form style={{  display: "flex",
-                        flexDirection: "column", 
-                        justifyContent: "center",
-                        alignItems: "center",
-                        marginTop: "20px" }} >
+      <div style={{height: "50px"}} className="shipment-table">
+        <form onSubmit={trackItem} className="shipping-table-form" >
             <select type="text"  name="tracktype" 
                     onChange={handleSelect}  value={tracktype} required>
                         <option value="" disabled label="Please select tracking options"/>
@@ -75,21 +49,24 @@ const ShipmentTable = () => {
                     </select>
                     <br/>
             <input type="text" placeholder="Insert Track number" name="tracknumber" 
-                    onChange={handleTrackno} value={trackno} required/>
+                    onChange={handleTrackno} value={trackNumber} required/>
+            <button type="submit"> Search </button>
         </form>
+        {
+        //  console.log("this is the shipment data", shipment)
+        }
       </div>
-      {shipment ? (
-        <TheTable key={shipment.id} data={shipment} />
+      {shipment || shipment === undefined ? (
+        <ShipmentCard  result={result} />
       ) : (
         <div className="shipment-table-content">
           <h1 className="shipment-table-header">Nothin here yet</h1>
           <p className="shipment-table-p"></p>
         </div>
       )}
-      {/* {console.log(shipment, "This is from the shipment data")} */}
-      {shipment.map(items => {
+      {/* {shipment.map(items => {
         return console.log(items)
-      })}
+      })} */}
     </div>
   );
 };

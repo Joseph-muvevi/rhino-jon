@@ -2,7 +2,6 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 import Home from './components/Home/home';
 import About from './components/About/about';
-import Trucking from './components/Trucking/trucking';
 import Service from './components/Services/service';
 import Contact from './components/Contact/contact';
 import Auth from './components/Auth/auth';
@@ -42,7 +41,6 @@ function App() {
           <Route path="/about" component={About}/>
           <Route path="/products" component={Product}/>
           <Route path="/services" component={Service}/>
-          <Route path="/trucking" component={Trucking}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/auth" component={Auth}/>
           <Route path="/dashboard" component={Dashboard}/>
