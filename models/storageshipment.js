@@ -44,7 +44,7 @@ const storageShipmentSchema = new Schema({
         type: Number,
         required: true,
         min: 1,
-        max: 50000
+        max: 50000000
     },
     weightunit: {
         type: String,
@@ -62,7 +62,7 @@ const storageShipmentSchema = new Schema({
         type: Number,
         required: true,
         min: 1,
-        max: 50000
+        max: 50000000
     },
     datein: {
         type: String,
@@ -120,10 +120,10 @@ const validate = (storageShipment) => {
         storagecity: Joi.string().min(3).max(50).required(),
         storagecountry: Joi.string().min(3).max(50).required(),
         warehousetype: Joi.string().min(3).max(50).required(),
-        weight: Joi.number().min(1).max(50000).required(),
+        weight: Joi.number().min(1).max(50000000).required(),
         weightunit: Joi.string().min(3).max(100).required(),
         producttype: Joi.string().min(3).max(50).required(),
-        pieces: Joi.number().min(1).max(50000).required(),
+        pieces: Joi.number().min(1).max(50000000).required(),
         datein: Joi.string().min(3).max(100).required(),
         intime: Joi.string().min(3).max(100).required(),
         dateout: Joi.string().min(3).max(100).required(),

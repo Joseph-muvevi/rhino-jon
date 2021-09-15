@@ -103,9 +103,6 @@ const StorageQuotationForm = () => {
     return (
         <div className="service-quotation-form">
             <div className="service-quotation-form-content">
-                <div className="service-quotation-left">
-                    <img className="service-quotation-form-image" src={golden} alt="Rhino jon gold shippment"/>
-                </div>
 
                 <form onSubmit={formik.handleSubmit} className="the-service-quotation-form">
 
@@ -131,9 +128,6 @@ const StorageQuotationForm = () => {
                                     <div className="error">{formik.errors.fullnames}</div>
                                 ) : null}
                         </div>
-                    </div>
-
-                    <div className="service-quotation-small-inputs">
                         <div className="service-quotation-small-input-group">
                             <label>Your company</label>
                             <input type="text" placeholder="Your company name here..." name="company" 
@@ -142,7 +136,9 @@ const StorageQuotationForm = () => {
                                     <div className="error">{formik.errors.company}</div>
                                 ) : null}
                         </div>
+                    </div>
 
+                    <div className="service-quotation-small-inputs">
                         <div className="service-quotation-small-input-group">
                             <label>Your position</label>
                             <input type="text" placeholder="Eg CEO, CTO, Manager, etc..." name="position" 
@@ -151,9 +147,6 @@ const StorageQuotationForm = () => {
                                     <div className="error">{formik.errors.position}</div>
                                 ) : null}
                         </div>
-                    </div>
-
-                    <div className="service-quotation-small-inputs">
                         <div className="service-quotation-small-input-group">
                             <label>Weight Unit</label>
                                 <select type="text"  name="unit" 
@@ -196,10 +189,6 @@ const StorageQuotationForm = () => {
                                     <div className="error">{formik.errors.city}</div>
                                 ) : null}            
                         </div>
-                    </div>
-
-                    <div className="service-quotation-small-inputs">
-
                         <div className="service-quotation-small-input-group">
                             <label>Product Name</label>
                             <input type="text" placeholder="EProduct name..." name="productname" 
@@ -208,6 +197,10 @@ const StorageQuotationForm = () => {
                                     <div className="error">{formik.errors.productname}</div>
                                 ) : null}
                         </div>
+                    </div>
+
+
+                    <div className="service-quotation-small-inputs">
                         <div className="service-quotation-small-input-group">
                             <label>Product Amount</label>
                             <input type="number" placeholder="Product amount..." name="quantity" 
@@ -216,9 +209,6 @@ const StorageQuotationForm = () => {
                                     <div className="error">{formik.errors.quantity}</div>
                                 ) : null}
                         </div>
-                    </div>
-
-                    <div className="service-quotation-small-inputs">
                         <div className="service-quotation-small-input-group">
                             <label>Product Type</label>
                             <select type="text"  name="producttype" 

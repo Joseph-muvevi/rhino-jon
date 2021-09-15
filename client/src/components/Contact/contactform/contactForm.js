@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import React from "react";
 import "./contactForm.css";
+import axios from "axios"
 
 const ContactForm = () => {
   // const contactSchema = {
@@ -27,7 +28,10 @@ const ContactForm = () => {
     }),
     onSubmit: (message, { resetForm }) => {
       alert(JSON.stringify(message, null, 2));
-      alert("Your message has been sent successfully...");
+      axios
+        .post("http://localhost:8080/send")
+        .then( )
+        .catch(err => console.log(err))
       resetForm({ message: "" });
     },
   });

@@ -1,19 +1,14 @@
 import React from "react";
 import "../Storage.css";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentsDollar, faFileAlt, faPlaneDeparture, faShip, faShippingFast, faWarehouse } from '@fortawesome/free-solid-svg-icons'
+
 
 const StorageContent = () => {
   return (
     <div className="storage-content">
       <div className="storage-content-content">
-        {/* <div className="storage-content-content-top">
-                    <p className="storage-content-content-left-p">
-                        What we offer
-                    </p>     
-                    <h3 className="storage-content-content-left-header">
-                        Header Topic
-                    </h3>
-                </div> */}
         <div className="storage-content-content-content">
           <div className="storage-content-content-left"></div>
           <div className="storage-content-content-right">
@@ -37,6 +32,26 @@ const StorageContent = () => {
                   </button>
                 </Link>
               </div>
+            </div>
+            <div className="service-fontawesome-div">
+                <Link to="/services-trade" className="service-fontawesome-icon">
+                    <FontAwesomeIcon size="2x" icon={faCommentsDollar} />
+                </Link>
+                <Link to="/services-air" className="service-fontawesome-icon">
+                    <FontAwesomeIcon size="2x" icon={faPlaneDeparture} />
+                </Link>
+                <Link to="/services-ocean" className="service-fontawesome-icon">
+                    <FontAwesomeIcon size="2x" icon={faShip} />
+                </Link>
+                <Link to="/services-land" className="service-fontawesome-icon">
+                    <FontAwesomeIcon size="2x" icon={faShippingFast} />
+                </Link>
+                <Link to="/services-customs" className="service-fontawesome-icon">
+                    <FontAwesomeIcon size="2x" icon={faFileAlt} />
+                </Link>
+                <Link to="/services-storage" className="service-fontawesome-icon">
+                    <FontAwesomeIcon size="2x" icon={faWarehouse} />
+                </Link>
             </div>
           </div>
         </div>

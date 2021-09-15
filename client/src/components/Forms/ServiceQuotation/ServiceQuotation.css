@@ -54,24 +54,11 @@
     margin: auto;
 }
 
-.service-quotation-left{
-    width: 35vw;
-    height: 75vh;
-}
-
-.service-quotation-form-image{
-    border-radius: 5px;
-    height: 900px;
-    width: 100%;
-    position: relative;
-    bottom: 50px;
-}
-
 .the-service-quotation-form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-width: 50vw;
+    min-width: 90vw;
     min-height: 75vh;
 }
 

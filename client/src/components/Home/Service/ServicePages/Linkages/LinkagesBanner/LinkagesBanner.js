@@ -5,7 +5,7 @@ const LinkagesBanner = () => {
   return (
     <div className="linkages-banner">
       <div className="linkages-banner-content">
-        <h3 className="linkages-banner-h3">Our linkages Services</h3>
+        <h3 className="linkages-banner-h3">Land Logistics Services</h3>
         <p className="linkages-banner-p"></p>
       </div>
     </div>

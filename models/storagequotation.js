@@ -44,7 +44,7 @@ const storageQuotationSchema = new Schema({
         type: Number,
         required: true,
         min: 1,
-        max: 5000
+        max: 50000000
     },
     country: {
         type: String,
@@ -68,7 +68,7 @@ const storageQuotationSchema = new Schema({
         type: Number,
         required: true,
         min: 1,
-        max: 50000
+        max: 50000000
     },
     producttype: {
         type: String,
@@ -114,11 +114,11 @@ const validate = (storagequotation) => {
         position: Joi.string().min(3).max(100).required(),
         email: Joi.string().min(3).max(100).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org', 'ke'] } }),
         unit: Joi.string().min(3).max(100).required(),
-        weight: Joi.number().min(1).max(50000).required(),
+        weight: Joi.number().min(1).max(50000000).required(),
         country: Joi.string().min(3).max(100).required(),
         city: Joi.string().min(3).max(100).required(),
         productname: Joi.string().min(3).max(100).required(),
-        quantity: Joi.number().min(1).max(50000).required(),
+        quantity: Joi.number().min(1).max(50000000).required(),
         producttype: Joi.string().min(3).max(100).required(),
         storagecity: Joi.string().min(3).max(100).required(),
         storagecountry: Joi.string().min(1).max(100).required(),

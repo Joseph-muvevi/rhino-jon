@@ -1,6 +1,6 @@
 .brokerage-banner{
     height: 40vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../../assets/plane.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../../assets/signing1.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
@@ -65,7 +65,7 @@
 .brokerage-content-content-left{
     width: 30vw;
     height: 80vh;
-    background-image: url(../../../../../assets/customs.jpg);
+    background-image: url(../../../../../assets/signing2.jpg);
     background-position: center;
     background-size: cover;
     border-radius:  2px;
@@ -154,7 +154,7 @@
 /* ==========The brokerage-footer========== */
 .brokerage-footer{
     min-height: 70vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.885)),url(../../../../../assets/container.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.885)),url(../../../../../assets/signing1.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

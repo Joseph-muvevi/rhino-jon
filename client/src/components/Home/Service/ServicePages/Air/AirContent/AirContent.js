@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../Air.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentsDollar, faFileAlt, faPlaneDeparture, faShip, faShippingFast, faWarehouse } from '@fortawesome/free-solid-svg-icons'
+
 
 const AirContent = () => {
     return (
@@ -94,8 +97,26 @@ const AirContent = () => {
                                     </button>
                                 </Link>
                             </div>
-
-                            
+                        </div>
+                        <div className="service-fontawesome-div">
+                            <Link to="/services-trade" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faCommentsDollar} />
+                            </Link>
+                            <Link to="/services-air" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faPlaneDeparture} />
+                            </Link>
+                            <Link to="/services-ocean" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faShip} />
+                            </Link>
+                            <Link to="/services-land" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faShippingFast} />
+                            </Link>
+                            <Link to="/services-customs" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faFileAlt} />
+                            </Link>
+                            <Link to="/services-storage" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faWarehouse} />
+                            </Link>
                         </div>
                     </div>
                 </div>

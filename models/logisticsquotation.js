@@ -50,7 +50,7 @@ const logisticsQuotationSchema = new Schema({
         type: Number,
         required: true,
         min: 1,
-        max: 5000
+        max: 50000000
     },
     producttype: {
         type: String,
@@ -139,13 +139,13 @@ const validate = (logisticsquotation) => {
         company:  Joi.string().min(3).max(100).required(),
         position: Joi.string().min(3).max(100).required(),
         unit: Joi.string().min(3).max(100).required(),
-        weight: Joi.number().min(1).max(50000).required(),
+        weight: Joi.number().min(1).max(50000000).required(),
         producttype: Joi.string().min(3).max(100).required(), //solid liquid gass etc
         fromcity: Joi.string().min(3).max(50).required(),
         fromcountry: Joi.string().min(3).max(50).required(),
-        pieces: Joi.number().min(1).max(50000).required(),
+        pieces: Joi.number().min(1).max(50000000).required(),
         productname: Joi.string().min(3).max(100).required(),
-        quantity: Joi.number().min(1).max(50000).required(),
+        quantity: Joi.number().min(1).max(50000000).required(),
         merchandise: Joi.string().min(3).max(100).required(),
         logisticstype: Joi.string().min(3).max(100).required(),
         tocity: Joi.string().min(3).max(50).required(),

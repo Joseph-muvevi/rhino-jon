@@ -1,6 +1,6 @@
 .linkages-banner{
     height: 40vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../../assets/plane.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../../assets/landlogistics1.jpg);
     background-attachment: fixed;
     background-size: cover;
     background-position: bottom;
@@ -154,7 +154,7 @@
 /* ==========The linkages-footer========== */
 .linkages-footer{
     min-height: 70vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.885)),url(../../../../../assets/container.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.686), rgba(0, 0, 0, 0.885)),url(../../../../../assets/landlogistics1.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;

@@ -1,20 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../Logistics.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCommentsDollar, faFileAlt, faPlaneDeparture, faShip, faShippingFast, faWarehouse } from '@fortawesome/free-solid-svg-icons'
+
 
 
 const LogisticsContent = () => {
     return (
         <div className="logistics-content">
             <div className="logistics-content-content">
-                {/* <div className="logistics-content-content-top">
-                    <p className="logistics-content-content-left-p">
-                        What we offer
-                    </p>     
-                    <h3 className="logistics-content-content-left-header">
-                        Header Topic
-                    </h3>
-                </div> */}
                 <div className="logistics-content-content-content">
                     <div className="logistics-content-content-left">
                         <div className="logistics-content-content-left-txt"> 
@@ -45,7 +40,28 @@ const LogisticsContent = () => {
                                         Make enquiry
                                     </button>
                                 </Link>
+                                <br/>
                             </div>
+                        </div>
+                        <div className="service-fontawesome-div">
+                            <Link to="/services-trade" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faCommentsDollar} />
+                            </Link>
+                            <Link to="/services-air" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faPlaneDeparture} />
+                            </Link>
+                            <Link to="/services-ocean" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faShip} />
+                            </Link>
+                            <Link to="/services-land" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faShippingFast} />
+                            </Link>
+                            <Link to="/services-customs" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faFileAlt} />
+                            </Link>
+                            <Link to="/services-storage" className="service-fontawesome-icon">
+                                <FontAwesomeIcon size="2x" icon={faWarehouse} />
+                            </Link>
                         </div>
                     </div>
                 </div>
