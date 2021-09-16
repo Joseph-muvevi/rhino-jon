@@ -35,7 +35,7 @@ const StorageTable = () => {;
     <div className="shipping">
         <Navbar/>
         <div className="shipping-input-groups">
-      <div style={{height: "50px"}} className="storage-table">
+      <div style={{height: "50px", marginBottom: "30px"}} className="storage-table">
         <form onSubmit={trackItem} className="shipping-table-form" >
             <input type="text" placeholder="Insert Track number" name="tracknumber" 
                     onChange={handleTrackno} value={trackNumber} required/>

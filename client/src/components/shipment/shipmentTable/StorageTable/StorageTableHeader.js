@@ -31,7 +31,8 @@ const StorageTableHeader = ({headers}) => {
                     </h3>
                     <div className="storage-table-headers-body">
                         <p className="storage-table-headers-p">
-                            Tracking number: <div className="track-number-background"> {header? header.trackno: null}</div>
+                            Tracking number: <span className="track-number-background"> 
+                            {header? header.trackno: null}</span>
                         </p>
                         <p className="storage-table-headers-p">
                             Date in: {header? header.datein: null}<span style={{marginLeft: "35px"}}>Time: {header? header.intime: null}</span> 

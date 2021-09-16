@@ -135,6 +135,7 @@
 .storage-table-headers-body-heading{
     color: white;
     font-size: 18px;
+    text-align: left;
 }
 
 /* ==========Shipment table content==================== */
@@ -168,8 +169,23 @@
 }
 
 .storage-content-table-content-topic-p{
-    max-width: 11.25vh;
-    margin-left: 10px;
+    width: 21.25vh;
+}
+
+.storage-content-table-content-topic-p-number{
+    width: 5vh;
+}
+.storage-content-table-content-topic-p-description{
+    width: 35.25vh;
+}
+.storage-content-table-content-topic-p-unit{
+    width: 8.25vh;
+}
+.storage-content-table-content-topic-p-packaging{
+    width: 15vh;
+}
+.storage-content-table-content-topic-p-weight{
+    width: 15vh;
 }
 
 .storage-content-table-content-topic-lower{
