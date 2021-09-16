@@ -12,6 +12,24 @@
     margin: auto
 }
 
+.dont-display{
+    display: none
+}
+
+@media(max-width: 900px){
+    .dashboard{
+        display: flex;
+        flex-direction: column;
+    }
+    .dashboard-nav{
+        display: none;
+    }
+    /* .dashboard-main{
+        margin-left: -30vw;
+        padding: 0;
+    } */
+}
+
 /* =======Dashboard navigation====== */
 .dash-nav{
     width: 15vw;
@@ -143,6 +161,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 .dashboard-card-circle{

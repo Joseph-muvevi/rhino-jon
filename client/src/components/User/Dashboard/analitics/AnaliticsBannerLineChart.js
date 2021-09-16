@@ -1,17 +1,23 @@
-import React, {useState, useEffect, useMemo} from 'react'
+import React, {
+    useState, 
+    useEffect, 
+    // useMemo
+} from 'react'
 import axios from "axios"
 import { Line } from "react-chartjs-2"
 
 const AnaliticsBannerLineChart = () => {
     const [chartData, setChartData] = useState({})
-    const [pieces, setPieces] = useState([])
-    const [dateIn, setDateIn] = useState([])
+    // const [pieces, setPieces] = useState([])
+    // const [dateIn, setDateIn] = useState([])
+
+    const shipmentURL = "http://localhost:8080/api/storageshipment"
   
     const Chart = () => {
         let empPiece = []
         let empDateIn = []
 
-        axios.get("http://localhost:8080/api/storageshipment")
+        axios.get(shipmentURL)
             .then(res => {
                 // console.log(res.data);
                 for (const dataObj of res.data){

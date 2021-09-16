@@ -1,4 +1,5 @@
 import React from "react";
+// import {Link} from "react-router-dom"
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {
 //   faFacebook,
@@ -14,6 +15,7 @@ const Banner = () => {
   return (
     <div className="the-banner">
       <div className="banner">
+
         {/* <div className="banner-content">
           <div className="banner-main-content">
             <div className="banner-left">
@@ -70,6 +72,7 @@ const Banner = () => {
           </div>
           <br />
         </div> */}
+        
         <video autoPlay loop  className="banner-video">
           <source type="video/mp4" src={video} />
         </video>

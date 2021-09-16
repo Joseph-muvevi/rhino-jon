@@ -1,12 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import login from "../../../assets/ship2.jpg"
 import "./authForm.css"
 import { Link } from 'react-router-dom';
+import axios from "axios"
+import authHeader from "./AuthServices/authheader"
+import AuthService from "./AuthServices/authservice"
 
 
 const AuthForm = () => {
+
 
     const formik = useFormik({
         initialValues: {
@@ -15,14 +19,25 @@ const AuthForm = () => {
         },
         validationSchema: Yup.object({
           email: Yup.string()
-            .email()
-            .min(5, "Too little charachters for that")
-            .max(150, "Thats a very long email")
-            .required("This email field is required"),
-          password: Yup.string().min(8).max(150).required(),
+            .min(5)
+            .max(100)
+            .required(),
+          password: Yup.string()
+            .min(6)
+            .max(100)
+            .required(),
         }),
-        onSubmit: (values) => {
-          alert(JSON.stringify(values, null, 2));
+        onSubmit: (values, {resetForm}) => {
+          axios.post("http://localhost:8080/api/login", values)
+            .then((res) => {
+              console.log(res)
+              // localStorage.setItem(values)
+              if (res.data) {
+                localStorage.setItem("user", JSON.stringify(res.data));
+              }
+             
+            })
+            .catch (er => console.log(er))
         },
       });
     
@@ -36,12 +51,12 @@ const AuthForm = () => {
                   <div className="form-group">
                       <label>Email</label>
                       <input
-                      onChange={formik.handleChange}
-                      value={formik.values.email}
-                      name="email"
-                      required
-                      type="email"
-                      placeholder="Enter your email here..."
+                        onChange={formik.handleChange}
+                        value={formik.values.email}
+                        name="email"
+                        required
+                        type="email"
+                        placeholder="Enter your email here..."
                       />
                       {formik.touched.email && formik.errors.email ? (
                       <div className="error">{formik.errors.email}</div>

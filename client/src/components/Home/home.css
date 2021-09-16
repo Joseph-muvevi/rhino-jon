@@ -5,3 +5,13 @@
 .lower-nav{
     margin-bottom: 10vh;
 }
+
+.home-navbar{
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .home-navbar{
+        display: block;
+    }
+}

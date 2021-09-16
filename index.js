@@ -1,5 +1,6 @@
 require("dotenv").config();
 require("express-async-errors");
+const config = require("config")
 
 // imports
 const express = require("express");
@@ -8,8 +9,8 @@ const connection = require("./db");
 const cors = require("cors");
 
 // importing routes
-const signup = require("./controllers/signup");
-const login = require("./controllers/login");
+const signup = require("./routes/signup");
+const login = require("./routes/login");
 const user = require("./routes/user");
 const goods = require("./routes/goods");
 const brokers = require("./routes/brokers");
@@ -21,19 +22,22 @@ const storagequotation = require("./routes/storagequotation");
 const logisticsquotation = require("./routes/logisticsquotation");
 const storageshipment = require("./routes/storageshipment");
 const logisticsshipmentrecords = require("./routes/logisticsshipment");
-// const register = require("./controllers/signup")
+const admin = require("./routes/admins");
 
 // the database
 connection();
 
+if (!config.get('jwtPrivateKey')) {
+    throw new Error('FATAL ERROR!!: jwtPrivateKey is not defined')
+  }
+
 // middlewares
 app.use(cors());
 app.use(express.json());
-app.use("/api/signup", signup);
+// app.use("/api/signup", signup);
 app.use("/api/login", login);
 app.use("/api/users", user);
-app.use("/api/goods", goods);
-app.use("/api/signup", signup);
+app.use("/api/goods", goods);;
 app.use("/api/brokers", brokers);
 app.use("/api/clients", clients);
 app.use("/api/quotation", quotes);
@@ -43,6 +47,7 @@ app.use("/api/storagequotation", storagequotation);
 app.use("/api/storageshipment", storageshipment);
 app.use("/api/logisticsrecords", logisticsshipmentrecords);
 app.use("/api/logisticsquotation", logisticsquotation);
+app.use("/api/signup", admin);
 
 // port
 const port = process.env.PORT || 8080;

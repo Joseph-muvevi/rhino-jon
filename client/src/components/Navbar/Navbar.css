@@ -40,4 +40,20 @@
     .navbar-logo{
         display: none;
     }
+    .nav-trigger{
+        display: none;
+    }
+    .navbar-content{
+        max-width: 100vw;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar-ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 }

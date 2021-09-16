@@ -28,10 +28,6 @@ const LowerNavs = () => {
                     <FontAwesomeIcon icon={faHeadset} size="2x"/>
                     Contact
                 </NavLink>
-                <NavLink to="/auth" className="lower-nav-single-item">
-                    <FontAwesomeIcon icon={faLock} size="2x"/>
-                    Login
-                </NavLink>
             </div>
         </div>
     )

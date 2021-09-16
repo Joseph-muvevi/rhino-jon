@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "../dashboard.css";
 
-const DashboardCards = () => {
+const DashboardCards = ({shipment}) => {
+    // const length = shipment.length
   return (
     <div className="dashboard-cards">
         <div className="dashboard-card">
@@ -23,7 +24,9 @@ const DashboardCards = () => {
                 <FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faPlaneDeparture}/>
             </div>
             <h3 className="dashboard-card-h3">
-                700
+                {
+                    console.log(shipment, "Data from dashboard cards")
+                }
             </h3>
             <p className="dashboard-card-p">
                 Product Shipped

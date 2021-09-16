@@ -3,7 +3,6 @@ import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useFormik } from 'formik'
 import * as Yup from "yup"
-import golden from "../../../../assets/gold1.jpg"
 import "./signupForm.css"
 import { Link } from 'react-router-dom'
 import axios from "axios"
@@ -12,80 +11,106 @@ const SignupForm = () => {
 
     const formik = useFormik({
         initialValues : {
+            title:  "",
             firstname:  "",
             lastname: "",
-            password: "",
+            idno: "",
+            email: "",
+            telephone: "",
+            pobox: "",
             city: "",
             country: "",
-            email: "",
-            accountCode : "",
-            telephone: ""
+            role: "",
+            password: "",
         },
-        valemailationSchema: Yup.object().shape({
+        validationSchema: Yup.object().shape({
+            title : Yup.string()
+                .required()
+                .min(2)
+                .max(100),
             firstname : Yup.string()
-                .required("This field is required")
-                .min(5, "Minimum number allowed is 5")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
             lastname : Yup.string()
-                .required("This field is required")
-                .min(5, "Minimum characters allowed are 5")
-                .max(100, "maximum characters allowed are 100"),
-            password : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 4")
-                .max(200, "maximum characters allowed are 200"),
-            city : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 5")
-                .max(100, "maximum characters allowed are 100"),
-            country : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 4")
-                .max(100, "maximum characters allowed are 200"),
+                .required()
+                .min(3)
+                .max(100),
+            idno : Yup.string()
+                .required()
+                .min(8)
+                .max(100),
             email : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 4")
-                .max(200, "maximum characters allowed are 200"),
-            accountCode : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 4")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(7)
+                .max(100),
             telephone : Yup.string()
-                .required("This field is required")
-                .min(7, "Minimum characters allowed are 4")
-                .max(30, "maximum characters allowed are 200"),
-            isAdmin: Yup.boolean()
-                // .required("This field is required")
+                .required()
+                .min(10)
+                .max(30),
+            pobox : Yup.string()
+                .required()
+                .min(5)
+                .max(30),
+            city : Yup.string()
+                .required()
+                .min(3)
+                .max(100),
+            country : Yup.string()
+                .required()
+                .min(3)
+                .max(100),
+            role : Yup.string()
+                .required()
+                .min(4)
+                .max(100),
+            password : Yup.string()
+                .required()
+                .min(6)
+                .max(100),
         }),
-        onSubmit: (values) => {
-            axios.post("http://localhost:8080/api/users", values)
-                .then(console.log(values))
-                // .then(alert(JSON.stringify(values, null, 2)))
+        onSubmit: (values, {resetForm}) => {
+            axios.post("http://localhost:8080/api/signup", values)
+                .then(res => {
+                    console.log(res)
+                    alert(JSON.stringify(values))
+                })
                 .catch(err => console.log(err))
+            resetForm({initialValues : ""})
         }
     })
 
     return (
         <div className="signup-form">
             <div className="signup-form-content">
-                <div className="signup-left">
-                    <img className="signup-form-image" src={golden} alt="Rhino jon gold shippment"/>
-                </div>
+                
+                <form onSubmit={formik.handleSubmit} className="the-service-quotation-form" >
 
-                <form onSubmit={formik.handleSubmit} >
-
-                    <div className="signup-small-inputs">
-                        <div className="signup-small-input-group">
-                            <label>first name</label>
-                            <input type="text" placeholder="firstname here..." name="firstname" 
+                <div className="service-quotation-small-inputs">
+                        <div className="service-quotation-small-input-group">
+                            <label>Your Title</label>
+                                <select type="text" placeholder="Arrival city here..." name="title" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.title} required>
+                                    <option value="" disabled label="Please select an option" />
+                                    <option value="mr" label="Mr." />
+                                    <option value="mrs" label="Mrs."/>
+                                    <option value="miss" label="Miss."/>
+                                </select>
+                                {formik.touched.title && formik.errors.title ? (
+                                    <div className="error">{formik.errors.title}</div>
+                                ) : null}
+                        </div>
+                        <div className="service-quotation-small-input-group">
+                            <label>Your firstname</label>
+                            <input type="text" placeholder="Your firstname here..." name="firstname" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.firstname} required/>
                                 {formik.touched.firstname && formik.errors.firstname ? (
                                     <div className="error">{formik.errors.firstname}</div>
                                 ) : null}
                         </div>
-                        <div className="signup-small-input-group">
-                            <label>last name</label>
-                            <input type="text" placeholder="lastname here..." name="lastname" 
+                        <div className="service-quotation-small-input-group">
+                            <label>Your lastname</label>
+                            <input type="text" placeholder="Your lastname name here..." name="lastname" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.lastname} required/>
                                 {formik.touched.lastname && formik.errors.lastname ? (
                                     <div className="error">{formik.errors.lastname}</div>
@@ -93,84 +118,90 @@ const SignupForm = () => {
                         </div>
                     </div>
 
-                    <div className="signup-small-inputs">
-                        <div className="signup-small-input-group">
+                    <div className="service-quotation-small-inputs">
+                        <div className="service-quotation-small-input-group">
+                            <label>Your ID/Passport</label>
+                            <input type="text" placeholder="Your ID/Passport" name="idno" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.idno} required/>
+                                {formik.touched.idno && formik.errors.idno ? (
+                                    <div className="error">{formik.errors.idno}</div>
+                                ) : null}
+                        </div>
+                        <div className="service-quotation-small-input-group">
+                            <label>P.O.Box Number</label>
+                            <input type="text" placeholder="P.O.Box Number" name="pobox" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.pobox} required/>
+                                {formik.touched.pobox && formik.errors.pobox ? (
+                                    <div className="error">{formik.errors.pobox}</div>
+                                ) : null}
+                        </div>
+                        <div className="service-quotation-small-input-group">
+                            <label>telephone</label>
+                            <input type="text" placeholder="The telephone of the product..." name="telephone" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.telephone} required/>
+                                {formik.touched.telephone && formik.errors.telephone ? (
+                                    <div className="error">{formik.errors.telephone}</div>
+                                ) : null}
+                        </div>
+                    </div>
+                    
+                    <div className="service-quotation-small-inputs">
+                        <div className="service-quotation-small-input-group">
                             <label>Country</label>
-                            <input type="text" placeholder="country here..." name="country" 
+                            <input type="text" placeholder="Your Country..." name="country" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.country} required/>
                                 {formik.touched.country && formik.errors.country ? (
                                     <div className="error">{formik.errors.country}</div>
                                 ) : null}                            
                         </div>
-
-                        <div className="signup-small-input-group">
+                        <div className="service-quotation-small-input-group">
                             <label>City</label>
-                            <input type="text" placeholder="your city here..." name="city" 
+                            <input type="text" placeholder="Your city..." name="city" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.city} required/>
-                                {formik.touched.city && formik.errors.city ? (
-                                    <div className="error">{formik.errors.city}</div>
-                                ) : null}
-                        </div>
-                    </div>
-                    
-                    <div className="signup-small-inputs">
-
-                        <div className="signup-small-input-group">
-                            <label>Account Code</label>
-                            <input type="text" placeholder="your ccount code here..." name="accountCode" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.accountCode} required/>
-                                {formik.touched.accountCode && formik.errors.accountCode ? (
-                                    <div className="error">{formik.errors.accountCode}</div>
-                                ) : null}                            
-                        </div>
-                        <div className="signup-small-input-group">
-                            <label>telephone number</label>
-                            <input type="tel" placeholder="your phone number here..." name="telephone" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.telephone} required/>
-                                {formik.touched.telephone && formik.errors.telephone ? (
-                                    <div className="error">{formik.errors.telephone}</div>
-                                ) : null}
-                        </div>
-
-                    </div>
-
-                    <div className="signup-small-inputs">
-                        <div className="signup-small-input-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="your email here..." name="email" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} required/>
                                 {formik.touched.city && formik.errors.city ? (
                                     <div className="error">{formik.errors.city}</div>
                                 ) : null}            
                         </div>
-                        <div className="signup-small-input-group">
-                            <label>password</label>
-                            <input type="password" placeholder="your password here..." name="password" 
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password} required/>
+                        <div className="service-quotation-small-input-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="Email..." name="email" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.email} required/>
+                                {formik.touched.email && formik.errors.email ? (
+                                    <div className="error">{formik.errors.email}</div>
+                                ) : null}
+                        </div>
+                    </div>
+
+
+                    <div className="service-quotation-small-inputs">
+                        <div className="service-quotation-small-input-group">
+                            <label>Role</label>
+                            <select type="text" placeholder="Arrival city here..." name="role" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.role} required>
+                                    <option value="" disabled label="Please role" />
+                                    <option value="user" label="User" />
+                                    <option value="moderator" label="Moderator."/>
+                                    <option value="admin" label="Admin."/>
+                                </select>
+                                {formik.touched.role && formik.errors.role ? (
+                                    <div className="error">{formik.errors.role}</div>
+                                ) : null}
+                        </div>
+                        <div className="service-quotation-small-input-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="Product amount..." name="password" 
+                                onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.password} required/>
                                 {formik.touched.password && formik.errors.password ? (
                                     <div className="error">{formik.errors.password}</div>
                                 ) : null}
                         </div>
                     </div>
-                    <div className="signup-small-inputs">
-                        <div className="signup-small-input-group">
-                            <label>Is Admin</label>
-                            <input type="checkbox" name="isAdmin"
-                                onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.isAdmin}/>
-                                {formik.touched.isAdmin && formik.errors.isAdmin ? (
-                                    <div className="error">{formik.errors.isAdmin}</div>
-                                ) : null}
-                        </div>
-                    </div>
+
 
                     <br/>
                     <button type="submit">
-                        Submit <FontAwesomeIcon icon={faPaperPlane}/>
+                        Register <FontAwesomeIcon icon={faPaperPlane}/>
                     </button>
-                    <br/>
-                    <p className="form-alt-p">
-                        Already have account? <Link to="/auth">Sign in here</Link>
-                    </p>
                 </form>
             </div>
         </div>

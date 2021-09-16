@@ -3,17 +3,19 @@ import "./AboutBanner.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import image1 from "../../../assets/container.jpg"
-import image2 from "../../../assets/warehousing.jpg"
+import image2 from "../../../assets/warehouse1.jpg"
 import image3 from "../../../assets/cargoplane 1.jpg"
-import image4 from "../../../assets/tradingbuysell.jpg"
-import image5 from "../../../assets/diamond.jpg"
+import image4 from "../../../assets/sea 2.jpg"
+import image5 from "../../../assets/ship 3.jpg"
 import image6 from "../../../assets/miningtools.jpg"
 
 const AboutBanner = () => {
+    
 
     const settings = {
         showArrows: false,
         swipeable: true,
+        fade: true,
         stopOnHover: true,
         autoPlay: true,
         infiniteLoop: true,
@@ -24,65 +26,48 @@ const AboutBanner = () => {
         showThumbs: false,
     }
 
+    const transitionTimingFunction = 'ease-in-out';
+
+    const carouselSlides = {
+        position: 'absolute',
+        display: 'block',
+        zIndex: -2,
+        minHeight: '100%',
+        opacity: 0,
+        top: 0,
+        right: 0,
+        left: 0,
+        bottom: 0,
+        transitionTimingFunction: transitionTimingFunction,
+        msTransitionTimingFunction: transitionTimingFunction,
+        MozTransitionTimingFunction: transitionTimingFunction,
+        WebkitTransitionTimingFunction: transitionTimingFunction,
+        OTransitionTimingFunction: transitionTimingFunction,
+    }
+
     return (
 
         
-        <Carousel  {...settings}>
-            <div className="about-banner-one">
-                <div className="about-banner-content">
-                    {/* <h3 className="about-banner-h3">
-                        About us
-                    </h3> */}
-                    <img className="about-image" alt="" src={image1}/>
-                        
-                </div>
-
-            </div>
-            <div className="about-banner-two">
-                <div className="about-banner-content">
-                    {/* <h3 className="about-banner-h3">
-                        About us
-                    </h3> */}
-                    <img className="about-image" alt="" src={image2}/>
-                </div>
-
-            </div>
-            <div className="about-banner-three">
-                <div className="about-banner-content">
-                    {/* <h3 className="about-banner-h3">
-                        About us
-                    </h3> */}
-                    <img className="about-image" alt="" src={image3}/>
-                </div>
-            </div>
-            <div className="about-banner-four">
-                <div className="about-banner-content">
-                    {/* <h3 className="about-banner-h3">
-                        About us
-                    </h3> */}
-                    <img className="about-image" alt="" src={image4}/>
-                </div>
-
-            </div>
-            <div className="about-banner-five">
-                <div className="about-banner-content">
-                    {/* <h3 className="about-banner-h3">
-                        About us
-                    </h3> */}
-                    <img className="about-image" alt="" src={image5}/>
-                        
-                </div>
-            </div>
-            <div className="about-banner-six">
-                <div className="about-banner-content">
-                    {/* <h3 className="about-banner-h3">
-                        About us
-                    </h3> */}
-                    <img className="about-image" alt="" src={image6}/>
-                        
-                </div>
-            </div>
-        </Carousel>
+    <Carousel className="about-image" {...settings} style={carouselSlides} >
+        <div>
+            <img src={image1}  alt="Rhino john about sliders"/>
+        </div>
+        <div>
+            <img src={image2}  alt="Rhino john about sliders"/>
+        </div>
+        <div>
+            <img src={image3}  alt="Rhino john about sliders"/>
+        </div>
+        <div>
+            <img src={image4}  alt="Rhino john about sliders"/>
+        </div>
+        <div>
+            <img src={image5}  alt="Rhino john about sliders"/>
+        </div>
+        <div>
+            <img src={image6} alt="Rhino john about sliders"/>
+        </div>
+    </Carousel>
 
     )
 }

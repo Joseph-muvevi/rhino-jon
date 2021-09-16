@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useFormik } from 'formik'
 import * as Yup from "yup"
 import React from 'react'
-import golden from "../../../../assets/gold1.jpg"
 import "../ServiceQuotation.css"
 import axios from "axios"
 

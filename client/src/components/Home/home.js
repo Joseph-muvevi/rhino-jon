@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
+import "./home.css"
 // import Background from './Background/background'
 import Banner from './Banner/banner'
 import LowerNavs from './LowerNavs/LowerNavs'
@@ -11,12 +12,10 @@ import LowerNavs from './LowerNavs/LowerNavs'
 const Home = () => {
     return (
         <div className="home">
+            <div className="home-navbar">
+                <Navbar />
+            </div>
            <Banner/>
-           {/* <Welcome/>
-           <Products/>
-           <Background/>
-           <Service/>
-           <Homefooter/> */}
            <div className="lower-nav">
                 <LowerNavs/>
            </div>

@@ -24,7 +24,6 @@ const DashboardBanner = () => {
                 </div>
             </div>
             <div className="dashboard-banner-short">
-
             </div>
         </div>
     )

@@ -5,7 +5,6 @@ import About from "./components/About/about";
 import Service from "./components/Services/service";
 import Contact from "./components/Contact/contact";
 import Auth from "./components/Auth/auth";
-import Navbar from "./components/Navbar/Navbar";
 import Dashboard from "./components/User/Dashboard/dashboard";
 import Signup from "./components/User/Signup/signup";
 import NotFound from "./components/404/404";

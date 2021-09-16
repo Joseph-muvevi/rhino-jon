@@ -7,11 +7,13 @@
     position: relative;
     z-index: 50;
     padding: 10px;
+    flex-wrap: wrap;
 }
 
 .lower-nav-items{
     background-color: #333232;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-left: 10px;
     margin-right: 10px;
@@ -34,4 +36,10 @@
     /* background-color: red; */
     background-color: goldenrod;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px){
+    .lower-nav{
+        display: none
+    }
 }

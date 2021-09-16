@@ -4,11 +4,11 @@ import DashboardBanner from './dashboardBanner'
 import DashboardCards from './dashboardCards'
 import DashboardHomeTable from './DashboardHomeTable/dashboardhometable'
 
-const DashboardHome = () => {
+const DashboardHome = ({shipment}) => {
     return (
         <div className="dashboard-home">
-            <DashboardBanner/>
-            <DashboardCards/>
+            <DashboardBanner />
+            <DashboardCards shipment={shipment}/>
             <DashboardHomeTable/>
         </div>
     )
