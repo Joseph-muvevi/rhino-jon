@@ -1,6 +1,7 @@
 import React from 'react'
 import StorageTableContent from './StorageTableContent'
 import StorageTableHeader from './StorageTableHeader'
+import "../../shipment"
 
 const StorageCard = ({result}) => {
 
@@ -11,8 +12,14 @@ const StorageCard = ({result}) => {
     return (
         <div className="shipment-card"> 
             <div className="shipment-card-content">
-                <StorageTableHeader headers = {results}/>
-                <StorageTableContent content = {results}/>
+                {
+                    result ? (
+                        <>
+                            <StorageTableHeader headers = {results}/>
+                            <StorageTableContent content = {results}/> 
+                        </>
+                        ): <p className="terniary-condition-p">Track storage</p>
+                }
             </div>
         </div>
     )

@@ -34,24 +34,27 @@ const StorageTable = () => {;
   return (
     <div className="shipping">
         <Navbar/>
+        <div className="shipping-input-groups">
       <div style={{height: "50px"}} className="storage-table">
         <form onSubmit={trackItem} className="shipping-table-form" >
             <input type="text" placeholder="Insert Track number" name="tracknumber" 
                     onChange={handleTrackno} value={trackNumber} required/>
-            <button type="submit"> Search </button>
+            <button type="submit"> Track </button>
         </form>
         {
         //  console.log("this is the storage data", storage)
         }
       </div>
-      {storage || storage !== undefined ? (
-        <StorageCard  result={result} />
-      ) : (
-        <div className="storage-table-content">
-          <h1 className="storage-table-header">Nothin here yet</h1>
-          <p className="storage-table-p"></p>
-        </div>
-      )}
+
+        {storage || storage !== undefined ? (
+          <StorageCard  result={result} />
+        ) : (
+          <div className="storage-table-content">
+            <h1 className="storage-table-header">Nothin here yet</h1>
+            <p className="storage-table-p"></p>
+          </div>
+        )}
+      </div>
       {/* {storage.map(items => {
         return console.log(items)
       })} */}

@@ -13,6 +13,15 @@
     z-index: 15; */
 }
 
+.shipping-input-groups{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+}
+
 .shipment-banner-content{
     width: 90vw;
     margin: auto;
@@ -83,7 +92,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100vw
+    max-width: 100vw;
+
 }
 
 .shipment-card-content{
@@ -116,6 +126,15 @@
 .storage-content-table{
     min-width: 100%;
     background-color: grey;
+}
+
+.storage-table-headers-body-head{
+    text-align: justify
+}
+
+.storage-table-headers-body-heading{
+    color: white;
+    font-size: 18px;
 }
 
 /* ==========Shipment table content==================== */
@@ -175,4 +194,40 @@
     background-color: grey;
     width: 102%;
     margin-left: -0.72%;
+}
+
+
+/* ============THE TRACKING SECTION================== */
+.terniary-condition-p{
+    width: 100%; 
+    text-align: center;
+    background-color: grey;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* =================TRACKING TYPE=================== */
+.track-type{
+    min-width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    min-height: 50vh;
+}
+
+.track-type-h3{
+    color: white;
+    font-size: 18px;
+    font-family: Monda;
+}
+
+.tracktype-link-group{
+    margin: auto;
+    max-width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }

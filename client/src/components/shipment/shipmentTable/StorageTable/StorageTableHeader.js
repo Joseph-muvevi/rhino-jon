@@ -7,7 +7,7 @@ const StorageTableHeader = ({headers}) => {
     return (
         <div className="storage-table-headers">
            <div className="storage-tabe-headers-left">
-                <div className="storage-table-headers-body">
+                <div className="storage-table-headers-body-head">
                     <h3 className="storage-table-headers-body-heading">
                         Ownership Details
                     </h3>
@@ -31,7 +31,7 @@ const StorageTableHeader = ({headers}) => {
                     </h3>
                     <div className="storage-table-headers-body">
                         <p className="storage-table-headers-p">
-                            Track number: <div className="track-number-background"> {header? header.trackno: null}</div>
+                            Tracking number: <div className="track-number-background"> {header? header.trackno: null}</div>
                         </p>
                         <p className="storage-table-headers-p">
                             Date in: {header? header.datein: null}<span style={{marginLeft: "35px"}}>Time: {header? header.intime: null}</span> 
