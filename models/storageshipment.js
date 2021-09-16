@@ -94,11 +94,35 @@ const storageShipmentSchema = new Schema({
         minLength: 3,
         maxLength: 100
     },
+    idno: {
+        type: String,
+        required: true,
+        minLength: 5,
+        maxLength: 30
+    },
+    quality: {
+        type: String,
+        required: true,
+        minLength: 3,
+        maxLength: 30
+    },
+    unit: {
+        type: Number,
+        required: true,
+        minLength: 1,
+        maxLength: 50000000
+    },
+    observation: {
+        type: String,
+        required: true,
+        minLength: 0,
+        maxLength: 2000
+    },
     notes: {
         type: String,
         required: true,
-        minLength: 20,
-        maxLength: 2000
+        minLength: 10,
+        maxLength: 100
     },
     date: {
         type: Date,
@@ -129,7 +153,11 @@ const validate = (storageShipment) => {
         dateout: Joi.string().min(3).max(100).required(),
         outtime: Joi.string().min(3).max(100).required(),
         trackno: Joi.string().min(3).max(100).required(),
-        notes: Joi.string().min(20).max(2000).required()
+        idno: Joi.string().min(5).max(30).required(),
+        quality: Joi.string().min(3).max(100).required(),
+        unit: Joi.number().min(1).max(50000000).required(),
+        notes: Joi.string().min(10).max(100).required(),
+        observation: Joi.string().min(0).max(2000).required()
     })
 
     return schema.validate(storageShipment)

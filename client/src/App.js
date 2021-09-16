@@ -29,6 +29,8 @@ import ProductQuotation from "./components/Forms/ProductQuotation/ProductQuotati
 import ServiceType from "./components/Forms/ServiceQuotation/ServiceType/ServiceType";
 import ServiceQuotation from "./components/Forms/ServiceQuotation/ServiceQuotation";
 import LogisticsQuotation from "./components/Forms/LogisticsQuotation/LogisticsQuotation";
+import ShipmentTable from "./components/shipment/shipmentTable/ShipmentDataTable/ShipmentTable";
+import StorageTable from "./components/shipment/shipmentTable/StorageTable/StorageTable";
 
 function App() {
   return (
@@ -64,6 +66,8 @@ function App() {
           <Route path="/product-quotation" component={ProductQuotation} />
           <Route path="/storage-quotation" component={ServiceQuotation} />
           <Route path="/logistics-quotation" component={LogisticsQuotation} />
+          <Route path="/track-shipment" component={ShipmentTable}/>
+          <Route path="/track-storage" component={StorageTable}/>
           <Route component={NotFound} />
         </Switch>
       </Router>

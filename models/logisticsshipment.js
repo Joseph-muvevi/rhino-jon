@@ -89,7 +89,7 @@ const logisticsShipmentSchema = new Schema(
       min: 3,
       max: 100,
     },
-    arrivaltime: {
+    quality: {
       type: String,
       required: true,
       minLength: 3,
@@ -106,6 +106,12 @@ const logisticsShipmentSchema = new Schema(
       required: true,
       min: 3,
       max: 100,
+    },
+    idno: {
+      type: String,
+      required: true,
+      min: 5,
+      max: 30,
     },
     notes: {
       type: String,
@@ -154,8 +160,9 @@ const validate = (logisticsShipment) => {
     departuredate: Joi.string().min(3).max(100).required(),
     departuretime: Joi.string().min(3).max(100).required(),
     arrivaldate: Joi.string().min(3).max(100).required(),
-    arrivaltime: Joi.string().min(3).max(100).required(),
+    quality: Joi.string().min(3).max(100).required(),
     trackno: Joi.string().min(3).max(100).required(),
+    idno: Joi.string().min(5).max(30).required(),
     notes: Joi.string().min(20).max(2000).required(),
   });
 

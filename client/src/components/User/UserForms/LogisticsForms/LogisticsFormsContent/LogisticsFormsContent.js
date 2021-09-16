@@ -24,9 +24,10 @@ const LogisticsFormsContent = () => {
       departuredate: "",
       departuretime: "",
       arrivaldate: "",
-      arrivaltime: "",
+      quality: "",
       trackno: "",
       notes: "",
+      idno: ""
     },
     validationSchema: Yup.object().shape({
       fullnames: Yup.string().required().min(3).max(100),
@@ -44,15 +45,16 @@ const LogisticsFormsContent = () => {
       departuredate: Yup.string().required().min(3).max(100),
       departuretime: Yup.string().required().min(3).max(100),
       arrivaldate: Yup.string().required().min(3).max(100),
-      arrivaltime: Yup.string().required().min(3).max(100),
+      quality: Yup.string().required().min(3).max(100),
       trackno: Yup.string().required().min(3).max(100),
       notes: Yup.string().required().min(20).max(2000),
+      idno: Yup.string().required().min(5).max(30),
     }),
     onSubmit: (values, { resetForm }) => {
       try {
         axios
           .post("http://localhost:8080/api/logisticsrecords", values)
-          .then(console.log(values))
+          .then(res => console.log(res))
           .catch((err) => console.log(err));
         alert(JSON.stringify(values, null, 2));
         console.log(values);
@@ -208,7 +210,7 @@ const LogisticsFormsContent = () => {
               ) : null}
             </div>
             <div className="logistics-quotation-small-input-group">
-              <label>Departure city</label>
+              <label>Arrival city</label>
               <input
                 type="text"
                 placeholder="What is your city..."
@@ -223,7 +225,7 @@ const LogisticsFormsContent = () => {
               ) : null}
             </div>
             <div className="logistics-quotation-small-input-group">
-              <label>Departure country</label>
+              <label>Arrival country</label>
               <input
                 type="text"
                 placeholder="What is your country..."
@@ -235,6 +237,21 @@ const LogisticsFormsContent = () => {
               />
               {formik.touched.arrivalcountry && formik.errors.arrivalcountry ? (
                 <div className="error">{formik.errors.arrivalcountry}</div>
+              ) : null}
+            </div>
+            <div className="logistics-quotation-small-input-group">
+              <label>ID number</label>
+              <input
+                type="text"
+                placeholder="Your ID number..."
+                name="idno"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.idno}
+                required
+              />
+              {formik.touched.idno && formik.errors.idno ? (
+                <div className="error">{formik.errors.idno}</div>
               ) : null}
             </div>
             <div className="logistics-quotation-small-input-group">
@@ -286,7 +303,7 @@ const LogisticsFormsContent = () => {
               ) : null}
             </div>
             <div className="logistics-quotation-small-input-group">
-              <label> Warehouse Type </label>
+              <label>Logistics mode</label>
               <select
                 type="text"
                 name="logisticstype"
@@ -323,18 +340,18 @@ const LogisticsFormsContent = () => {
               ) : null}
             </div>
             <div className="logistics-quotation-small-input-group">
-              <label>Arrival time</label>
+              <label>Comodity quality</label>
               <input
-                type="time"
-                placeholder="Arrival time..."
-                name="arrivaltime"
+                type="quality"
+                placeholder="Comodity quality..."
+                name="quality"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                value={formik.values.arrivaltime}
+                value={formik.values.quality}
                 required
               />
-              {formik.touched.arrivaltime && formik.errors.arrivaltime ? (
-                <div className="error">{formik.errors.arrivaltime}</div>
+              {formik.touched.quality && formik.errors.quality ? (
+                <div className="error">{formik.errors.quality}</div>
               ) : null}
             </div>
             <div className="logistics-quotation-small-input-group">
