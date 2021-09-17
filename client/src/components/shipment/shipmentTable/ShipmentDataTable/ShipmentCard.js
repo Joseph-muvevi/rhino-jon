@@ -5,29 +5,32 @@ import ShipmentTableContent from './ShipmentTableContent'
 
 const ShipmentCard = ({result}) => {
 
-    let results = result
-    // const entries = Object.entries(results)
-    let length
+	let results = []
+	results.push(result)
 
-    if (results){
-        length = results.length 
-    }
+	// console.log("these are the results from shipment card", results)
 
-    console.log("the length is",length)
-    console.log("these are the results from shipment card", results)
-
-    return (
-        <div className="shipment-card"> 
-            <div className="shipment-card-content">
-                <ShipmentTableHeader headers = {results}/>
-                {
-                    [1,2,3,4].map(() => (
-                        <ShipmentTableContent/>
-                    ))
-                }
-            </div>
-        </div>
-    )
+	return (
+		<div className="shipment-card"> 
+			<div className="shipment-card-content">
+			{
+				results ? (
+					<>
+						<ShipmentTableHeader headers = {result}/>
+						{
+							// console.log("This is the results in jsx",results)
+							results ? results.map((mappedResults) => (
+								<ShipmentTableContent array = {results} data = {mappedResults} />
+							)):  null
+						}
+					</>
+				) : <p className="terniary-condition-p">
+						Track your shipment
+					</p>
+			}
+			</div>
+		</div>
+	)
 }
 
 export default ShipmentCard

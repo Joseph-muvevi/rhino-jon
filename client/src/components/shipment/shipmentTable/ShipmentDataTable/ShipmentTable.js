@@ -22,10 +22,7 @@ const ShipmentTable = () => {
 		})
 		.catch(err => console.log(err))
   }
-  console.log(shipment)
   const result = shipment.find( ({ trackno }) => trackno === trackNumber)
-
-  console.log("testing the shipment", result)
 
 
   return (

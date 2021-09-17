@@ -8,9 +8,8 @@ const AdminStorageTable = () => {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/logisticsrecords`)
+        axios.get(`http://localhost:8080/api/storageshipment`)
         .then(res => {
-            console.log(res.data)
             setAdminStorage(res.data)
             console.log("data from admin storage", adminStorage)
          
@@ -18,7 +17,6 @@ const AdminStorageTable = () => {
         .catch(err => console.log(err))
     }, [])
 
-    console.log(adminStorage, "in the body")
     
     return (
         <div className="admin-storage-table">

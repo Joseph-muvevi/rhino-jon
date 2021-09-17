@@ -12,13 +12,13 @@ const StorageCard = ({result}) => {
         <div className="shipment-card"> 
             <div className="shipment-card-content">
                 {
-                    result ? (
+                    results ? (
                         <>
                             <StorageTableHeader headers = {results}/>
                             <StorageTableContent content = {results}/> 
                         </>
                         ): <p className="terniary-condition-p">
-                                Track storage
+                                Track your storage
                             </p>
                 }
             </div>

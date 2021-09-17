@@ -5,16 +5,6 @@ const StorageTableContent = ({content}) => {
     let info = content
     console.log(info)
 
-    const styles = {
-        borderRight: "solid",
-        borderRightColor: "black",
-        padding: "2px"
-    }
-
-    const spacing = {
-        textAlign: "left",
-        marginLeft: "-10px !important",
-    }
 
     return (
         <div className="storage-content-table">

@@ -35,9 +35,6 @@ const StorageTable = () => {;
                         onChange={handleTrackno} value={trackNumber} required/>
                 <button type="submit"> Track </button>
             </form>
-            {
-            //  console.log("this is the storage data", storage)
-            }
           </div>
 
         {storage || storage !== undefined ? (

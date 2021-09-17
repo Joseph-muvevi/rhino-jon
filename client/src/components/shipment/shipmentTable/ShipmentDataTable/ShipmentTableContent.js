@@ -1,13 +1,16 @@
 import React from 'react'
 import "../../shipment.css"
 
-const ShipmentTableContent = () => {
+const ShipmentTableContent = ({data, array}) => {
+	const content = data
+	console.log("this is the tablecontent data", content)
+
 	return (
-		<div className="storage-content-table">
+		<div key = {content ? content._id : null} className="storage-content-table">
 			<div className="storage-content-table-content">
 				<div className="storage-content-table-content-topic">
 					<p className="storage-content-table-content-topic">
-						Wednesday, Tuesday 30 2018
+						{content ? content.date : null}
 					</p>
 					<p className="storage-content-table-content-topic">
 						Location
@@ -16,26 +19,27 @@ const ShipmentTableContent = () => {
 						Time
 					</p>
 					<p className="storage-content-table-content-topic">
-						Piece
+						Pieces
 					</p>
 				</div>
-			   { [1, 2, 3].map(() => (
+				
+			   { [array].map(() => (
 						<>
 							<div className="shipment-content-table-content-info">
 								<p className="storage-content-table-content-topic">
-									5
+									{array? array.length: null} 
 								</p>
 								<p className="storage-content-table-content-topic">
-									Some activity from 
+									{content ? content.notes : null}
 								</p>
 								<p className="storage-content-table-content-topic">
-									Nairobi
+									{content ? content.city : null} - {content ? content.country : null}
 								</p>
 								<p className="storage-content-table-content-topic">
-									12:30
+									{content ? content.timeevents : null}
 								</p>
 								<p className="storage-content-table-content-topic">
-									Piece
+									{content ? content.pieces : null} pieces
 								</p>
 							</div>
 						</>
