@@ -1,45 +1,42 @@
 import React from 'react'
-// import "./adminstoragetable.css"
+import "./adminlogisticstable.css"
 
 const AdminLogisticsTableHeaders = () => {
     return (
-        <div className="admin-storage-table-header">
-            <div className="admin-storage-table-header-content">
-                <p className="admin-storage-table-header">
+        <div className="admin-logistics-table-header">
+            <div className="admin-logistics-table-header-content">
+                <p className="admin-logistics-table-header">
                     #
                 </p>
-                <p className="admin-storage-table-header">
+                <p className="admin-logistics-table-header">
                     Tracking No
                 </p>
-                <p className="admin-storage-table-header">
-                    Client
+                <p className="admin-logistics-table-header">
+                    Names
                 </p>
-                <p className="admin-storage-table-header">
-                    ID
+                <p className="admin-logistics-table-header">
+                    Products
                 </p>
-                <p className="admin-storage-table-header">
+                <p className="admin-logistics-table-header">
                     Address
                 </p>
-                <p className="admin-storage-table-header">
-                    Product
-                </p>
-                <p className="admin-storage-table-header">
-                    Quality
-                </p>
-                <p className="admin-storage-table-header">
-                    Unit
-                </p>
-                <p className="admin-storage-table-header">
-                    Packaging
-                </p>
-                <p className="admin-storage-table-header">
+                <p className="admin-logistics-table-header">
                     Weight
                 </p>
-                <p className="admin-storage-table-header">
-                    Date in
+                <p className="admin-logistics-table-header">
+                    City departed
                 </p>
-                <p className="admin-storage-table-header">
-                    Date out
+                <p className="admin-logistics-table-header">
+                    Country departed
+                </p>
+                <p className="admin-logistics-table-header">
+                    Destination city
+                </p>
+                <p className="admin-logistics-table-header">
+                    Destination country
+                </p>
+                <p className="admin-logistics-table-header">
+                    Status
                 </p>
             </div>
         </div>

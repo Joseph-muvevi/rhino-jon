@@ -1,0 +1,70 @@
+.admin-logistics-table{
+    margin-left: 15vw;
+    /* padding-top: 50px; */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========the logistics area=========== */
+
+.admin-logistics-table-header{
+    background-color: rgb(19, 19, 17);
+    color: white;
+    font-family: Monda;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    max-width: 80vw;
+    margin: auto;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+
+.admin-logistics-table-header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: none;
+}
+/* ===========THE TABLE CARD ================== */
+.admin-logistics-table-card{
+    width: 100%;
+}
+
+/* ========THE CONTENT SECTION=============== */
+.admin-logistics-table-content{
+    background-color: rgb(68, 56, 56);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 80vw;
+    margin: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.logistics-content-table{
+    border-bottom: black;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+}
+
+.logistics-content-table-content-info{
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: flex-start;
+}
+
+.logistics-content-table-content-topic-upper{
+    padding: 5px 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+ 

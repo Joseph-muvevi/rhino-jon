@@ -1,42 +1,28 @@
 import React, {useState, useEffect} from 'react'
+import "./adminlogisticstable.css"
 import axios from "axios"
-import AdminLogisticsTableContent from './AdminLogisticsTableContent'
+import AdminLogisticsContentTableCard from './AdminLogisticsTableCard'
 
-const AdminStorageTable = () => {
+const AdminLogisticsTable = () => {
 
-    const [adminStorage, setAdminStorage] = useState([])
+    const [adminLogistics, setAdminLogistics] = useState([])
 
-
-    // const getAdminStorageData = () => {
-    //     axios.get(`http://localhost:8080/api/logisticsrecords`)
-    //         .then(res => {
-    //             // setAdminStorage(res.data)
-    //             const data = res.data
-    //             console.log("this is the res information from adminstorage", data)
-    //             // setAdminStorage(data)
-    //         })
-    //         .catch(err => console.log(err))
-    // }
 
     useEffect(() => {
         axios.get(`http://localhost:8080/api/logisticsrecords`)
         .then(res => {
-            console.log(res.data)
-            setAdminStorage(res.data)
-            console.log("data from admin storage", adminStorage)
+            setAdminLogistics(res.data)
          
         })
         .catch(err => console.log(err))
     }, [])
-
-    console.log(adminStorage, "in the body")
     
     return (
-        <div className="admin-storage-table">
-            <div className="admin-storage-table-content">
+        <div className="admin-logistics-table">
+            <div className="admin-logistics-table-content">
                 
                 {
-                    adminStorage ? <AdminLogisticsTableContent storage={adminStorage} /> : null
+                    adminLogistics ? <AdminLogisticsContentTableCard logistics={adminLogistics} /> : null
                 }
                 
             </div>
@@ -44,4 +30,4 @@ const AdminStorageTable = () => {
     )
 }
 
-export default AdminStorageTable
+export default AdminLogisticsTable

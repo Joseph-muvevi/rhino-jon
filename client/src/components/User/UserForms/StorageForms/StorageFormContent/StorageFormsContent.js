@@ -28,6 +28,10 @@ const StorageFormsContent = () => {
 			quality: "",
 			idno: "",
 			unit: "",
+			product: "",
+			collectedby: "",
+			collectoraddress: "",
+			collectortel: "",
 			observation: ""
 		},
 		validationSchema: Yup.object().shape({
@@ -47,8 +51,12 @@ const StorageFormsContent = () => {
 			outtime: Yup.string().required().min(3).max(100),
 			trackno: Yup.string().required().min(3).max(100),
 			quality: Yup.string().required().min(3).max(100),
-			idno: Yup.string().required().min(3).max(100),
-			unit: Yup.number().required().min(1).max(50000000),
+			product: Yup.string().required().min(3).max(100),
+			collectoraddress: Yup.string().min(3).max(100),
+			collectortel: Yup.string().min(3).max(100),
+			collectedby: Yup.string().min(3).max(100),
+			idno: Yup.string().required().min(5).max(30),
+			unit: Yup.string().required().min(3).max(100),
 			notes: Yup.string().required().min(10).max(100),
 			observation: Yup.string().required().min(0).max(2000),
 		}),
@@ -352,8 +360,8 @@ const StorageFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Unit</label>
 							<input
-								type="number"
-								placeholder="Unit"
+								type="text"
+								placeholder="Unit eg bags, heap etc"
 								name="unit"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
@@ -377,6 +385,69 @@ const StorageFormsContent = () => {
 							/>
 							{formik.touched.idno && formik.errors.idno ? (
 								<div className="error">{formik.errors.idno}</div>
+							) : null}
+						</div>
+					</div>
+					<div className="logistics-quotation-small-inputs">
+						<div className="logistics-quotation-small-input-group">
+							<label>Collected by</label>
+							<input
+								type="text"
+								placeholder="Quality eg 20% moist, etx"
+								name="collectedby"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.collectedby}
+								required
+							/>
+							{formik.touched.collectedby && formik.errors.collectedby ? (
+								<div className="error">{formik.errors.collectedby}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Collector's Address</label>
+							<input
+								type="text"
+								placeholder="Unit eg bags, heap etc"
+								name="collectoraddress"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.collectoraddress}
+							/>
+							{formik.touched.collectoraddress && formik.errors.collectoraddress ? (
+								<div className="error">{formik.errors.collectoraddress}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Collector's Telephone</label>
+							<input
+								type="text"
+								placeholder="Collectors phone number..."
+								name="collectortel"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.collectortel}
+								required
+							/>
+							{formik.touched.collectortel && formik.errors.collectortel ? (
+								<div className="error">{formik.errors.collectortel}</div>
+							) : null}
+						</div>
+					</div>
+					<div className="logistics-quotation-small-inputs">
+						<div className="logistics-quotation-small-input-group">
+							<label>Product</label>
+							<input
+								type="text"
+								placeholder="Time in..."
+								name="product"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.product}
+								required
+							/>
+							{formik.touched.product && formik.errors.product ? (
+								<div className="error">{formik.errors.product}</div>
 							) : null}
 						</div>
 					</div>

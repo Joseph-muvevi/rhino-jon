@@ -1,27 +1,26 @@
 import React from 'react'
-import "./adminstoragetable.css"
-import AdminStorageTableContent from './AdminStorageTableContent'
+import "./adminlogisticstable.css"
+import AdminLogisticsTableContent from './AdminLogisticsTableContent'
 import AdminLogisticsTableHeader from './AdminLogisticsTableHeader'
 
-const AdminStorageContentTableCard = ({storage}) => {
-    const storageItems = storage
-    console.log("Storage items in admin", storageItems)
-    // const entries = Object.entries(storageItems)
-    // const objLength = Object.keys(storageItems)
-    // const values = Object.values(storageItems)
-    
-    let keys = storageItems.map(entr => {
-        console.log(Object.keys(storageItems, "mapping through these"))
-    })
-    console.log(keys)
+const AdminLogisticsContentTableCard = ({logistics}) => {
+    const logisticsItems = logistics
+    console.log( logisticsItems)
+
 
     return (
-        <div className="admin-storage-table-card">
+        <div className="admin-logistics-table-card">
             {
-                storageItems ? (
+                logisticsItems ? (
                     <>
                         <AdminLogisticsTableHeader/>
-                        <AdminStorageTableContent/>
+                        {
+                            logisticsItems ? logisticsItems.map(item => (
+                                <>
+                                    <AdminLogisticsTableContent data = {item} /> 
+                                </>
+                            )) : <p>No items yet</p>
+                        }
                     </>
                 ) : <p> Items doesn't exist yet </p>
             }
@@ -29,4 +28,4 @@ const AdminStorageContentTableCard = ({storage}) => {
     )
 }
 
-export default AdminStorageContentTableCard
+export default AdminLogisticsContentTableCard

@@ -1,85 +1,61 @@
 import React from 'react'
+import "./adminlogisticstable.css"
 
-const AdminLogisticsTableContent = ({content}) => {
-    let info = content
+const AdminLogisticsTableContent = ({data}) => {
+    let info = data
     console.log(info)
 
 
     return (
-        <div className="storage-content-table">
-            <div className="storage-content-table-content">
-                <div className="storage-content-table-content-topic">
-                    <p  className="storage-content-table-content-topic-p-number">
-                        #
-                    </p>
-                    <p  className="storage-content-table-content-topic-p-description">
-                        Tracking No. 
-                    </p>
-                    <p  className="storage-content-table-content-topic-p-description">
-                        Client
-                    </p>
-                    <p className="storage-content-table-content-topic-p">
-                        
-                    </p>
-                    <p className="storage-content-table-content-topic-p-unit">
-                        Unit
-                    </p>
-                    <p className="storage-content-table-content-topic-p-packaging">
-                        Packaging
-                    </p>
-                    <p className="storage-content-table-content-topic-p-weight">
-                        Weight
-                    </p>
-                    <p className="storage-content-table-content-topic-p">
-                        Location
-                    </p>
-                    <p className="storage-content-table-content-topic-p">
-                        Status
-                    </p>
-                </div>
-              
-               {[1,2,3,4].map(() =>  (
-                    <div className="storage-content-table-content-info">
-                        <div className="storage-content-table-content-topic-upper">
-                            <p className="storage-content-table-content-topic-p-number">
+        <div className="logistics-content-table">
+            <div className="logistics-content-table-content">
+                   
+                    <div className="logistics-content-table-content-info">
+                        <div className="logistics-content-table-content-topic-upper">
+                            <p className="logistics-content-table-content-topic-p-number">
                                 1
                             </p>
-                            <p className="storage-content-table-content-topic-p-description">
-                                {info ? info.notes : null}
+                            <p className="logistics-content-table-content-topic-p-description">
+                                {info ? info.trackno : null}
                             </p>
-                            <p className="storage-content-table-content-topic-p">
-                                {info ? info.quality : null}
+                            <p className="logistics-content-table-content-topic-p">
+                                {info ? info.fullnames : null}    
                             </p>
-                            <p className="storage-content-table-content-topic-p-unit">
-                                {info ? info.unit : null}
+                            <p className="logistics-content-table-content-topic-p-unit">
+                                {info ? info.product : null}
                             </p>
-                            <p className="storage-content-table-content-topic-p-packaging">
-                                {info ? info.notes : null}
+                            <p className="logistics-content-table-content-topic-p-packaging">
+                                {info ? info.address : null}
                             </p>
-                            <p className="storage-content-table-content-topic-p-weight">
-                                {info ? info.weight : null}
+                            <p className="logistics-content-table-content-topic-p-weight">
+                                {info ? info.weight : null} {info ? info.weightunit : null}
                             </p>
-                            <p className="storage-content-table-content-topic-p">
-                                {info ? info.storagecity : null}
+                            <p className="logistics-content-table-content-topic-p">
+                                 {info ? info.departurecity : null}
                             </p>
-                            <p className="storage-content-table-content-topic-p">
-                                status
+                            <p className="logistics-content-table-content-topic-p">
+                                {info ? info.departurecountry : null}
+                            </p>
+                            <p className="logistics-content-table-content-topic-p-weight">
+                                {info ? info.arrivalcountry : null}
+                            </p>
+                            <p className="logistics-content-table-content-topic-p">
+                                {info ? info.arrivalcity : null}
+                            </p>
+                            <p className="logistics-content-table-content-topic-p">
+                                {info ? info.status : null}
                             </p>
                         </div>
-                        <div className="storage-content-table-content-topic-lower">
-                        <div className="storage-content-table-content-topic-lower-observation">
-                            <p style={{marginLeft: "12px"}} className="storage-content-table-content-topic-p">
-                                Observations
-                            </p>
+                        <div className="logistics-content-table-content-topic-lower">
+                            <div className="logistics-content-table-content-topic-lower-observation">
+                                <p style={{marginLeft: "12px"}} className="logistics-content-table-content-topic-p">
+                                    Observations : {info ? info.notes : null}
+                                </p>
+                            </div>
                         </div>
-                        </div>
-                            <p style={{marginLeft: "12px"}} className="storage-content-table-content-topic-observation">
-                                {info ? info.observation : null}
-                            </p>
+                            {/* <p style={{marginLeft: "12px"}} className="logistics-content-table-content-topic-observation">
+                            </p> */}
                     </div>
-                   )
-               )}
-
             </div>
         </div>
     )

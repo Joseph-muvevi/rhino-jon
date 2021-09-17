@@ -31,7 +31,12 @@ const LogisticsFormsContent = () => {
 			unit: "",
 			arrivaltime: "",
 			timeevents: "",
-			completed: ""
+			collectedby: "",
+			collectoraddress: "",
+			collectortel: "",
+			completed: "",
+			status: "",
+			product: ""
 		},
 		validationSchema: Yup.object().shape({
 			fullnames: Yup.string().required().min(3).max(100),
@@ -51,12 +56,17 @@ const LogisticsFormsContent = () => {
 			arrivaldate: Yup.string().required().min(3).max(100),
 			quality: Yup.string().required().min(3).max(100),
 			trackno: Yup.string().required().min(3).max(100),
+			product: Yup.string().required().min(3).max(100),
 			notes: Yup.string().required().min(20).max(2000),
 			idno: Yup.string().required().min(5).max(30),
 			unit: Yup.string().required().min(2).max(100),
 			timeevents: Yup.string().min(4).max(10).required(),
 			arrivaltime: Yup.string().min(5).max(30),
-			completed: Yup.string().min(5).max(30),
+			collectoraddress: Yup.string().min(3).max(100),
+			collectortel: Yup.string().min(3).max(100),
+			collectedby: Yup.string().min(3).max(100),
+			status: Yup.string().min(3).max(100).required(),
+			completed: Yup.boolean().oneOf([true])
 		}),
 		onSubmit: (values, { resetForm }) => {
 			try {
@@ -281,7 +291,7 @@ const LogisticsFormsContent = () => {
 
 					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
-							<label>DEparture date</label>
+							<label>Departure date</label>
 							<input
 								type="date"
 								placeholder="DEparture date..."
@@ -350,7 +360,7 @@ const LogisticsFormsContent = () => {
 						<div className="logistics-quotation-small-input-group">
 							<label>Comodity quality</label>
 							<input
-								type="quality"
+								type="text"
 								placeholder="Comodity quality..."
 								name="quality"
 								onChange={formik.handleChange}
@@ -385,7 +395,7 @@ const LogisticsFormsContent = () => {
 							<input
 								type="time"
 								placeholder="Arrival time, If not arrived leave blank"
-								name="arrivaldate"
+								name="arrivaltime"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
 								value={formik.values.arrivaltime}
@@ -398,7 +408,7 @@ const LogisticsFormsContent = () => {
 							<label>Time events</label>
 							<input
 								type="time"
-								placeholder="Comodity quality..."
+								placeholder="Time events"
 								name="timeevents"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
@@ -428,17 +438,99 @@ const LogisticsFormsContent = () => {
 
 					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
+							<label>Collected by</label>
+							<input
+								type="text"
+								placeholder="Colledted by"
+								name="collectedby"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.collectedby}
+								required
+							/>
+							{formik.touched.collectedby && formik.errors.collectedby ? (
+								<div className="error">{formik.errors.collectedby}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Collector's phone number</label>
+							<input
+								type="text"
+								placeholder="Collector's phone number"
+								name="collectortel"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.collectortel}
+								required
+							/>
+							{formik.touched.collectortel && formik.errors.collectortel ? (
+								<div className="error">{formik.errors.collectortel}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Collector's address</label>
+							<input
+								type="text"
+								placeholder="Collector's address"
+								name="collectoraddress"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.collectoraddress}
+								required
+							/>
+							{formik.touched.collectoraddress && formik.errors.collectoraddress ? (
+								<div className="error">{formik.errors.collectoraddress}</div>
+							) : null}
+						</div>
+					</div>
+
+					<div className="logistics-quotation-small-inputs">
+						<div className="logistics-quotation-small-input-group">
+							<label>Is product</label>
+							<input
+								type="text"
+								placeholder="Arrival time, If not arrived leave blank"
+								name="product"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.product}
+								required
+							/>
+							{formik.touched.product && formik.errors.product ? (
+								<div className="error">{formik.errors.product}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Status</label>
+							<select
+								type="text"
+								name="status"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.status}
+								required
+							>
+								<option value="" disabled label="Please select an option" />
+								<option value="pending" label="pending" defaultValue />
+								<option value="success" label="Success" />
+								<option value="failed" label="failed" />
+							</select>
+							{formik.touched.status && formik.errors.status ? (
+								<div className="error">{formik.errors.status}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
 							<label>Is logistics completed</label>
 							<input
 								type="checkbox"
 								placeholder="Arrival time, If not arrived leave blank"
-								name="arrivaldate"
+								name="completed"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
-								value={formik.values.arrivaltime}
+								value={formik.values.completed}
 							/>
-							{formik.touched.arrivaltime && formik.errors.arrivaltime ? (
-								<div className="error">{formik.errors.arrivaltime}</div>
+							{formik.touched.completed && formik.errors.completed ? (
+								<div className="error">{formik.errors.completed}</div>
 							) : null}
 						</div>
 					</div>

@@ -139,6 +139,36 @@ const logisticsShipmentSchema = new Schema(
 	completed: {
 		type: Boolean
 	},
+	collectoraddress: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
+	collectortel: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
+	collectedby: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
+	product: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
+	status: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
 	date: {
 		type: Date,
 		default: Date.now,
@@ -185,6 +215,11 @@ const validate = (logisticsShipment) => {
 	idno: Joi.string().min(5).max(30).required(),
 	timeevents: Joi.string().min(4).max(10).required(),
 	arrivaltime: Joi.string().min(4).max(10),
+	collectoraddress: Joi.string().min(3).max(100),
+	collectortel: Joi.string().min(3).max(100),
+	collectedby: Joi.string().min(3).max(100),
+	product: Joi.string().min(3).max(100),
+	status: Joi.string().min(3).max(100).required(),
 	completed: Joi.boolean(),
 	unit: Joi.string().min(2).max(100).required(),
 	notes: Joi.string().min(20).max(2000).required(),
