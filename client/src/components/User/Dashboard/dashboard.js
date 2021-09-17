@@ -10,12 +10,12 @@ import DashTable from './Tables/table'
 import DashForms from "./DashForms/DashForms"
 import axios from "axios"
 import Home from '../../Home/home'
-
+import AdminLogisticsTable from '../AdminLogisticsTable/AdminLogisticsTable'
+import AdminStorageTable from '../AdminStorageTable/AdminStorageTable'
 
 const Dashboard = () => {
 
     const [shipment, setShipment] = useState([])
-    const [productEnquiries, setProductEnquiries] = useState([])
 
     useEffect(() => {
         axios.get("http://localhost:8080/api/storageshipment")
@@ -42,6 +42,8 @@ const Dashboard = () => {
                 <Route path="/dashboard/forms" component={DashForms}/>
                 <Route path="/dashboard/logistics-form" component={LogisticsForms}/>
                 <Route path="/dashboard/storage-form" component={StorageForms}/>
+                <Route path="/dashboard/admin/logistics-records" component={AdminLogisticsTable}/>
+                <Route path="/dashboard/admin/storage-records" component={AdminStorageTable}/>
             </Switch>
         </Router>
     )

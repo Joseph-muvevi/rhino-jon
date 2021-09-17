@@ -7,7 +7,6 @@ const StorageCard = ({result}) => {
 
     let results = result
 
-    console.log("this is from storage card",results)
 
     return (
         <div className="shipment-card"> 

@@ -1,7 +1,9 @@
 .dashboard{
     min-height: 150vh;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    background-color: #1f1f1f;
+    margin-top: 0% !important;
 }
 /* 
 .dashboard-nav{

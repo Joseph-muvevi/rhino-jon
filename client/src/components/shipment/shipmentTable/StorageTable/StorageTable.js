@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../../shipment.css";
 import axios from "axios";
 import Navbar from "../../../Navbar/Navbar";
@@ -6,7 +6,7 @@ import StorageCard from "./StorageCard";
 
 const StorageTable = () => {;
   const [trackNumber, setTrackNumber] = useState("")
-  const [storage, setShipment] = useState([])
+  const [storage, setStorage] = useState([])
 
   const handleTrackno = (e) => {
     setTrackNumber(e.target.value)
@@ -16,9 +16,7 @@ const StorageTable = () => {;
     e.preventDefault()
         axios.get(`http://localhost:8080/api/storageshipment`)
         .then(res => {
-          setShipment(res.data)
-          // const result = storage
-          console.log(res.data)
+          setStorage(res.data)
         })
         .catch(err => console.log(err))
   }
@@ -27,24 +25,20 @@ const StorageTable = () => {;
   console.log("testing the object finder", result)
 
 
-  useEffect(() => {
-    // trackItem(e)
-  }, []);
-
   return (
     <div className="shipping">
         <Navbar/>
         <div className="shipping-input-groups">
-      <div style={{height: "50px", marginBottom: "30px"}} className="storage-table">
-        <form onSubmit={trackItem} className="shipping-table-form" >
-            <input type="text" placeholder="Insert Track number" name="tracknumber" 
-                    onChange={handleTrackno} value={trackNumber} required/>
-            <button type="submit"> Track </button>
-        </form>
-        {
-        //  console.log("this is the storage data", storage)
-        }
-      </div>
+          <div style={{height: "50px", marginBottom: "30px"}} className="storage-table">
+            <form onSubmit={trackItem} className="shipping-table-form" >
+                <input type="text" placeholder="Insert Track number" name="tracknumber" 
+                        onChange={handleTrackno} value={trackNumber} required/>
+                <button type="submit"> Track </button>
+            </form>
+            {
+            //  console.log("this is the storage data", storage)
+            }
+          </div>
 
         {storage || storage !== undefined ? (
           <StorageCard  result={result} />
@@ -55,9 +49,6 @@ const StorageTable = () => {;
           </div>
         )}
       </div>
-      {/* {storage.map(items => {
-        return console.log(items)
-      })} */}
     </div>
   );
 };

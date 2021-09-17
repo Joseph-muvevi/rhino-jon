@@ -1,22 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios"
-import AdminLogisticsTableContent from './AdminLogisticsTableContent'
+import AdminStorageContentTableCard from './AdminStorageContentTableCard'
 
 const AdminStorageTable = () => {
 
     const [adminStorage, setAdminStorage] = useState([])
 
-
-    // const getAdminStorageData = () => {
-    //     axios.get(`http://localhost:8080/api/logisticsrecords`)
-    //         .then(res => {
-    //             // setAdminStorage(res.data)
-    //             const data = res.data
-    //             console.log("this is the res information from adminstorage", data)
-    //             // setAdminStorage(data)
-    //         })
-    //         .catch(err => console.log(err))
-    // }
 
     useEffect(() => {
         axios.get(`http://localhost:8080/api/logisticsrecords`)
@@ -36,7 +25,7 @@ const AdminStorageTable = () => {
             <div className="admin-storage-table-content">
                 
                 {
-                    adminStorage ? <AdminLogisticsTableContent storage={adminStorage} /> : null
+                    adminStorage ? <AdminStorageContentTableCard storage={adminStorage} /> : null
                 }
                 
             </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import AdminLogisticsTable from '../../AdminLogisticsTable/AdminLogisticsTable'
 import EnquiriesTable from './EnquiriesTable/EnquiriesTable'
 import LogisticsTable from './LogisticsTable/LogisticsTable'
 import { StorageTable } from './StorageTable/StorageTable'
