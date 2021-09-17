@@ -17,7 +17,9 @@ const StorageCard = ({result}) => {
                             <StorageTableHeader headers = {results}/>
                             <StorageTableContent content = {results}/> 
                         </>
-                        ): <p className="terniary-condition-p">Track storage</p>
+                        ): <p className="terniary-condition-p">
+                                Track storage
+                            </p>
                 }
             </div>
         </div>

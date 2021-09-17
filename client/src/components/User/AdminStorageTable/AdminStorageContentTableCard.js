@@ -6,9 +6,6 @@ import AdminStorageTableHeaders from './AdminStorageTableHeaders'
 const AdminStorageContentTableCard = ({storage}) => {
     const storageItems = storage
     console.log("Storage items in admin", storageItems)
-    const entries = Object.entries(storageItems)
-    const objLength = Object.keys(storageItems)
-    const values = Object.values(storageItems)
     
     let keys = storageItems.map(entr => {
         console.log(Object.keys(storageItems, "mapping through these"))

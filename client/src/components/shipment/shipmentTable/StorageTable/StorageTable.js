@@ -22,7 +22,7 @@ const StorageTable = () => {;
   }
 
   const result = storage.find( ({ trackno }) => trackno === trackNumber)
-  console.log("testing the object finder", result)
+  console.log("testing the storage", result)
 
 
   return (

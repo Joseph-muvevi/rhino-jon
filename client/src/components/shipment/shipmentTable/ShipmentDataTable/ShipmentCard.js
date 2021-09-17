@@ -6,14 +6,25 @@ import ShipmentTableContent from './ShipmentTableContent'
 const ShipmentCard = ({result}) => {
 
     let results = result
+    // const entries = Object.entries(results)
+    let length
 
-    console.log(results)
+    if (results){
+        length = results.length 
+    }
+
+    console.log("the length is",length)
+    console.log("these are the results from shipment card", results)
 
     return (
         <div className="shipment-card"> 
             <div className="shipment-card-content">
                 <ShipmentTableHeader headers = {results}/>
-                <ShipmentTableContent/>
+                {
+                    [1,2,3,4].map(() => (
+                        <ShipmentTableContent/>
+                    ))
+                }
             </div>
         </div>
     )

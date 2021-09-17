@@ -58,6 +58,11 @@
 
 /* =======shipment table=========== */
 
+/* .top-track-info{
+	text-align: justify;
+	width: 100%;
+	color: white
+} */
 
 .shipment-table{
     min-height: 10vh;
@@ -120,12 +125,33 @@
     width: 90vw;
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+	text-align: left;
+}
+
+.header-info-container{
+	display: flex;
+	justify-content: space-between;
+	text-align: left;
+	width: 90.7% !important;
+	margin-left: 2.3%;
+	max-height: min-content;
+	padding: 10px;
+	
+}
+
+.font-awesome-sign-alt-icon{
+	margin-top: 30px;
 }
 
 .storage-content-table{
-    min-width: 100%;
+	min-width: 100%;
     background-color: grey;
+}
+
+.storage-table-headers-body{
+	max-width: 21vw;
+	text-align: justify !important;
 }
 
 .storage-table-headers-body-head{
@@ -138,6 +164,60 @@
     text-align: left;
 }
 
+.storage-table-headers-h3{
+	text-transform: capitalize;
+	font-family: "Monda";
+	color: white ;
+	font-weight: 900;
+	margin-top: -10px
+}
+
+.storage-table-headers-h3-estimated{
+	text-transform: capitalize;
+	font-family: "Monda";
+	color: white ;
+	font-weight: 900;
+	margin-left: 1.875rem;
+	margin-top: -10px;
+}
+
+.storage-table-headers-h3-flex{
+	text-transform: capitalize;
+	font-family: "Monda";
+	color: white ;
+	font-weight: 900;
+	margin-top: -10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	min-width: 17.8vw;
+	max-width: 21vw;
+}
+.storage-table-headers-h3-sign{
+	text-transform: capitalize;
+	font-family: "Monda";
+	color: white ;
+	font-weight: 900;
+	margin-top: -10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	min-width: 220px;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.storage-table-headers-p{
+	margin-top: -15px;
+	padding-left: 30px;
+}
+
+.storage-table-headers-p-sign{
+	margin-top: -15px;
+	padding-left: 30px;
+	margin-left: -1rem
+
+}
 /* ==========Shipment table content==================== */
 .storage-content-table-content-topic{
     display: flex;
@@ -146,12 +226,24 @@
     padding-left: 5px;
 }
 
+/* for storage */
 .storage-content-table-content-info{
     background-color: rgb(68, 56, 56);
     display: flex;
     max-width: 100%;
     justify-content: space-around;
     flex-direction: column;
+    padding-left: 5px;
+    border-bottom: solid;
+    border-bottom-color: black;
+    border-bottom-width: 3px;
+}
+/* for shipmnet */
+.shipment-content-table-content-info{
+    background-color: rgb(68, 56, 56);
+    display: flex;
+    max-width: 100%;
+    justify-content: space-around;
     padding-left: 5px;
     border-bottom: solid;
     border-bottom-color: black;
@@ -166,6 +258,12 @@
     border-bottom-color: black;
     border-bottom-width: 3px;
 
+}
+
+.fontawesome-chrevron{
+	font-size: 12px;
+	margin-left: -27px;
+	padding-right: 7.5px;
 }
 
 .storage-content-table-content-topic-p{
@@ -198,7 +296,8 @@
 
 .track-number-background{
     background-color: grey;
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     color: white;
 }
 
@@ -246,4 +345,18 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.grey-item-container{
+	background-color: white;
+	color: green;
+	/* margin-top: -15px ; */
+}
+
+.white-background-red-text{
+	background-color: white;
+	padding: 2px;
+	color: green;
+	font-weight: 900;
+	margin-left: -1.7rem;
 }

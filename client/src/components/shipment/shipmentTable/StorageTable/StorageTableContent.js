@@ -58,13 +58,13 @@ const StorageTableContent = ({content}) => {
                             {info ? info.quality : null}
                         </p>
                         <p className="storage-content-table-content-topic-p-unit">
-                            {info ? info.unit : null}
+                            {info ? info.unit : null} 
                         </p>
                         <p className="storage-content-table-content-topic-p-packaging">
                             {info ? info.notes : null}
                         </p>
                         <p className="storage-content-table-content-topic-p-weight">
-                            {info ? info.weight : null}
+                            {info ? info.weight : null} {info ? info.weightunit : null} 
                         </p>
                         <p className="storage-content-table-content-topic-p">
                             {info ? info.storagecity : null}
