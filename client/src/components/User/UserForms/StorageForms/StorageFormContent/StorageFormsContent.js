@@ -27,7 +27,7 @@ const StorageFormsContent = () => {
 			notes: "",
 			quality: "",
 			idno: "",
-			unit: "",
+			packaging: "",
 			product: "",
 			collectedby: "",
 			collectoraddress: "",
@@ -56,7 +56,7 @@ const StorageFormsContent = () => {
 			collectortel: Yup.string().min(3).max(100),
 			collectedby: Yup.string().min(3).max(100),
 			idno: Yup.string().required().min(5).max(30),
-			unit: Yup.string().required().min(3).max(100),
+			packaging: Yup.string().required().min(3).max(100),
 			notes: Yup.string().required().min(10).max(100),
 			observation: Yup.string().required().min(0).max(2000),
 		}),
@@ -358,18 +358,18 @@ const StorageFormsContent = () => {
 							) : null}
 						</div>
 						<div className="logistics-quotation-small-input-group">
-							<label>Unit</label>
+							<label>Packaging</label>
 							<input
 								type="text"
 								placeholder="Unit eg bags, heap etc"
-								name="unit"
+								name="packaging"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
-								value={formik.values.unit}
+								value={formik.values.packaging}
 								required
 							/>
-							{formik.touched.unit && formik.errors.unit ? (
-								<div className="error">{formik.errors.unit}</div>
+							{formik.touched.packaging && formik.errors.packaging ? (
+								<div className="error">{formik.errors.packaging}</div>
 							) : null}
 						</div>
 						<div className="logistics-quotation-small-input-group">

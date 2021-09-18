@@ -8,32 +8,29 @@ import DashNav from './DashNav/DashNav'
 import DashboardHome from './DashBoardHome/DashboardHome'
 import DashTable from './Tables/table'
 import DashForms from "./DashForms/DashForms"
-import axios from "axios"
 import Home from '../../Home/home'
+import { Redirect } from 'react-router'
 import AdminLogisticsTable from '../AdminLogisticsTable/AdminLogisticsTable'
 import AdminStorageTable from '../AdminStorageTable/AdminStorageTable'
 
 const Dashboard = () => {
 
-    const [shipment, setShipment] = useState([])
 
-    useEffect(() => {
-        axios.get("http://localhost:8080/api/storageshipment")
-            .then((res) => setShipment(res.data))
-            .catch(err => console.log(err))
-    }, [])
+        const tkt = localStorage.getItem("token")
+        console.log("my tkt of the dashboard is", tkt)
 
-    return (
+        // if (!tkt) {
+        //     return <Redirect to="/auth"/>
+        // }
+
+        return (
         <Router  className="dashboard">
             <div className="dashboard-nav">
                 <DashNav/>
             </div>
             <div className="dont-display">
-                <DashboardHome shipment={shipment}/>
+                <DashboardHome />
             </div>
-            {
-                console.log(shipment)
-            }
             <Switch className="dashboard-main">
                 <Route path="/" exact component={Home}/>
                 <Route path="/dashboard/home" component={DashboardHome}/>

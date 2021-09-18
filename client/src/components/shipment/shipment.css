@@ -50,6 +50,16 @@
     color: white;
 }
 
+.storage-tabe-headers-left{
+    min-width: 35vw;
+    background-color: aqua;
+}
+
+.storage-table-headers-middle{
+    min-width: 35vw;
+    background-color: green;
+}
+
 @media screen and (max-width: 900px){
     .shipment-banner{
         height: 80vh;
@@ -63,6 +73,18 @@
 	width: 100%;
 	color: white
 } */
+
+.track-shipment-top-h2{
+    font-size: 25px;
+    font-family: Monda;
+    text-align: left;
+    color: white
+}
+
+.track-shipment-top-p{
+    font-size: 16px;
+    text-align: justify;
+}
 
 .shipment-table{
     min-height: 10vh;
@@ -115,18 +137,20 @@
     justify-content: space-around
 }
 
-.storage-table-headers{
+.storage-table-headers-client{
     background-color: rgb(19, 19, 19);
-    max-width: 90vw;
-}
-
-/* ========Storage table header================= */
-.storage-table-headers{
     width: 90vw;
     padding: 10px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
 	text-align: left;
+}
+
+
+/* ========Storage table header================= */
+
+.storage-table-headers-body-heading{
+    margin-left: 30px;
 }
 
 .header-info-container{
@@ -349,14 +373,12 @@
 
 .grey-item-container{
 	background-color: white;
-	color: green;
 	/* margin-top: -15px ; */
 }
 
 .white-background-red-text{
 	background-color: white;
 	padding: 2px;
-	color: green;
 	font-weight: 900;
 	margin-left: -1.7rem;
 }

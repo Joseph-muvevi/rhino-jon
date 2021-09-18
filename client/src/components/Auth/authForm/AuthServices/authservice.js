@@ -1,38 +1,25 @@
-import axios from "axios";
+class Auth {
+    constructor () {
+        this.authenticated = false
+    }
 
-const API_URL = "http://localhost:8080/api/auth/";
-
-class AuthService {
-  login(username, password) {
-    return axios
-      .post(API_URL + "signin", {
-        username,
-        password
-      })
-      .then(response => {
-        if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
+    login(token){
+        this.authenticated = true
+        console.log("auth log in trigger")
+        localStorage.getItem(token)
+        if (token) {
+            console.log("i have the token", token)
         }
 
-        return response.data;
-      });
-  }
+    }
 
-  logout() {
-    localStorage.removeItem("user");
-  }
+    logout(){
+        this.authenticated = false
+    }
 
-  register(username, email, password) {
-    return axios.post(API_URL + "signup", {
-      username,
-      email,
-      password
-    });
-  }
-
-  getCurrentUser() {
-    return JSON.parse(localStorage.getItem('user'));;
-  }
+    isAuthenticated(){
+        return this.authenticated
+    }
 }
 
-export default new AuthService();
+export default new Auth()

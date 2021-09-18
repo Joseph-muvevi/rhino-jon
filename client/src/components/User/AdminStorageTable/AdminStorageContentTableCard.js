@@ -5,15 +5,16 @@ import AdminStorageTableHeaders from './AdminStorageTableHeaders'
 
 const AdminStorageContentTableCard = ({storage}) => {
     const storageItems = storage
-    console.log("Storage items in admin", storageItems)
+    const arrlength = storageItems.length
+    console.log("The array length",arrlength)
 
     return (
         <div className="admin-storage-table-card">
             <AdminStorageTableHeaders/>
             {
-                storageItems ? storageItems.map((object) => (
+                storageItems ? storageItems.map((object, arraylength) => (
                     <>
-                        <AdminStorageTableContent content = {object}/>
+                        <AdminStorageTableContent length={arraylength} content = {object}/>
                     </>
                 ) ) : <p> Items doesn't exist yet </p>
             }

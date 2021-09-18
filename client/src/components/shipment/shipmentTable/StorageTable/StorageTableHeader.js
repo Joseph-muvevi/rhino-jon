@@ -5,7 +5,7 @@ const StorageTableHeader = ({headers}) => {
     let header = headers
     console.log("Information from storage table header",header)
     return (
-        <div className="storage-table-headers">
+        <div className="storage-table-headers-client">
            <div className="storage-tabe-headers-left">
                 <div className="storage-table-headers-body-head">
                     <h3 className="storage-table-headers-body-heading">
@@ -24,7 +24,7 @@ const StorageTableHeader = ({headers}) => {
                     </div>
                 </div>
            </div>
-           <div className="storage-tabe-headers-middle">
+           <div className="storage-table-headers-middle">
                 <div className="storage-table-headers-body">
                     <h3 className="storage-table-headers-body-heading">
                         

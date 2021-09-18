@@ -76,7 +76,7 @@ const SignupForm = () => {
                     alert(JSON.stringify(values))
                 })
                 .catch(err => console.log(err))
-            resetForm({initialValues : ""})
+            // resetForm({initialValues : ""})
         }
     })
 

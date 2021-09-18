@@ -20,7 +20,7 @@ const StorageTableContent = ({content}) => {
                         Quality
                     </p>
                     <p className="storage-content-table-content-topic-p-unit">
-                        Unit
+                        Pieces
                     </p>
                     <p className="storage-content-table-content-topic-p-packaging">
                         Packaging
@@ -48,10 +48,10 @@ const StorageTableContent = ({content}) => {
                             {info ? info.quality : null}
                         </p>
                         <p className="storage-content-table-content-topic-p-unit">
-                            {info ? info.unit : null} 
+                            {info ? info.pieces : null}
                         </p>
                         <p className="storage-content-table-content-topic-p-packaging">
-                            {info ? info.notes : null}
+                            {info ? info.packaging : null}
                         </p>
                         <p className="storage-content-table-content-topic-p-weight">
                             {info ? info.weight : null} {info ? info.weightunit : null} 

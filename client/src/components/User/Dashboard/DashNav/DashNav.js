@@ -38,10 +38,14 @@ const DashNav = () => {
                         Storage records
                     </div>
                 </NavLink>
-                <NavLink to="/dashboard/tables" className="dash-nav-li">
-                    <div className="dash-nav-li-items">
-                        <FontAwesomeIcon icon={faPowerOff} />
-                        Sign Out
+                <NavLink to="/" className="dash-nav-li">
+                    <div className="dash-nav-li-items" >
+                        <FontAwesomeIcon icon={faPowerOff} >
+                            Sign Out
+                            {
+                                localStorage.removeItem("token")
+                            }
+                        </FontAwesomeIcon>
                     </div>
                 </NavLink>
             </div>

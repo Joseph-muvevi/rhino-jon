@@ -112,7 +112,7 @@ const storageShipmentSchema = new Schema({
 		minLength: 3,
 		maxLength: 100
 	},
-	unit: {
+	packaging: {
 		type: String,
 		required: true,
 		minLength: 3,
@@ -157,7 +157,7 @@ const storageShipmentSchema = new Schema({
 })
 
 // the model
-const StorageShipment = mongoose.model("Storage Shipment", storageShipmentSchema)
+const StorageShipment = mongoose.model("Storage", storageShipmentSchema)
 
 // validation
 const validate = (storageShipment) => {
@@ -181,7 +181,7 @@ const validate = (storageShipment) => {
 		idno: Joi.string().min(5).max(30).required(),
 		quality: Joi.string().min(3).max(100).required(),
 		product: Joi.string().min(3).max(100).required(),
-		unit: Joi.string().min(3).max(100).required(),
+		packaging: Joi.string().min(3).max(100).required(),
 		collectoraddress: Joi.string().min(3).max(100),
 		collectortel: Joi.string().min(3).max(100),
 		collectedby: Joi.string().min(3).max(100),

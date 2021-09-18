@@ -11,18 +11,18 @@ router.get('/', async (req, res) => {
 // get by id
 router.get("/:id", async (req, res) => {
     const admin = await Admin.findById(req.params.id)
-    if (!admin) return res.status(404).send("user not exist")
+    if (!admin) return res.status(404).send("user does not exist")
     res.send(admin)
 })
 
 // post
 router.post("/", async (req, res) => {
     const {error} = validate(req.body)
-    if (error) return res.status(400).send(error.details[0].message)
+    if (error) return res.status(400).send({messages : error.details[0].message})
 
     // cheking if a given admin exists
     const email = await Admin.findOne({email: req.body.email})
-    if (email) res.status(400).send("user already exist")
+    if (email) return res.status(400).send({message: "user already exist"})
 
     let admin = new Admin(req.body)
     admin = await admin.save()
