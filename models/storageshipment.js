@@ -22,6 +22,36 @@ const storageShipmentSchema = new Schema({
 		minLength: 3,
 		maxLength: 100
 	},
+	shipaddress: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
+	consignfullnames: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
+	consignemail: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
+	consignaddress: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
+	consigncompany: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
 	storagecity: {
 		type: String,
 		required: true,
@@ -49,7 +79,7 @@ const storageShipmentSchema = new Schema({
 	weightunit: {
 		type: String,
 		required: true,
-		minLength: 2,
+		minLength: 1,
 		maxLength: 50
 	},
 	producttype: {
@@ -120,7 +150,6 @@ const storageShipmentSchema = new Schema({
 	},
 	observation: {
 		type: String,
-		required: true,
 		minLength: 0,
 		maxLength: 2000
 	},
@@ -166,11 +195,16 @@ const validate = (storageShipment) => {
 		email: Joi.string().min(3).max(100).required().email(),
 			// .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org', 'ke'] } }),
 		company: Joi.string().min(3).max(100).required(),
+		shipaddress: Joi.string().min(3).max(100).required(),
+		consignfullnames: Joi.string().min(3).max(100).required(),
+		consignemail: Joi.string().min(3).max(100).required(),
+		consigncompany: Joi.string().min(3).max(100).required(),
+		consignaddress: Joi.string().min(3).max(100).required(),
 		storagecity: Joi.string().min(3).max(50).required(),
 		storagecountry: Joi.string().min(3).max(50).required(),
 		warehousetype: Joi.string().min(3).max(50).required(),
 		weight: Joi.number().min(1).max(50000000).required(),
-		weightunit: Joi.string().min(2).max(100).required(),
+		weightunit: Joi.string().min(1).max(100).required(),
 		producttype: Joi.string().min(3).max(50).required(),
 		pieces: Joi.number().min(1).max(50000000).required(),
 		datein: Joi.string().min(3).max(100).required(),
@@ -186,7 +220,7 @@ const validate = (storageShipment) => {
 		collectortel: Joi.string().min(3).max(100),
 		collectedby: Joi.string().min(3).max(100),
 		notes: Joi.string().min(10).max(100).required(),
-		observation: Joi.string().min(0).max(2000).required()
+		observation: Joi.string().min(0).max(2000)
 	})
 
 	return schema.validate(storageShipment)

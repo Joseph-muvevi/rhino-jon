@@ -42,7 +42,7 @@ const StorageFormsContent = () => {
 			storagecountry: Yup.string().required().min(3).max(50),
 			warehousetype: Yup.string().required().min(3).max(50),
 			weight: Yup.number().required().min(1).max(50000000),
-			weightunit: Yup.string().required().min(3).max(50),
+			weightunit: Yup.string().required().min(1).max(100),
 			producttype: Yup.string().required().min(3).max(50),
 			pieces: Yup.number().required().min(1).max(50000000),
 			datein: Yup.string().required().min(3).max(100),
@@ -58,7 +58,7 @@ const StorageFormsContent = () => {
 			idno: Yup.string().required().min(5).max(30),
 			packaging: Yup.string().required().min(3).max(100),
 			notes: Yup.string().required().min(10).max(100),
-			observation: Yup.string().required().min(0).max(2000),
+			observation: Yup.string().min(0).max(2000),
 		}),
 		onSubmit: (values, { resetForm }) => {
 			try {
@@ -141,12 +141,12 @@ const StorageFormsContent = () => {
 								required
 							>
 								<option value="" disabled label="Please select an option" />
-								<option value="kilograms" label="Kilograms" />
-								<option value="pounds" label="Pounds" />
-								<option value="grams" label="Grams" />
-								<option value="tonnes" label="Tonnes" />
-								<option value="liters" label="Liters" />
-								<option value="gallons" label="Gallons" />
+								<option value="kg" label="Kilograms" />
+								<option value="lb" label="Pounds" />
+								<option value="g" label="Grams" />
+								<option value="t" label="Tonnes" />
+								<option value="l" label="Liters" />
+								<option value="gal" label="Gallons" />
 							</select>
 							{formik.touched.weightunit && formik.errors.weightunit ? (
 								<div className="error">{formik.errors.weightunit}</div>
@@ -477,7 +477,6 @@ const StorageFormsContent = () => {
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
 								value={formik.values.observation}
-								required
 							/>
 							{formik.touched.observation && formik.errors.observation ? (
 							<div className="error">{formik.errors.observation}</div>

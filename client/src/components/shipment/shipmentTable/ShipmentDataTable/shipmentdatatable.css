@@ -1,0 +1,88 @@
+.shipment-table-headers{
+    background-color: rgb(22, 22, 22);
+    color: white;
+    display: flex;
+    padding: 10px;
+    min-height: 40vh;
+    border-top-left-radius: 5px ;
+    border-top-left-radius: 5px ;
+}
+
+.font-awesome-sign-alt-icon{
+    margin-top: 50px;
+}
+
+.header-info-container{
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.shipment-table-headers-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px;
+    min-width: 27vw;
+    text-align: left !important;
+}
+
+
+.shipment-tabe-headers-middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px;
+    min-width: 27vw;
+    text-align: left !important;
+}
+
+.shipment-tabe-headers-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px;
+    min-width: 27vw;
+    text-align: left !important;
+}
+
+
+.shipment-table-headers-p{
+    margin-left: 27px;
+    margin-top: -15px;
+}
+
+.grey-item-container-shipment{
+    background-color: white;
+    font-family: Monda;
+    color: green;
+    margin-left: 20px
+}
+
+.grey-item-container-shipment-arrow{
+    background-color: white;
+    font-family: Monda;
+    color: green;
+    margin-left: -24px
+}
+
+.shipment-table-headers-h3-flex{
+    display: flex;
+    
+}
+
+
+
+.shipment-tabe-headers-right{
+    margin-left: 10px;
+}
+
+.shipment-table-headers-h3-sign{
+    display: flex;
+    align-items: center;
+}
+
+.shipment-table-headers-p-sign{
+    margin-left: 20px
+}

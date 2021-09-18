@@ -50,14 +50,12 @@
     color: white;
 }
 
-.storage-tabe-headers-left{
+.storage-table-headers-left{
     min-width: 35vw;
-    background-color: aqua;
 }
 
 .storage-table-headers-middle{
     min-width: 35vw;
-    background-color: green;
 }
 
 @media screen and (max-width: 900px){
@@ -257,7 +255,7 @@
     max-width: 100%;
     justify-content: space-around;
     flex-direction: column;
-    padding-left: 5px;
+    /* padding-left: 5px; */
     border-bottom: solid;
     border-bottom-color: black;
     border-bottom-width: 3px;
@@ -277,7 +275,7 @@
     display: flex;
     max-width: 100%;
     justify-content: space-around;
-    padding-left: 5px;
+    /* padding-left: 5px; */
     border-bottom: solid;
     border-bottom-color: black;
     border-bottom-width: 3px;
@@ -311,7 +309,8 @@
 }
 
 .storage-content-table-content-topic-lower{
-    padding-left: 5px;
+    margin-left: 11px;
+    /* padding-left: -10px; */
     display: flex;
     max-width: 100%;
     justify-content: space-around;

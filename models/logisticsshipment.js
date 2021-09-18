@@ -23,6 +23,36 @@ const logisticsShipmentSchema = new Schema(
 		minLength: 3,
 		maxLength: 100,
 	},
+	shipaddress: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100,
+	},
+	consignfullnames: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100,
+	},
+	consignemail: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100,
+	},
+	consigncompany: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100,
+	},
+	consignaddress: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100,
+	},
 	departurecity: {
 		type: String,
 		required: true,
@@ -195,9 +225,14 @@ const validate = (logisticsShipment) => {
 		.required()
 		.email({
 			minDomainSegments: 2,
-			tlds: { allow: ["com", "net", "org", "ke"] },
+			// tlds: { allow: ["com", "net", "org", "ke"] },
 		}),
 	company: Joi.string().min(3).max(100).required(),
+	shipaddress: Joi.string().min(3).max(100).required(),
+	consignfullnames: Joi.string().min(3).max(100).required(),
+	consignemail: Joi.string().min(3).max(100).required(),
+	consigncompany: Joi.string().min(3).max(100).required(),
+	consignaddress: Joi.string().min(3).max(100).required(),
 	departurecity: Joi.string().min(3).max(50).required(),
 	departurecountry: Joi.string().min(3).max(50).required(),
 	arrivalcity: Joi.string().min(3).max(50).required(),

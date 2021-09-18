@@ -5,12 +5,17 @@ const ShipmentTableContent = ({data, array}) => {
 	const content = data
 	console.log("this is the tablecontent data", content)
 
+
+
+	// console.log("i am date", new Date())
+
+
 	return (
 		<div key = {content ? content._id : null} className="storage-content-table">
 			<div className="storage-content-table-content">
 				<div className="storage-content-table-content-topic">
 					<p className="storage-content-table-content-topic">
-						{content ? content.date : null}
+						{content ? toString(new Date(content.date)) : null}
 					</p>
 					<p className="storage-content-table-content-topic">
 						Location

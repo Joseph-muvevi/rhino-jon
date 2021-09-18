@@ -12,6 +12,11 @@ const LogisticsFormsContent = () => {
 			fullnames: "",
 			email: "",
 			company: "",
+			shipaddress: "",
+			consignfullnames: "",
+			consignemail: "",
+			consigncompany: "",
+			consignaddress: "",
 			departurecity: "",
 			departurecountry: "",
 			arrivalcity: "",
@@ -42,6 +47,11 @@ const LogisticsFormsContent = () => {
 			fullnames: Yup.string().required().min(3).max(100),
 			email: Yup.string().required().min(3).max(100),
 			company: Yup.string().required().min(3).max(100),
+			shipaddress: Yup.string().required().min(3).max(100),
+			consignfullnames: Yup.string().required().min(3).max(100),
+			consignemail: Yup.string().required().min(3).max(100),
+			consigncompany: Yup.string().required().min(3).max(100),
+			consignaddress: Yup.string().required().min(3).max(100),
 			departurecity: Yup.string().required().min(3).max(50),
 			departurecountry: Yup.string().required().min(3).max(50),
 			arrivalcity: Yup.string().required().min(3).max(50),
@@ -76,7 +86,7 @@ const LogisticsFormsContent = () => {
 					.catch((err) => console.log(err));
 				alert(JSON.stringify(values, null, 2));
 				console.log(values);
-				resetForm({ values: "" });
+				// resetForm({ values: "" });
 			} catch (err) {
 				console.log(err);
 			}
@@ -92,10 +102,10 @@ const LogisticsFormsContent = () => {
 				>
 					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
-							<label>Your fullnames</label>
+							<label>Shipper fullnames</label>
 							<input
 								type="text"
-								placeholder="Your fullnames here..."
+								placeholder="Shipper fullnames"
 								name="fullnames"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
@@ -107,10 +117,10 @@ const LogisticsFormsContent = () => {
 							) : null}
 						</div>
 						<div className="logistics-quotation-small-input-group">
-							<label> Email</label>
+							<label>Shipper email</label>
 							<input
 								type="email"
-								placeholder="email"
+								placeholder="Shipper email"
 								name="email"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
@@ -122,10 +132,10 @@ const LogisticsFormsContent = () => {
 							) : null}
 						</div>
 						<div className="logistics-quotation-small-input-group">
-							<label> Company</label>
+							<label>Shipper Company</label>
 							<input
 								type="text"
-								placeholder="company"
+								placeholder="Shipper Company"
 								name="company"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
@@ -134,6 +144,87 @@ const LogisticsFormsContent = () => {
 							/>
 							{formik.touched.company && formik.errors.company ? (
 								<div className="error">{formik.errors.company}</div>
+							) : null}
+						</div>
+					</div>
+					<div className="logistics-quotation-small-inputs">
+						<div className="logistics-quotation-small-input-group">
+							<label>Shipper Address</label>
+							<input
+								type="text"
+								placeholder="Shipper Address"
+								name="shipaddress"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.shipaddress}
+								required
+							/>
+							{formik.touched.shipaddress && formik.errors.shipaddress ? (
+								<div className="error">{formik.errors.shipaddress}</div>
+							) : null}
+						</div>
+					</div>
+					<div className="logistics-quotation-small-inputs">
+						<div className="logistics-quotation-small-input-group">
+							<label>Consignee fullnames</label>
+							<input
+								type="text"
+								placeholder="Consignee fullnames"
+								name="consignfullnames"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.consignfullnames}
+								required
+							/>
+							{formik.touched.consignfullnames && formik.errors.consignfullnames ? (
+								<div className="error">{formik.errors.consignfullnames}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Consignee Email</label>
+							<input
+								type="email"
+								placeholder="Consignee Email"
+								name="consignemail"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.consignemail}
+								required
+							/>
+							{formik.touched.consignemail && formik.errors.consignemail ? (
+								<div className="error">{formik.errors.consignemail}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Consignee company</label>
+							<input
+								type="text"
+								placeholder="Consignee company<"
+								name="consigncompany"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.consigncompany}
+								required
+							/>
+							{formik.touched.consigncompany && formik.errors.consigncompany ? (
+								<div className="error">{formik.errors.consigncompany}</div>
+							) : null}
+						</div>
+					</div>
+					<div className="logistics-quotation-small-inputs">
+						<div className="logistics-quotation-small-input-group">
+							<label>Consignee Address</label>
+							<input
+								type="text"
+								placeholder="Consignee address here..."
+								name="consignaddress"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.consignaddress}
+								required
+							/>
+							{formik.touched.consignaddress && formik.errors.consignaddress ? (
+								<div className="error">{formik.errors.consignaddress}</div>
 							) : null}
 						</div>
 					</div>
