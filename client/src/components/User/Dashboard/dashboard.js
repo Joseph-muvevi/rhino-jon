@@ -12,12 +12,14 @@ import Home from '../../Home/home'
 import { Redirect } from 'react-router'
 import AdminLogisticsTable from '../AdminLogisticsTable/AdminLogisticsTable'
 import AdminStorageTable from '../AdminStorageTable/AdminStorageTable'
+import LogisticsEditForms from '../UserForms/LogisticsEditForm/LogisticsEditForms'
+import StorageEditForms from '../UserForms/StorageEditForms/StorageEditForms'
 
 const Dashboard = () => {
 
 
-        const tkt = localStorage.getItem("token")
-        console.log("my tkt of the dashboard is", tkt)
+        // const tkt = localStorage.getItem("token")
+        // console.log("my tkt of the dashboard is", tkt)
 
         // if (!tkt) {
         //     return <Redirect to="/auth"/>
@@ -38,7 +40,9 @@ const Dashboard = () => {
                 <Route path="/dashboard/tables" component={DashTable}/>
                 <Route path="/dashboard/forms" component={DashForms}/>
                 <Route path="/dashboard/logistics-form" component={LogisticsForms}/>
+                <Route path="/dashboard/logistics/edit/logisticsform" component={LogisticsEditForms}/>
                 <Route path="/dashboard/storage-form" component={StorageForms}/>
+                <Route path="/dashboard/storage/edit/storageform" component={StorageEditForms}/>
                 <Route path="/dashboard/admin/logistics-records" component={AdminLogisticsTable}/>
                 <Route path="/dashboard/admin/storage-records" component={AdminStorageTable}/>
             </Switch>

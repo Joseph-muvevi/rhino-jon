@@ -44,7 +44,8 @@ const ShipmentTableHeader = ({ headers }) => {
 								color="white"
 							/>
 							
-							CONSIGNEE
+							
+							{ header ? header.company : null }
 						</p>
 						<h3 className="shipment-table-headers-h3">Address</h3>
 						<p className="shipment-table-headers-p">
@@ -54,7 +55,7 @@ const ShipmentTableHeader = ({ headers }) => {
 								className="fontawesome-chrevron"
 								color="white"
 							/>
-							ADRESS
+							{ header ? header.shipaddress : null }
 						</p>
 					</div>
 				</div>
@@ -116,7 +117,7 @@ const ShipmentTableHeader = ({ headers }) => {
 								color="white"
 							/>
 							
-							CONSIGNEE
+							{ header ? header.consigncompany : null }
 						</p>
 						<h3 className="shipment-table-headers-h3">Address</h3>
 						<p className="shipment-table-headers-p">
@@ -126,7 +127,7 @@ const ShipmentTableHeader = ({ headers }) => {
 								className="fontawesome-chrevron"
 								color="white"
 							/>
-							ELKA
+							{ header ? header.consignaddress : null }
 						</p>
 						<div className="shipment-table-headers-h3-sign">
 							<h3 className="shipment-table-headers-h3">Signed for by :</h3>
