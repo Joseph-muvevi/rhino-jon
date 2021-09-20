@@ -14,25 +14,90 @@ import AdminLogisticsTable from '../AdminLogisticsTable/AdminLogisticsTable'
 import AdminStorageTable from '../AdminStorageTable/AdminStorageTable'
 import LogisticsEditForms from '../UserForms/LogisticsEditForm/LogisticsEditForms'
 import StorageEditForms from '../UserForms/StorageEditForms/StorageEditForms'
+import axios from "axios"
 
 const Dashboard = () => {
+    // const tkt = localStorage.getItem("token")
+    // console.log("my tkt of the dashboard is", tkt)
+
+    // if (!tkt) {
+    //     return <Redirect to="/auth"/>
+    // }
+
+    const [logdata, setLogData] = useState([])
+    const [storageData, setStorageData] = useState([])
+    const [logquotation, setLogQuotation] = useState([])
+    const [storageQuotation, setStorageQuotation] = useState([])
+    const [productQuotation, setProductQuotation] = useState([])
+    // const [logdataErrors, setLogDataErrors] = useState([])
+    // const [dates, setDates] = useState([])
+
+    const getLogData = () => {
+        axios.get("http://localhost:8080/api/logisticsrecords")
+        .then(res => {
+            setLogData(res.data)
+            console.log(res)
+        })
+        .catch(err => console.log(err))
+    }
+    
+    const getStorageData = () => {
+        axios.get("http://localhost:8080/api/storageshipment")
+        .then(res =>{
+            setStorageData(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+    
+    const getLogisticsQuotation = () => {
+        axios.get("http://localhost:8080/api/logisticsquotation")
+        .then(res =>{
+            setLogQuotation(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+    
+    const getStorageQuotation = () => {
+        axios.get("http://localhost:8080/api/storagequotation")
+        .then(res =>{
+            setStorageQuotation(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+    
+    const getProductQuotation = () => {
+        axios.get("http://localhost:8080/api/productquotation")
+        .then(res =>{
+            setProductQuotation(res.data)
+        })
+        .catch(err => console.log(err))
+    }
 
 
-        // const tkt = localStorage.getItem("token")
-        // console.log("my tkt of the dashboard is", tkt)
+    useEffect(() => {
+        getLogData()
+        getStorageData()
+        getLogisticsQuotation()
+        getProductQuotation()
+        getStorageQuotation()
+    }, [])
 
-        // if (!tkt) {
-        //     return <Redirect to="/auth"/>
-        // }
-
-        return (
+    console.log("dashboard data",logdata, storageData, storageQuotation, logquotation)
+    
+    return (
         <Router  className="dashboard">
             <div className="dashboard-nav">
                 <DashNav/>
             </div>
-            <div className="dont-display">
-                <DashboardHome />
-            </div>
+            {/* <div className="dont-display"> */}
+                <DashboardHome 
+                    storage={storageData} 
+                    logistics = {logdata}
+                    storeQuotation = {storageQuotation}
+                    prodQuotation = {productQuotation}
+                    logisticsQuotation = {logquotation}
+                    />
+            {/* </div> */}
             <Switch className="dashboard-main">
                 <Route path="/" exact component={Home}/>
                 <Route path="/dashboard/home" component={DashboardHome}/>

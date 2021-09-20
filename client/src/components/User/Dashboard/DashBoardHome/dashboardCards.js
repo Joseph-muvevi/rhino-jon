@@ -1,10 +1,25 @@
 import { faGem, faInfoCircle, faPlaneDeparture, faWarehouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "../dashboard.css";
 
-const DashboardCards = ({shipment}) => {
+const DashboardCards = ({  storeQuotation, prodQuotation, logQuotation, strLength}) => {
     // const length = shipment.length
+
+    // const [storage, setStorage] = useState([])
+    // const [product, setProduct] = useState([])
+    // const [logistics, setLogistics] = useState([])
+
+    // const setStorageData = () =>{
+    //     setStorage(storageQuotation)
+    // }
+
+    // useEffect(() => {
+    //     setStorageData()
+    // }, [])
+
+    // console.log(strLength, "tha's the value")
+
   return (
     <div className="dashboard-cards">
         <div className="dashboard-card">
@@ -12,7 +27,7 @@ const DashboardCards = ({shipment}) => {
                 <FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faWarehouse}/>
             </div>
             <h3 className="dashboard-card-h3">
-                700
+                {strLength ? strLength : "No items yet..." }
             </h3>
             <p className="dashboard-card-p">
                 Product Stored
@@ -25,7 +40,7 @@ const DashboardCards = ({shipment}) => {
             </div>
             <h3 className="dashboard-card-h3">
                 {
-                    console.log(shipment, "Data from dashboard cards")
+                    // storageQuotation ? console.log("storage cards data", storageQuotation) : "nothing here"
                 }
             </h3>
             <p className="dashboard-card-p">

@@ -18,7 +18,6 @@
     flex-direction: column;
     max-width: 80vw;
     margin: auto;
-    padding: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -29,12 +28,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    max-width: 80vw;
     border-bottom: none;
 }
 /* ===========THE TABLE CARD ================== */
 .admin-logistics-table-card{
     width: 100%;
+    /* overflow: scroll; */
+    /* overflow: hidden; */
 }
 
 /* ========THE CONTENT SECTION=============== */
@@ -43,7 +44,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 80vw;
+    width: 80vw;
     margin: auto;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -59,12 +60,81 @@
     flex-direction: column;
     justify-content:  center;
     align-items: flex-start;
+    overflow: hidden;
 }
 
 .logistics-content-table-content-topic-upper{
-    padding: 5px 10px;
     display: flex;
-    width: 100%;
     justify-content: space-between;
 }
  
+.logistics-content-table-content-topic-p-number{
+    width: 50px;
+    /* background-color: black */;
+}
+
+.logistics-content-table-content-topic-p-track{
+    width: 150px;
+    /* background-color: red*/;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-p-fullnames{
+    width: 150px;
+    /* background-color: green*/;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-p-product{
+    width: 100px;
+    /* background-color: black */;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-p-address{
+    width: 150px;
+    /* background-color: red*/;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-p-weight{
+    width: 150px;
+    /* background-color: green*/;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-departure-city{
+    width: 100px;
+    /* background-color: black */;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-departure-country{
+    width: 100px;
+    /* background-color: red*/;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-arrival-city{
+    width: 150px;
+    /* background-color: green*/;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-arrival-country{
+    width: 100px;
+    /* background-color: black */;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-status{
+    width: 100px;
+    /* background-color: red*/;
+    margin-left: 0px;
+}
+
+.logistics-content-table-content-topic-lower{
+    background-color:  grey;
+    padding: 1%;
+    width: 100%
+}

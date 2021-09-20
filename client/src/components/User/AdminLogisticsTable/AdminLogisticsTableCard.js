@@ -5,8 +5,10 @@ import AdminLogisticsTableHeader from './AdminLogisticsTableHeader'
 
 const AdminLogisticsContentTableCard = ({logistics}) => {
     const logisticsItems = logistics
-    console.log( logisticsItems)
+    console.log("the items are", logisticsItems)
 
+    // const lengthOf = logisticsItems.length
+    
 
     return (
         <div className="admin-logistics-table-card">
@@ -15,9 +17,12 @@ const AdminLogisticsContentTableCard = ({logistics}) => {
                     <>
                         <AdminLogisticsTableHeader/>
                         {
-                            logisticsItems ? logisticsItems.map(item => (
+                            logisticsItems ? logisticsItems.map((item, lengthOf) => (
                                 <>
-                                    <AdminLogisticsTableContent data = {item} /> 
+                                    <AdminLogisticsTableContent data = {item} length = {lengthOf}/> 
+                                    {
+                                        console.log("the dates are", item.date)
+                                    }
                                 </>
                             )) : <p>No items yet</p>
                         }
