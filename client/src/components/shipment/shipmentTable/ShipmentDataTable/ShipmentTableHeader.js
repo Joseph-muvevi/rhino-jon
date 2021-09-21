@@ -3,18 +3,28 @@ import {
   faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./shipmentdatatable.css";
+import moment from "moment"
 
 const ShipmentTableHeader = ({ headers }) => {
   const header = headers;
   console.log("This is from table header",header)
 
+  const [date, setDate] = useState({})
 
+  useEffect(() => {
+	  if (headers){
+		setDate(headers.updatedAt)
+	  }
+  }, [])
+
+  const dateString = moment(date).format('MMMM Do YYYY') 
+  console.log(dateString, "the date string")
 
   return (
 	<>
-		<div className="shipment-table-headers">
+		<div className="shipment-table-headers-client">
 			<div className="font-awesome-sign-alt-icon">
 				<FontAwesomeIcon icon={faSignOutAlt} color="white" size="2x" />
 			</div>
@@ -62,7 +72,7 @@ const ShipmentTableHeader = ({ headers }) => {
 				<div className="shipment-tabe-headers-middle">
 					<div className="shipment-table-headers-body">
 						<h3 className="shipment-table-headers-h3">
-						[Latest date Wednesday 12 2021 at latest time 20:21]
+						{ header ? dateString.toString() : null }
 						</h3>
 						<div className="h3-p-enclosing">
 							<h3 className="shipment-table-headers-h3">

@@ -24,7 +24,7 @@ const ShipmentTable = () => {
   }
   const result = shipment.find( ({ trackno }) => trackno === trackNumber)
 
-
+  console.log("shipment date array", shipment)
   return (
 	<div className="shipping">
 	  <Navbar/>

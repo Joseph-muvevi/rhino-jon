@@ -1,11 +1,16 @@
-.shipment-table-headers{
+.shipment-card{
+    max-width: 85vw;
+    margin: auto;
+}
+.shipment-table-headers-client{
     background-color: rgb(22, 22, 22);
     color: white;
     display: flex;
     padding: 10px;
     min-height: 40vh;
     border-top-left-radius: 5px ;
-    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px ;
+
 }
 
 .font-awesome-sign-alt-icon{
@@ -85,4 +90,61 @@
 
 .shipment-table-headers-p-sign{
     margin-left: 20px
+}
+
+/* ===========CLIENT TABLE============== */
+
+.shipment-content-table{
+	min-width: 100%;
+    background-color: grey;
+}
+
+.shipment-content-table-content-topic{
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+}
+
+
+.shipment-content-table-content-info{
+    background-color: rgb(68, 56, 56);
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: solid;
+    border-bottom-color: black;
+    border-bottom-width: 3px;
+    text-align: left;
+}
+
+.shipment-content-table-content-topic-hash{
+    min-width: 4%;
+    padding-right: 1%
+}
+
+.shipment-content-table-content-topic-date{
+    min-width: 33%;
+    padding-right: 1%;
+    padding-left: 1%
+}
+
+.shipment-content-table-content-topic-location{
+    min-width: 28%;
+    padding-right: 1%;
+    padding-left: 1%
+}
+
+.shipment-content-table-content-topic-time{
+    min-width: 13%;
+    padding-right: 1%;
+    padding-left: 1%
+}
+
+.shipment-content-table-content-topic-pieces{
+    min-width: 14%;
+    padding-left: 1%
 }

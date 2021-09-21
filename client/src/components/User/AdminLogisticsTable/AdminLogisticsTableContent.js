@@ -27,7 +27,7 @@ const AdminLogisticsTableContent = ({data, length}) => {
                                 {info ? info.product : null}
                             </p>
                             <p className="logistics-content-table-content-topic-p-address">
-                                {info ? info.address : null}
+                                {info ? info.shipaddress : null}
                             </p>
                             <p className="logistics-content-table-content-topic-p-weight">
                                 {info ? info.weight : null} {info ? info.weightunit : null}

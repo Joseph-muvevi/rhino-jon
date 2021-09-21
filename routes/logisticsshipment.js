@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
 // post
 router.post("/", async (req, res) => {
     const {error} = validate(req.body)
-    if (error) return res.status(400).send(error.details[0].message)
+    if (error) return res.status(400).send({message : error.details[0].message})
     
     let logisticsshipment = new LogisticsShipment(req.body)
     logisticsshipment = await logisticsshipment.save()

@@ -87,7 +87,7 @@ const logisticsShipmentSchema = new Schema(
 		type: Number,
 		required: true,
 		min: 1,
-		max: 50000,
+		max: 50000000,
 	},
 	weightunit: {
 		type: String,
@@ -105,7 +105,7 @@ const logisticsShipmentSchema = new Schema(
 		type: Number,
 		required: true,
 		min: 1,
-		max: 50000,
+		max: 50000000,
 	},
 	departuredate: {
 		type: String,
@@ -193,6 +193,12 @@ const logisticsShipmentSchema = new Schema(
 		minLength: 3,
 		maxLength: 100
 	},
+	currentlocation: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
 	status: {
 		type: String,
 		required: true,
@@ -210,10 +216,7 @@ const logisticsShipmentSchema = new Schema(
 );
 
 // the model
-const LogisticsShipment = mongoose.model(
-  "Logistics Shipment",
-  logisticsShipmentSchema
-);
+const LogisticsShipment = mongoose.model("Logistics Shipment", logisticsShipmentSchema);
 
 // validation
 const validate = (logisticsShipment) => {
@@ -253,6 +256,7 @@ const validate = (logisticsShipment) => {
 	collectoraddress: Joi.string().min(3).max(100),
 	collectortel: Joi.string().min(3).max(100),
 	collectedby: Joi.string().min(3).max(100),
+	currentlocation: Joi.string().min(3).max(100),
 	product: Joi.string().min(3).max(100),
 	status: Joi.string().min(3).max(100).required(),
 	completed: Joi.boolean(),

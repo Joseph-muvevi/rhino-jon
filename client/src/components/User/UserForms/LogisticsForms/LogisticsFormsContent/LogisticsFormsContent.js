@@ -2,11 +2,14 @@ import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import React from "react";
+import React, {useState} from "react";
 import "../LogisticsForms.css";
 import axios from "axios";
 
 const LogisticsFormsContent = () => {
+
+	const [errors, setErrors] = useState("")
+
 	const formik = useFormik({
 		initialValues: {
 			fullnames: "",
@@ -40,6 +43,7 @@ const LogisticsFormsContent = () => {
 			collectoraddress: "",
 			collectortel: "",
 			completed: "",
+			currentlocation : "",
 			status: "",
 			product: ""
 		},
@@ -75,15 +79,22 @@ const LogisticsFormsContent = () => {
 			collectoraddress: Yup.string().min(3).max(100),
 			collectortel: Yup.string().min(3).max(100),
 			collectedby: Yup.string().min(3).max(100),
+			currentlocation: Yup.string().min(3).max(100),
 			status: Yup.string().min(3).max(100).required(),
-			completed: Yup.boolean().oneOf([true])
+			completed: Yup.boolean().oneOf([true, false])
 		}),
 		onSubmit: (values, { resetForm }) => {
 			try {
 				axios
 					.post("http://localhost:8080/api/logisticsrecords", values)
-					.then(res => console.log(res))
-					.catch((err) => console.log(err));
+					.then(res => {
+						console.log(res, "this is the res data")
+					
+					})
+					.catch((err) => {
+						console.log(err, "the error message is")
+						setErrors(err.message)
+					});
 				alert(JSON.stringify(values, null, 2));
 				console.log(values);
 				// resetForm({ values: "" });
@@ -577,10 +588,10 @@ const LogisticsFormsContent = () => {
 
 					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
-							<label>Is product</label>
+							<label>Product</label>
 							<input
 								type="text"
-								placeholder="Arrival time, If not arrived leave blank"
+								placeholder="Product item"
 								name="product"
 								onChange={formik.handleChange}
 								onBlur={formik.handleBlur}
@@ -622,6 +633,24 @@ const LogisticsFormsContent = () => {
 							/>
 							{formik.touched.completed && formik.errors.completed ? (
 								<div className="error">{formik.errors.completed}</div>
+							) : null}
+						</div>
+					</div>
+
+					<div className="logistics-quotation-small-inputs">
+						<div className="logistics-quotation-small-input-group">
+							<label>Current location</label>
+							<input
+								type="text"
+								placeholder="Current location"
+								name="currentlocation"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.currentlocation}
+								required
+							/>
+							{formik.touched.currentlocation && formik.errors.currentlocation ? (
+								<div className="error">{formik.errors.currentlocation}</div>
 							) : null}
 						</div>
 					</div>

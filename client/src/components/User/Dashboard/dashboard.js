@@ -89,7 +89,7 @@ const Dashboard = () => {
             <div className="dashboard-nav">
                 <DashNav/>
             </div>
-            {/* <div className="dont-display"> */}
+            <div className="dont-display">
                 <DashboardHome 
                     storage={storageData} 
                     logistics = {logdata}
@@ -97,7 +97,7 @@ const Dashboard = () => {
                     prodQuotation = {productQuotation}
                     logisticsQuotation = {logquotation}
                     />
-            {/* </div> */}
+            </div>
             <Switch className="dashboard-main">
                 <Route path="/" exact component={Home}/>
                 <Route path="/dashboard/home" component={DashboardHome}/>

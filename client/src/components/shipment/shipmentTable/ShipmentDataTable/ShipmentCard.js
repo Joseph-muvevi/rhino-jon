@@ -1,7 +1,8 @@
 import React from 'react'
 import ShipmentTableHeader from './ShipmentTableHeader'
 import ShipmentTableContent from './ShipmentTableContent'
-import "../../shipment.css"
+// import "../../shipment.css"
+import "./shipmentdatatable.css"
 // import StorageTableHeader from '../StorageTable/StorageTableHeader'
 
 const ShipmentCard = ({result}) => {

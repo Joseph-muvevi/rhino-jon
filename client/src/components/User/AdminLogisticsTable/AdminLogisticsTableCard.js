@@ -8,7 +8,7 @@ const AdminLogisticsContentTableCard = ({logistics}) => {
     console.log("the items are", logisticsItems)
 
     // const lengthOf = logisticsItems.length
-    
+    console.log(logistics.date, "thats the date")
 
     return (
         <div className="admin-logistics-table-card">
