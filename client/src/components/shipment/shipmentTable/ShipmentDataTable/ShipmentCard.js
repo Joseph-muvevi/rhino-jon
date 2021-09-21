@@ -7,19 +7,17 @@ import "./shipmentdatatable.css"
 
 const ShipmentCard = ({result, filtered}) => {
 
-	let results = []
-	results.push(result)
+	
 
 	let filter = filtered
 
 	console.log("the filter items are",filter)
-	console.log("the results are", results)
 
 	return (
 		<div className="shipment-card"> 
 			<div className="shipment-card-content">
 			{
-				results ? (
+				filtered ? (
 					<>
 						<div className="track-shipment-top-info">
 							<h2 className="track-shipment-top-h2">
@@ -30,7 +28,13 @@ const ShipmentCard = ({result, filtered}) => {
 								as your shipment speeds through our logistics network.
 							</p>
 						</div>
-						<ShipmentTableHeader headers = {result}/>
+						{
+							result? <ShipmentTableHeader headers = {result}/> : (
+								<p className="terniary-condition-p">
+									Track your shipment
+								</p>
+							)
+						}
 						{/* {
 							// console.log("This is the results in jsx",results)
 							results ? results.map((mappedResults) => (

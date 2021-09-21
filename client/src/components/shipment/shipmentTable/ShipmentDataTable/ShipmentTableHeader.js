@@ -19,6 +19,8 @@ const ShipmentTableHeader = ({ headers }) => {
 	  }
   }, [])
 
+  console.log("we are the headers", headers)
+
   const dateString = moment(date).format('MMMM Do YYYY') 
   console.log(dateString, "the date string")
 
