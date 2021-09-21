@@ -31,7 +31,9 @@ const ContactForm = () => {
       axios
         .post("http://localhost:8080/send")
         .then( )
-        .catch(err => console.log(err))
+        .catch(err =>{
+           console.log(err.response)
+          })
       resetForm({ message: "" });
     },
   });

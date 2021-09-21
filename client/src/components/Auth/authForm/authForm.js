@@ -16,6 +16,7 @@ const AuthForm = (props) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [credentials, setCredentials] = useState([])
+  const [error, setError] = useState([])
 
   const history = useHistory()
 
@@ -40,7 +41,9 @@ const AuthForm = (props) => {
         localStorage.setItem("token", tkt)
         history.push("/dashboard/home")
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err.response)
+      })
     }
     
     return (

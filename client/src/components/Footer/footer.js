@@ -35,7 +35,9 @@ const Footer = () => {
       axios
         .post("http://localhost:8080/api/emails", value)
         .then(console.log(value))
-        .catch((err) => console.log(err));
+        .catch(err =>{
+          console.log(err.response)
+         })
     },
   });
 

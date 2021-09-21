@@ -54,7 +54,9 @@ const LogisticsQuotationForm = () => {
 	  axios
 		.post("http://localhost:8080/api/logisticsquotation", values)
 		.then(console.log(values))
-		.catch((err) => console.log(err));
+		.catch(err =>{
+			console.log(err.response)
+		   })
 	  alert(JSON.stringify(values, null, 2));
 	  console.log(values);
 	  resetForm({ values: "" });
