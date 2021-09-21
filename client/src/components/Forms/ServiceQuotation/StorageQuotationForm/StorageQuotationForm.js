@@ -150,12 +150,13 @@ const StorageQuotationForm = () => {
                             <label>Weight Unit</label>
                                 <select type="text"  name="unit" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.unit} required>
-                                    <option value="" disabled label="Please select an option" />
-                                    <option value="kilograms" label="Kilograms" />
-                                    <option value="pounds" label="Pounds"/>
-                                    <option value="grams" label="Grams"/>
-                                    <option value="litres" label="Litres"/>
-                                    <option value="tonnes" label="Tonnes"/>
+                                    <option value="" disabled label="Please select a value" />
+                                    <option value="kg" label="Kilograms"/>
+                                    <option value="t" label="Tonnes"/>
+                                    <option value="lb" label="pounds"/>
+                                    <option value="g" label="grams"/>
+                                    <option value="l" label="Liters"/>
+                                    <option value="gal" label="Gallons"/>
                                 </select>
                                 {formik.touched.unit && formik.errors.unit ? (
                                     <div className="error">{formik.errors.unit}</div>

@@ -252,10 +252,12 @@ const LogisticsFormsContent = () => {
 								required
 							>
 								<option value="" disabled label="Please select an option" />
-								<option value="kilograms" label="Kilograms" />
-								<option value="pounds" label="Pounds" />
-								<option value="grams" label="Grams" />
-								<option value="tonnes" label="Tonnes" />
+								<option value="kg" label="Kilograms"/>
+								<option value="t" label="Tonnes"/>
+								<option value="lb" label="pounds"/>
+								<option value="g" label="grams"/>
+								<option value="l" label="Liters"/>
+								<option value="gal" label="Gallons"/>
 							</select>
 							{formik.touched.weightunit && formik.errors.weightunit ? (
 								<div className="error">{formik.errors.weightunit}</div>

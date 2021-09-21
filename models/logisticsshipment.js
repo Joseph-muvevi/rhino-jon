@@ -216,7 +216,7 @@ const logisticsShipmentSchema = new Schema(
 );
 
 // the model
-const LogisticsShipment = mongoose.model("Logistics Shipment", logisticsShipmentSchema);
+const LogisticsShipment = mongoose.model("Shipment records", logisticsShipmentSchema);
 
 // validation
 const validate = (logisticsShipment) => {

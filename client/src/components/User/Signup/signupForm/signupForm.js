@@ -62,7 +62,7 @@ const SignupForm = () => {
                 .max(100),
             role : Yup.string()
                 .required()
-                .min(4)
+                .min(2)
                 .max(100),
             password : Yup.string()
                 .required()
@@ -75,8 +75,10 @@ const SignupForm = () => {
                     console.log(res)
                     alert(JSON.stringify(values))
                 })
-                .catch(err => console.log(err))
-            // resetForm({initialValues : ""})
+                .catch(err => {
+                    console.log(err.res)
+                })
+            resetForm({initialValues : ""})
         }
     })
 
@@ -176,12 +178,19 @@ const SignupForm = () => {
                     <div className="service-quotation-small-inputs">
                         <div className="service-quotation-small-input-group">
                             <label>Role</label>
-                            <select type="text" placeholder="Arrival city here..." name="role" 
+                            <select type="text"  name="role" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.role} required>
-                                    <option value="" disabled label="Please role" />
-                                    <option value="user" label="User" />
-                                    <option value="moderator" label="Moderator."/>
-                                    <option value="admin" label="Admin."/>
+                                     <option value="" disabled label="Please select a role" />
+                                    {
+                                        ["IT", "accountant", "admin", "lawyer", "CEO"].map(role => (
+                                            <option value={role} label={role}/>
+                                        ))
+                                    }
+                                    {
+                                    // <option value="user" label="User" />
+                                    // <option value="moderator" label="Moderator."/>
+                                    // <option value="admin" label="Admin."/>
+                                    }
                                 </select>
                                 {formik.touched.role && formik.errors.role ? (
                                     <div className="error">{formik.errors.role}</div>
@@ -189,7 +198,7 @@ const SignupForm = () => {
                         </div>
                         <div className="service-quotation-small-input-group">
                             <label>Password</label>
-                            <input type="password" placeholder="Product amount..." name="password" 
+                            <input type="password"  name="password" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.password} required/>
                                 {formik.touched.password && formik.errors.password ? (
                                     <div className="error">{formik.errors.password}</div>

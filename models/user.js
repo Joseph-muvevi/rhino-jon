@@ -62,7 +62,7 @@ const userSchema = new Schema({
     },
     role: {
         type: String,
-        minLength: 4,
+        minLength: 2,
         maxLength: 100,
         required: true
     },
@@ -101,7 +101,7 @@ const validate = (user) => {
         pobox: Joi.string().min(5).max(100).required(),
         city: Joi.string().min(3).max(100).required(),
         country: Joi.string().min(3).max(100).required(),
-        role: Joi.string().min(4).max(100).required(),
+        role: Joi.string().min(2).max(100).required(),
         password: Joi.string().min(6).max(100).required(),
     })
 

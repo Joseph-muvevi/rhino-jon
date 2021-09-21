@@ -132,9 +132,13 @@ const ProductQuotationForm = () => {
                             <label>Weight Unit</label>
                                 <select type="text"  name="unit" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.unit} required>
-                                    <option value="kilograms" label="Kilograms" selected/>
-                                    <option value="pounds" label="pounds"/>
-                                    <option value="grams" label="grams"/>
+                                    <option value="" disabled label="Please select a value" selected/>
+                                    <option value="kg" label="Kilograms"/>
+                                    <option value="t" label="Tonnes"/>
+                                    <option value="lb" label="pounds"/>
+                                    <option value="g" label="grams"/>
+                                    <option value="l" label="Liters"/>
+                                    <option value="gal" label="Gallons"/>
                                 </select>
                                 {formik.touched.unit && formik.errors.unit ? (
                                     <div className="error">{formik.errors.unit}</div>
