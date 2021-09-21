@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import "../../shipment.css"
 import moment from "moment"
 
-const ShipmentTableContent = ({data, array}) => {
-	const content = data
+const ShipmentTableContent = ({ array}) => {
+	const content = array
 	console.log("this is the tablecontent data", content)
 
 	const [date, setDate] = useState({})

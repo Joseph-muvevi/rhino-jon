@@ -242,7 +242,7 @@ const validate = (logisticsShipment) => {
 	arrivalcountry: Joi.string().min(3).max(50).required(),
 	logisticstype: Joi.string().min(3).max(50).required(),
 	weight: Joi.number().min(1).max(50000000).required(),
-	weightunit: Joi.string().min(3).max(100).required(),
+	weightunit: Joi.string().min(1).max(100).required(),
 	producttype: Joi.string().min(3).max(50).required(),
 	pieces: Joi.number().min(1).max(50000000).required(),
 	departuredate: Joi.string().min(3).max(100).required(),

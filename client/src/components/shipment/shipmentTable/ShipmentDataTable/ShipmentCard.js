@@ -5,12 +5,15 @@ import ShipmentTableContent from './ShipmentTableContent'
 import "./shipmentdatatable.css"
 // import StorageTableHeader from '../StorageTable/StorageTableHeader'
 
-const ShipmentCard = ({result}) => {
+const ShipmentCard = ({result, filtered}) => {
 
 	let results = []
 	results.push(result)
 
-	// console.log("these are the results from shipment card", results)
+	let filter = filtered
+
+	console.log("the filter items are",filter)
+	console.log("the results are", results)
 
 	return (
 		<div className="shipment-card"> 
@@ -28,11 +31,20 @@ const ShipmentCard = ({result}) => {
 							</p>
 						</div>
 						<ShipmentTableHeader headers = {result}/>
-						{
+						{/* {
 							// console.log("This is the results in jsx",results)
 							results ? results.map((mappedResults) => (
 								<ShipmentTableContent array = {results} data = {mappedResults} />
 							)):  null
+						} */}
+						{/* {
+							// console.log("This is the results in jsx",results)
+							results ? results.map((filteredObj) => (
+								<ShipmentTableContent array = {filteredObj}  />
+							)):  null
+						} */}
+						{
+							filter ? filter.map(filterResults => (<ShipmentTableContent array = {filterResults}  /> )) : null
 						}
 					</>
 				) : <p className="terniary-condition-p">

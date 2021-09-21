@@ -23,8 +23,13 @@ const ShipmentTable = () => {
 		.catch(err => console.log(err))
   }
   const result = shipment.find( ({ trackno }) => trackno === trackNumber)
+  console.log(result, "this is the result")
 
-  console.log("shipment date array", shipment)
+  const filterItems = shipment.filter(({trackno}) => trackno === trackNumber)
+
+
+
+  console.log("shipment data array", shipment)
   return (
 	<div className="shipping">
 	  <Navbar/>
@@ -36,7 +41,7 @@ const ShipmentTable = () => {
 		</form>
 	  </div>
 	  {shipment || shipment !== undefined ? (
-		<ShipmentCard  result={result} />
+		<ShipmentCard  result={result} shipment={shipment} filtered = {filterItems} />
 	  ) : (
 		<div className="shipment-table-content">
 		  <h1 className="shipment-table-header">Nothin here yet</h1>

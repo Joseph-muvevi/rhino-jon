@@ -44,7 +44,6 @@ const ShipmentTableHeader = ({ headers }) => {
 						</h3>
 						<h3 className="shipment-table-headers-h3">
 							Shipper
-							{/* {header ? header.fullnames : null} */}
 						</h3>
 						<p className="shipment-table-headers-p">
 							{/* {header ? header.address : null} */}
