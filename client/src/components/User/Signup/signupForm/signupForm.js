@@ -6,6 +6,7 @@ import * as Yup from "yup"
 import "./signupForm.css"
 import { Link } from 'react-router-dom'
 import axios from "axios"
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
 const SignupForm = () => {
 	const [error, setError] = useState("")
@@ -90,11 +91,16 @@ const SignupForm = () => {
 			<div className="signup-form-content">
 				<form onSubmit={formik.handleSubmit} className="the-service-quotation-form" >
 				
-				<div className="service-quotation-small-inputs">
-					<div className="error-section">
-						<p className="error">{error}</p>
-					</div>
-				</div>
+				{
+					error ? (
+						<div className="service-quotation-small-inputs">
+							<div className="error-section">
+								<FontAwesomeIcon icon={faExclamationTriangle} size="2x"/>
+								<p className="error-section-p">{error}</p>
+							</div>
+						</div>
+					): null
+				}
 
 				<div className="service-quotation-small-inputs">
 						<div className="service-quotation-small-input-group">

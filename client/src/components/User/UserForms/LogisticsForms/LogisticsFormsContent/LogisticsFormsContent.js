@@ -5,10 +5,11 @@ import * as Yup from "yup";
 import React, {useState} from "react";
 import "../LogisticsForms.css";
 import axios from "axios";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 
 const LogisticsFormsContent = () => {
 
-	const [errors, setErrors] = useState("")
+	const [error, setErrors] = useState("")
 
 	const formik = useFormik({
 		initialValues: {
@@ -62,7 +63,7 @@ const LogisticsFormsContent = () => {
 			arrivalcountry: Yup.string().required().min(3).max(50),
 			logisticstype: Yup.string().required().min(3).max(50),
 			weight: Yup.number().required().min(1).max(50000000),
-			weightunit: Yup.string().required().min(3).max(50),
+			weightunit: Yup.string().required().min(1).max(50),
 			producttype: Yup.string().required().min(3).max(50),
 			pieces: Yup.number().required().min(1).max(50000000),
 			departuredate: Yup.string().required().min(3).max(100),
@@ -92,8 +93,8 @@ const LogisticsFormsContent = () => {
 					
 					})
 					.catch((err) => {
-						console.log(err, "the error message is")
-						setErrors(err.message)
+						console.log(err.response, "the error message is")
+						setErrors(err.response.data.message)
 					});
 				alert(JSON.stringify(values, null, 2));
 				console.log(values);
@@ -111,6 +112,16 @@ const LogisticsFormsContent = () => {
 					onSubmit={formik.handleSubmit}
 					className="the-logistics-quotation-form"
 				>
+									{
+					error ? (
+						<div className="service-quotation-small-inputs">
+							<div className="error-section">
+								<FontAwesomeIcon icon={faExclamationTriangle} size="2x"/>
+								<p className="error-section-p">{error}</p>
+							</div>
+						</div>
+					): null
+				}
 					<div className="logistics-quotation-small-inputs">
 						<div className="logistics-quotation-small-input-group">
 							<label>Shipper fullnames</label>

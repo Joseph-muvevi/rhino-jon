@@ -92,7 +92,7 @@ const logisticsShipmentSchema = new Schema(
 	weightunit: {
 		type: String,
 		required: true,
-		minLength: 3,
+		minLength: 1,
 		maxLength: 50,
 	},
 	producttype: {

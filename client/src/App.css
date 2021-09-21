@@ -239,6 +239,26 @@ NavLink:focus{
   justify-content: space-between;
 }
 
+.error-section{
+  max-width: 90vw;
+  min-width: 80vw;
+  background-color: red;
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.521);
+  padding: 5px 10px;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items:  center;
+}
+
+.error-section-p{
+  color: white;
+  display: flex;
+  font-family: Monda;
+  font-size: 18px;
+  margin-left: 5vw
+}
 
 @media screen and (max-width: 900px){
   form{
