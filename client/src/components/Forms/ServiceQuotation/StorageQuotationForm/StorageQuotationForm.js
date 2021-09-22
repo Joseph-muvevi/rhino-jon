@@ -2,12 +2,15 @@ import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useFormik } from 'formik'
 import * as Yup from "yup"
-import React from 'react'
+import React, {useState} from 'react'
 import "../ServiceQuotation.css"
 import axios from "axios"
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
 
 const StorageQuotationForm = () => {
+
+    const [error, setError] = useState("")
 
     const formik = useFormik({
         initialValues : {
@@ -22,7 +25,7 @@ const StorageQuotationForm = () => {
             city: "",
             productname: "", 
             quantity: "",
-            producttype: "", //solid liquid gass etc
+            producttype: "",
             storagecity: "",
             storagecountry: " ",
             description: ""
@@ -31,76 +34,92 @@ const StorageQuotationForm = () => {
             title : Yup.string()
                 .min(2)
                 .max(100)
-                .required("This field is required"),
+                .required(),
             fullnames : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 6")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(6)
+                .max(200),
             company : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum character allowed is 2")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
             position : Yup.string()
-                .required("This field is required")
-                .min(3, "Minimum characters allowed are 3")
-                .max(100, "maximum characters allowed are 100"),
+                .required()
+                .min(3)
+                .max(100),
             email : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 6")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(6)
+                .max(200),
             unit : Yup.string()
-                .required("This field is required"),
+                .required(),
             weight : Yup.number()
-                .required("This field is required")
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(50000, "maximum characters allowed are 50000"),
+                .required()
+                .min(1)
+                .max(5000000000),
             country : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(4)
+                .max(50),
             city : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(4)
+                .max(50),
             productname : Yup.string()
-                .required("This field is required")
-                .min(6, "Minimum characters allowed are 6")
-                .max(200, "maximum characters allowed are 200"),
+                .required()
+                .min(6)
+                .max(200),
             quantity : Yup.number()
-                .required("This field is required")
-                .min(1, "Minimum characters allowed are 1")
-                .max(5000000, "maximum characters allowed are 5000000"),
+                .required()
+                .min(1)
+                .max(5000000000),
             producttype : Yup.string()
-                .required("This field is required"),
+                .required(),
             storagecity : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(4)
+                .max(50),
             storagecountry : Yup.string()
-                .required("This field is required")
-                .min(4, "Minimum characters allowed are 4")
-                .max(50, "maximum characters allowed are 50"),
+                .required()
+                .min(4)
+                .max(50),
             description : Yup.string()
-                .required("This field is required")
-                .min(20, "Minimum characters allowed are 4")
-                .max(2000, "maximum characters allowed are 200"),
+                .required()
+                .min(20)
+                .max(2000),
         }),
         onSubmit: (values, {resetForm}) => {
             try {
                 axios.post("http://localhost:8080/api/storagequotation", values)
-                .then(console.log(values))
-                .catch(err => console.log(err))
+                .then(res => {
+                    setError(null)
+                    console.log(res)
+                })
+                .catch(err =>{
+                    console.log(err.response)
+                    setError(err.response.data)
+                })
                 alert(JSON.stringify(values, null, 2))
                 console.log(values)
-                resetForm({values : ""})
+                // resetForm({values : ""})
             } catch (err) {
-                console.log("An error occured", err)
+                console.log("An error occured", err.response)
             }
         }
     })
 
     return (
         <div className="service-quotation-form">
+				{
+					error ? (
+						<div className="service-quotation-small-inputs">
+							<div className="error-section">
+								<FontAwesomeIcon icon={faExclamationTriangle} size="2x"/>
+								<p className="error-section-p">{error}</p>
+							</div>
+						</div>
+					): null
+				}
             <div className="service-quotation-form-content">
 
                 <form onSubmit={formik.handleSubmit} className="the-service-quotation-form">

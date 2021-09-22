@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import quotation from "../../../../assets/container.jpg"
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,9 +6,12 @@ import { useFormik } from 'formik'
 import * as Yup from "yup"
 import "./quotationForm.css"
 import axios from "axios"
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
 const QuotationForm = () => {
     
+    const [error, setError] = useState("")
+
     const formik = useFormik({
         initialValues : {
             fullnames:  "",
@@ -52,8 +55,13 @@ const QuotationForm = () => {
         onSubmit: (values, {resetForm}) => {
             try {
                 axios.post("http://localhost:8080/api/quotation", values)
-                .then(console.log(values))
-                .catch(err => console.log(err))
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.log(err.response)
+                    setError(err.response.data)
+                })
                 resetForm({initialValues: ""})
             } catch (err) {
                 console.log(err)
@@ -63,6 +71,18 @@ const QuotationForm = () => {
 
     return (
         <div className="quotation-form">
+            				
+				{
+					error ? (
+						<div className="service-quotation-small-inputs">
+							<div className="error-section">
+								<FontAwesomeIcon icon={faExclamationTriangle} size="2x"/>
+								<p className="error-section-p">{error}</p>
+							</div>
+						</div>
+					): null
+				}
+
             <div className="quotation-form-content">
                 <div className="quotation-left">
                     <img className="quotation-form-image" src={quotation} alt="Rhino jon gold shippment"/>

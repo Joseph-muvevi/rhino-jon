@@ -1,17 +1,18 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import ShipmentTableHeader from './ShipmentTableHeader'
 import ShipmentTableContent from './ShipmentTableContent'
+import moment from "moment"
 // import "../../shipment.css"
 import "./shipmentdatatable.css"
 // import StorageTableHeader from '../StorageTable/StorageTableHeader'
 
 const ShipmentCard = ({result, filtered}) => {
 
-	
+	const [dateList, setDateList] = useState([])
 
 	let filter = filtered
 
-	console.log("the filter items are",filter)
+	let filteredDateArr 
 
 	return (
 		<div className="shipment-card"> 
@@ -35,21 +36,30 @@ const ShipmentCard = ({result, filtered}) => {
 								</p>
 							)
 						}
-						{/* {
-							// console.log("This is the results in jsx",results)
-							results ? results.map((mappedResults) => (
-								<ShipmentTableContent array = {results} data = {mappedResults} />
-							)):  null
-						} */}
-						{/* {
-							// console.log("This is the results in jsx",results)
-							results ? results.map((filteredObj) => (
-								<ShipmentTableContent array = {filteredObj}  />
-							)):  null
-						} */}
 						{
-							filter ? filter.map(filterResults => (<ShipmentTableContent array = {filterResults}  /> )) : null
+							filter ? filter.map(
+								details => {
+									console.log()
+									// filteredDateArr.push(details.createdAt)
+									// dateList.push(details.createdAt)
+									// console.log("WE ARE THE DETAILS", filteredDateArr)
+								}
+							): console.log("hasnt mapped yet")
 						}
+						{
+							filter ? filter.map(filterResults => 
+									(<ShipmentTableContent 
+										array = {filterResults} 
+										results = {result} 
+										dates ={filterResults.createdAt}  /> )) 
+									: null
+						}
+
+						{
+							console.log(typeof(filtered.createdAt), "i am the content date")
+						/* {
+							filter.map(item => {console.log("we are fetched dates", item.date)})
+						} */}
 					</>
 				) : <p className="terniary-condition-p">
 						Track your shipment

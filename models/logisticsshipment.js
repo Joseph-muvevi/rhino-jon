@@ -205,6 +205,12 @@ const logisticsShipmentSchema = new Schema(
 		minLength: 3,
 		maxLength: 100
 	},
+	currentdate: {
+		type: String,
+		required: true,
+		minLength: 3,
+		maxLength: 100
+	},
 	date: {
 		type: Date,
 		default: Date.now,
@@ -258,6 +264,7 @@ const validate = (logisticsShipment) => {
 	collectedby: Joi.string().min(3).max(100),
 	currentlocation: Joi.string().min(3).max(100),
 	product: Joi.string().min(3).max(100),
+	currentdate: Joi.string().min(3).max(100),
 	status: Joi.string().min(3).max(100).required(),
 	completed: Joi.boolean(),
 	unit: Joi.string().min(2).max(100).required(),

@@ -15,7 +15,7 @@ const ShipmentTableHeader = ({ headers }) => {
 
   useEffect(() => {
 	  if (headers){
-		setDate(headers.updatedAt)
+		setDate(headers.currentdate)
 	  }
   }, [])
 

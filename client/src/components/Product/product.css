@@ -65,10 +65,11 @@
 
 .product-content-values-row{
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .product-content-values-item{

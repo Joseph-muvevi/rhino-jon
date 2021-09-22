@@ -2,13 +2,15 @@ import { faPaperPlane } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useFormik } from 'formik'
 import * as Yup from "yup"
-import React from 'react'
-import golden from "../../../../assets/gold1.jpg"
+import React, {useState} from 'react'
 import "../ProductQuotation.css"
 import axios from "axios"
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
 
 const ProductQuotationForm = () => {
+
+    const [error, setError] = useState("")
 
     const formik = useFormik({
         initialValues : {
@@ -29,59 +31,65 @@ const ProductQuotationForm = () => {
         validationSchema: Yup.object().shape({
             company : Yup.string()
                 .required()
-                .min(3, "Minimum character allowed is 2")
-                .max(100, "maximum characters allowed are 100"),
+                .min(3)
+                .max(100),
             fullnames : Yup.string()
                 .required()
-                .min(3, "Minimum characters allowed are 3")
-                .max(100, "maximum characters allowed are 100"),
+                .min(3)
+                .max(100),
             title : Yup.string()
                 .required(),
             email : Yup.string()
                 .required()
-                .min(3, "Minimum characters allowed are 5")
-                .max(100, "maximum characters allowed are 100"),
+                .min(3)
+                .max(100),
             position : Yup.string()
                 .required()
-                .min(3, "Minimum characters allowed are 3")
-                .max(100, "maximum characters allowed are 100"),
+                .min(3)
+                .max(100),
             country : Yup.string()
                 .required()
-                .min(3, "Minimum characters allowed are 3")
-                .max(50, "maximum characters allowed are 50"),
+                .min(3)
+                .max(50),
             city : Yup.string()
                 .required()
-                .min(3, "Minimum characters allowed are 3")
-                .max(50, "maximum characters allowed are 50"),
+                .min(3)
+                .max(50),
             product : Yup.string()
                 .required()
-                .min(3, "Minimum characters allowed are 3")
-                .max(100, "maximum characters allowed are 100"),
+                .min(3)
+                .max(100),
             quantity : Yup.number()
                 .required()
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(50000, "maximum characters allowed are 50000"),
+                .min(1)
+                .max(50000000000),
             packaging : Yup.string()
                 .required()
-                .min(3, "Minimum characters allowed are 3")
-                .max(100, "maximum characters allowed are 100"),
+                .min(3)
+                .max(100),
             unit : Yup.string()
                 .required(),
             weight : Yup.number()
                 .required()
-                .min(1, "Minimum product allowed allowed is 1")
-                .max(50000, "maximum characters allowed are 50000"),
+                .min(1)
+                .max(50000000000),
             description : Yup.string()
                 .required()
-                .min(20, "Minimum characters allowed are 20")
-                .max(2000, "maximum characters allowed are 2000"),
+                .min(20)
+                .max(2000),
         }),
         onSubmit: (values, {resetForm}) => {
             try {
                 alert(JSON.stringify(values, null, 2))
                 axios.post("http://localhost:8080/api/productquotation", values)
-                .then(console.log(values))
-                .catch(err => console.log(err))
+                .then(res => {
+                    console.log(res)
+                    setError(null)
+                })
+                .catch(err => {
+                    console.log(err.response)
+                    setError(err.response.data)
+                })
                 resetForm({values: ""})
             } catch (err) {
                 console.log(err)
@@ -91,7 +99,18 @@ const ProductQuotationForm = () => {
 
     return (
         <div className="product-quotation-form">
-            <div className="product-quotation-form-content">
+				{
+					error ? (
+						<div className="service-quotation-small-inputs">
+							<div className="error-section">
+								<FontAwesomeIcon icon={faExclamationTriangle} size="2x"/>
+								<p className="error-section-p">{error}</p>
+							</div>
+						</div>
+					): null
+				}
+            <div className="product-quotation-form-content">				
+
 
                 <form onSubmit={formik.handleSubmit} className="the-product-quotation-form">
 
@@ -213,7 +232,7 @@ const ProductQuotationForm = () => {
                         </div>
                         <div className="product-quotation-small-input-group">
                             <label>Product Amount</label>
-                            <input type="number" placeholder="Estimated Arrival date here..." name="quantity" 
+                            <input type="number" placeholder="the product amount" name="quantity" 
                                 onChange={formik.handleChange} onBlur={formik.handleBlur} value = {formik.values.quantity} required/>
                                 {formik.touched.quantity && formik.errors.quantity ? (
                                     <div className="error">{formik.errors.quantity}</div>

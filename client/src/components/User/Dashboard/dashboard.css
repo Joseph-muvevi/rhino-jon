@@ -145,12 +145,16 @@
     width: 80vw;
     margin-right: auto;
     margin-left: auto;
+}
+
+.dashboard-cards-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 20px;
     padding-bottom: 20px;
+
 }
 
 .dashboard-card{

@@ -2,48 +2,78 @@ import React, {useState, useEffect} from 'react'
 import "../../shipment.css"
 import moment from "moment"
 
-const ShipmentTableContent = ({ array}) => {
+const ShipmentTableContent = ({ array, dates}) => {
 	const content = array
-	console.log("this is the tablecontent data", content)
+	console.log(content, "this is the tablecontent data")
 
 	const [date, setDate] = useState({})
 
+	const datelists = []
 
+	// console.log(typeof(content.createdAt), "i am the content date")
 
-	// console.log("i am date", new Date())
+	// let mydate = content.createdAt.split("T")
+
+	// let theDate = mydate[0]
+
+	// let momentDate = moment(theDate).format("dddd MMMM Do YYYY")
+	// // console.log(momentDate, "This is split date only")
+
+	// const currentDateNow = array.currentdate
+	// const formated = moment(currentDateNow).format("dddd MMMM Do YYYY")
+	// console.log("i am the input date", formated)
+	// console.log("i am the created at date", momentDate)
 
 	useEffect(() => {
 		if (content) {
-			setDate(content.date)
+			setDate(content.currentdate)
 		}
 	}, [])
 
 	const dateString = moment(date).format('dddd MMMM Do YYYY') 
-	console.log(dateString, "the date string")
+	// console.log(dateString, "the date string")
 
 
 	return (
 		<div key = {content ? content._id : null} className="shipment-content-table">
 			<div className="shipment-content-table-content">
-				<div className="shipment-content-table-content-topic">
-					<p className="shipment-content-table-content-topic-hash">
-						#
-					</p>
-					<p className="shipment-content-table-content-topic-date">
-						{content ? dateString.toString() : null}
-					</p>
-					<p className="shipment-content-table-content-topic-location">
-						Location
-					</p>
-					<p className="shipment-content-table-content-topic-time">
-						Time
-					</p>
-					<p className="shipment-content-table-content-topic-pieces">
-						Pieces
-					</p>
-				</div>
+		{/* {
+			content.createdAt !== content.date ? (
+				): <p>There is nothin here</p>
+			} */}
+
+		{
+			content ? (
+				<>
+					{
+						content? (
+				<>
+					<div className="shipment-content-table-content-topic">
+						<p className="shipment-content-table-content-topic-hash">
+							#
+						</p>
+						<p className="shipment-content-table-content-topic-date">
+							{content ? dateString.toString() : null}
+						</p>
+						<p className="shipment-content-table-content-topic-location">
+							Location
+						</p>
+						<p className="shipment-content-table-content-topic-time">
+							Time
+						</p>
+						<p className="shipment-content-table-content-topic-pieces">
+							Pieces
+						</p>
+					</div>
+				</>
+							
+						): <p>dont print me</p>
+					}
+				</>
+			) : (<p>content doesnt exist</p>)
+		}
 				
-			   { [array].map(() => (
+			   { [content].map(() => (
 						<>
 							<div className="shipment-content-table-content-info">
 								<p className="shipment-content-table-content-topic-hash">

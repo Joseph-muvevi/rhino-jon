@@ -43,14 +43,14 @@ const logisticsQuotationSchema = new Schema({
     unit: {
         type: String,
         required: true,
-        minLength: 3,
-        maxLength: 100
+        minLength: 1,
+        maxLength: 10
     },
     weight: {
         type: Number,
         required: true,
         min: 1,
-        max: 50000000
+        max: 5000000000
     },
     producttype: {
         type: String,
@@ -74,7 +74,7 @@ const logisticsQuotationSchema = new Schema({
         type: Number,
         required: true,
         minLength: 1,
-        maxLength: 50000
+        maxLength: 5000000000
     },
     productname: {
         type: String,
@@ -86,7 +86,7 @@ const logisticsQuotationSchema = new Schema({
         type: Number,
         required: true,
         minLength: 1,
-        maxLength: 50000
+        maxLength: 5000000000
     },
     merchandise: {
         type: String,
@@ -138,19 +138,19 @@ const validate = (logisticsquotation) => {
         title: Joi.string().min(2).max(100).required(),
         company:  Joi.string().min(3).max(100).required(),
         position: Joi.string().min(3).max(100).required(),
-        unit: Joi.string().min(3).max(100).required(),
-        weight: Joi.number().min(1).max(50000000).required(),
+        unit: Joi.string().min(1).max(10).required(),
+        weight: Joi.number().min(1).max(5000000000).required(),
         producttype: Joi.string().min(3).max(100).required(), //solid liquid gass etc
         fromcity: Joi.string().min(3).max(50).required(),
         fromcountry: Joi.string().min(3).max(50).required(),
-        pieces: Joi.number().min(1).max(50000000).required(),
+        pieces: Joi.number().min(1).max(5000000000).required(),
         productname: Joi.string().min(3).max(100).required(),
-        quantity: Joi.number().min(1).max(50000000).required(),
+        quantity: Joi.number().min(1).max(5000000000).required(),
         merchandise: Joi.string().min(3).max(100).required(),
         logisticstype: Joi.string().min(3).max(100).required(),
         tocity: Joi.string().min(3).max(50).required(),
         tocountry: Joi.string().min(3).max(50).required(),
-        description: Joi.string().min(3).max(100).required(),
+        description: Joi.string().min(3).max(2000).required(),
     })
 
     return schema.validate(logisticsquotation)

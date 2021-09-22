@@ -56,7 +56,7 @@ const productQuotationSchema = new Schema({
         type: Number,
         required: true,
         min: 1,
-        max: 50000000
+        max: 50000000000
     },
     packaging: {
         type: String,
@@ -67,14 +67,14 @@ const productQuotationSchema = new Schema({
     unit: {
         type: String,
         required: true,
-        minLength: 3,
-        maxLength: 100
+        minLength: 1,
+        maxLength: 10
     },
     weight: {
         type: Number,
         required: true,
         min: 1,
-        max: 50000000
+        max: 50000000000
     },
     description: {
         type: String,
@@ -99,15 +99,15 @@ const validate = (productquotation) => {
         company: Joi.string().min(3).max(100).required(),
         fullnames: Joi.string().min(3).max(100).required(),
         title: Joi.string().min(2).max(100).required(),
-        email: Joi.string().min(3).max(100).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org', 'ke'] } }),
+        email: Joi.string().min(3).max(100).required().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org', 'ke', 'world'] } }),
         position: Joi.string().min(3).max(100).required(),
         city: Joi.string().min(3).max(100).required(),
         country: Joi.string().min(3).max(100).required(),
         product: Joi.string().min(3).max(100).required(),
-        quantity: Joi.number().min(1).max(100).required(),
+        quantity: Joi.number().min(1).max(50000000000).required(),
         packaging: Joi.string().min(3).max(100).required(),
-        unit: Joi.string().min(3).max(100).required(),
-        weight: Joi.number().min(1).max(100).required(),
+        unit: Joi.string().min(1).max(10).required(),
+        weight: Joi.number().min(1).max(50000000000).required(),
         description: Joi.string().min(20).max(2000).required()
     })
 

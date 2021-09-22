@@ -240,7 +240,7 @@ NavLink:focus{
 }
 
 .error-section{
-  max-width: 90vw;
+  max-width: 100vw;
   min-width: 80vw;
   background-color: red;
   border-radius: 5px;
@@ -250,6 +250,7 @@ NavLink:focus{
   display: flex;
   justify-content: flex-start;
   align-items:  center;
+  margin-bottom: 20px;
 }
 
 .error-section-p{

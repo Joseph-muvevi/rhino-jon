@@ -46,7 +46,8 @@ const LogisticsFormsContent = () => {
 			completed: "",
 			currentlocation : "",
 			status: "",
-			product: ""
+			product: "",
+			currentdate: ""
 		},
 		validationSchema: Yup.object().shape({
 			fullnames: Yup.string().required().min(3).max(100),
@@ -79,6 +80,7 @@ const LogisticsFormsContent = () => {
 			arrivaltime: Yup.string().min(5).max(30),
 			collectoraddress: Yup.string().min(3).max(100),
 			collectortel: Yup.string().min(3).max(100),
+			currentdate: Yup.string().min(3).max(100),
 			collectedby: Yup.string().min(3).max(100),
 			currentlocation: Yup.string().min(3).max(100),
 			status: Yup.string().min(3).max(100).required(),
@@ -98,7 +100,7 @@ const LogisticsFormsContent = () => {
 					});
 				alert(JSON.stringify(values, null, 2));
 				console.log(values);
-				resetForm({ values: "" });
+				// resetForm({ values: "" });
 			} catch (err) {
 				console.log(err);
 			}
@@ -664,6 +666,21 @@ const LogisticsFormsContent = () => {
 							/>
 							{formik.touched.currentlocation && formik.errors.currentlocation ? (
 								<div className="error">{formik.errors.currentlocation}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Date Authored</label>
+							<input
+								type="date"
+								placeholder="Current location"
+								name="currentdate"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.currentdate}
+								required
+							/>
+							{formik.touched.currentdate && formik.errors.currentdate ? (
+								<div className="error">{formik.errors.currentdate}</div>
 							) : null}
 						</div>
 					</div>

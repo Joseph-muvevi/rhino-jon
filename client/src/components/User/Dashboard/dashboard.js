@@ -15,6 +15,14 @@ import AdminStorageTable from '../AdminStorageTable/AdminStorageTable'
 import LogisticsEditForms from '../UserForms/LogisticsEditForm/LogisticsEditForms'
 import StorageEditForms from '../UserForms/StorageEditForms/StorageEditForms'
 import axios from "axios"
+import DashGeneralEnquiries from './DashBoardHome/DashboardHomePages/DashGeneralEnquiries/DashGeneralEnquiries'
+import DashProductQuotation from './DashBoardHome/DashboardHomePages/DashProductQuotation/DashProductQuotation'
+import DashProductShipment from './DashBoardHome/DashboardHomePages/DashProductShipped/DashProductShipped'
+import DashShipmentQuotation from './DashBoardHome/DashboardHomePages/DashShipmentQuotation/DashShipmentQuotation'
+import DashShipmentTableAdmin from './DashBoardHome/DashboardHomePages/DashShipmentTableAdmin/DashShipmentTableAdmin'
+import DashStorageQuotation from './DashBoardHome/DashboardHomePages/DashStorageQuotation/DashStorageQuotation'
+import DashStorageTableAdmin from './DashBoardHome/DashboardHomePages/DashStorageTableAdmin/DashStorageTableAdmin'
+import DashProductStored from './DashBoardHome/DashboardHomePages/DashProductStored/DashProductStored'
 
 const Dashboard = () => {
     // const tkt = localStorage.getItem("token")
@@ -110,6 +118,14 @@ const Dashboard = () => {
                 <Route path="/dashboard/storage/edit/storageform" component={StorageEditForms}/>
                 <Route path="/dashboard/admin/logistics-records" component={AdminLogisticsTable}/>
                 <Route path="/dashboard/admin/storage-records" component={AdminStorageTable}/>
+                <Route path="/dashboard/generalenquiries" component={DashGeneralEnquiries}/>
+                <Route path="/dashboard/productquotation" component={DashProductQuotation}/>
+                <Route path="/dashboard/productshipped" component={DashProductShipment}/>
+                <Route path="/dashboard/shipmentquotation" component={DashShipmentQuotation}/>
+                <Route path="/dashboard/shipmenttable" component={DashShipmentTableAdmin}/>
+                <Route path="/dashboard/storagequotation" component={DashStorageQuotation}/>
+                <Route path="/dashboard/storagetable" component={DashStorageTableAdmin}/>
+                <Route path="/dashboard/productstored" component={DashProductStored}/>
             </Switch>
         </Router>
     )
