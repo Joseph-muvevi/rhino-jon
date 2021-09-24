@@ -27,12 +27,12 @@ import DashProductStored from './DashBoardHome/DashboardHomePages/DashProductSto
 const Dashboard = () => {
 
 	// =============DONT DELETE=============
-	// const tkt = localStorage.getItem("token")
-	// console.log("my tkt of the dashboard is", tkt)
+	const tkt = localStorage.getItem("token")
+	console.log("my tkt of the dashboard is", tkt)
 
-	// if (!tkt) {
-	//     return <Redirect to="/auth"/>
-	// }
+	if (!tkt) {
+	    return <Redirect to="/auth"/>
+	}
 
 	
 	return (

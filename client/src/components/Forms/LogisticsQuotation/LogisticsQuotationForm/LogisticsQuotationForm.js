@@ -66,7 +66,7 @@ const LogisticsQuotationForm = () => {
 				})
 			alert(JSON.stringify(values, null, 2));
 			console.log(values);
-	//   resetForm({ values: "" });
+	  	resetForm({ values: "" });
 	},
   });
 
