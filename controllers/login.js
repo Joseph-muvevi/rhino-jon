@@ -11,11 +11,11 @@ router.post("/", async (req, res) => {
 
   // login
   const user = await User.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send("Invalid Credentials");
+  if (!user) return res.status(400).send("Invalid Email or Password");
 
   // comparing password
   const validPassword = await bcrypt.compare(req.body.password, user.password);
-  if (!validPassword) return res.status(400).send("Invalid Credentials");
+  if (!validPassword) return res.status(400).send("Invalid Email or Password");
 
   res.send(true);
 });

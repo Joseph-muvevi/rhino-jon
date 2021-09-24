@@ -54,12 +54,10 @@ const AuthForm = () => {
 			<div className="authform">
 			{
 				error ? (
-					<div className="service-quotation-small-inputs">
 						<div className="error-section">
 							<FontAwesomeIcon icon={faExclamationTriangle} size="2x"/>
 							<p className="error-section-p">{error}</p>
 						</div>
-					</div>
 				): null
 			}
 				<div className="auth-content">
@@ -67,9 +65,18 @@ const AuthForm = () => {
 						<img className="auth-form-image" src={login} alt="Rhino jon gold shippment"/>
 					</div>
 					<form onSubmit={handleSubmit} className="auth-form">
+						<div className="all-form-topic-info">
+							<h3 className="all-form-topic-info-h3">
+								Login info
+							</h3>
+							<p className="all-form-topic-info-p">
+								Fill in your registered email address below to login.
+							</p>
+						</div>
 						<div className="form-group">
-								<label>Email</label>
+								<label className="all-auth-labels">Email</label>
 								<input
+									className="all-auth-input"
 									onChange={handleEmail}
 									value={email}
 									name="email"
@@ -79,21 +86,24 @@ const AuthForm = () => {
 								/>
 						</div>
 						<div className="form-group">
-								<label>password</label>
+								<label className="all-auth-labels">password</label>
 								<input
-								onChange={handlePassword}
-								value={password}
-								name="password"
-								required
-								type="password"
-								placeholder="Enter your password here..."
+									className="all-auth-input"
+									onChange={handlePassword}
+									value={password}
+									name="password"
+									required
+									type="password"
+									placeholder="Enter your password here..."
 								/>
 						</div>
+						<button className="reset-password-button" type="submit">
+							Sign in
+						</button>
 						<p className="form-alt-p">
-							Forgot your password? <Link to="/reset">Reset now!!</Link>
+							Forgot your password? <Link className="reset-password-p" to="/reset">Reset now!!</Link>
 						</p>
 						<br/>
-						<button type="submit">Sign in</button>
 					</form>
 				</div>
 			</div>
