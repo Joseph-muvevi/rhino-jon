@@ -71,14 +71,16 @@
 
 .service-content-values-row{
     display: flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     margin-bottom: 10px;
 }
 
 .service-content-values-item{
-    width: 420px;
-    height: 500px;
+    width: 330px;
+    height: 400px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 10px;
     background-color: #333232;
     color: black;
@@ -149,7 +151,7 @@
 }
 
 .service-content-card-image-seven{
-    background-image: url(../../assets/military1.jpg);
+    background-image: url(../../assets/goldrefining.jfif);
     background-size: cover;
     background-position: center;
     height: 40%;

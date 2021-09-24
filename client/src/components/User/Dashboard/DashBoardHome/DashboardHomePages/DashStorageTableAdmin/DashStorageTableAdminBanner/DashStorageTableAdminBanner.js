@@ -1,12 +1,19 @@
 import React from 'react'
-import "../DashGeneralEnquiries.css"
+import "../DashStorageTableAdmin.css"
 
-const DashGeneralEnquiriesBanner = () => {
-    return (
-        <div className="dash-general-enquiries-banner">
-            
-        </div>
-    )
+const DashStorageTableAdminBanner = () => {
+	return (
+		<div className="dash-storage-table-admin-banner">
+			<div className="dash-storage-table-admin-banner-content">
+				<h3 className="dash-storage-table-admin-banner-content-h3">
+					Dashboard storage admin table
+				</h3>
+				<p className="dash-storage-table-admin-banner-p">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+				</p>
+			</div>
+		</div>
+	)
 }
 
-export default DashGeneralEnquiriesBanner
+export default DashStorageTableAdminBanner

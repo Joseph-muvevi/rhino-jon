@@ -1,128 +1,19 @@
-.banner{
-    max-width: 100vw;
-    min-height: 100vh;
-    /* background-color: #202020; */
-    background-attachment: fixed;
-    background-position: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-    /* bottom: 20px; */
-    z-index: 10;
-    display: flex;
-    justify-content: center;
+.the-homepage-banner{
+    max-width: 100vw !important;
+    /* height: 100vh; */
 }
 
 .banner-video{
-    width: 100% !important;
-    height: 100% !important;
+    max-height: 100vh;
+    /* width: 100vw; */
+    
 }
 
-.banner-content{
-    background-image: linear-gradient(to bottom, rgba(33, 33, 33, 0.774), rgba(32, 32, 32, 0.808)), url('../../../assets/blackworldmap2.jpg');
-    display: none;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100vw;
-    margin: auto;
-    height: 90vh;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+.the-banner-video{
+    width: 100vw !important
+
 }
-
-.banner-main-content{
-    height: 75%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.banner-left{
-    width: 90vw;
-    margin: auto;
-    text-align: left;
-}
-
-.products-button{
-    width: 200px !important
-}
-
-.banner-left-h3{
-    font-size: 30px;
-    font-family: Monda
-}
-
-.banner-left-p{
-    color: white;
-    font-size: 16px
-}  
-
-.banner-right{
-    width: 50vw;
-    height: 100vh !important;
-    background-position: center;
-    /* background-attachment: fixed; */
-    background-image: url(../../../assets/military1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-}
-
-.home-gold{
-    width: 40vw;
-    height: 80vh;
-}
-
-.banner-social{
-    display: flex;
-    width: 40vw;
-    margin: auto;
-    justify-content: flex-start;
-}
-
-.banner-social-media{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 300px;
-}
-
-.fontawesome-icon:hover{
-    color: white;
-    cursor: pointer;
-  }
-
-/* .right-image{
-    background-image: url(../../../assets/);
-    background-attachment: fixed;
-    width: 50vw; */
-    /* height: 100vw; */
-/* } */
 
 @media screen and (max-width: 900px){
-    .banner{
-        min-height: 80vh;
-        max-width: 100vw;
-    }
-    .banner-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: left;
-        margin-top: 50px;
-    }
-    .banner-main-content{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: left;
-        height: 100%;
-    }
-    .banner-left{
-        width: 90vw;
-    }
-    .banner-right{
-        display: none;
-    }
+
 }

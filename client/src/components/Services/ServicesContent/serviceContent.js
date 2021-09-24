@@ -37,9 +37,6 @@ const ServiceContent = () => {
 								Load) as FCL (Full Container Load)...
 							</p>
 						</Link>
-					</div>
-
-					<div className="service-content-values-row">
 						<Link to="/services-land" className="service-content-values-item">
 							<div className="service-content-card-image-four"></div>
 							<h4 className="service-content-values-h3">Land logistics</h4>
@@ -48,6 +45,9 @@ const ServiceContent = () => {
 								providers experienced with good knowledge and experience...
 							</p>
 						</Link>
+					</div>
+
+					<div className="service-content-values-row">
 						<Link to="/services-customs" className="service-content-values-item">
 							<div className="service-content-card-image-five"></div>
 							<h4 className="service-content-values-h3">Customs Clearance</h4>
@@ -64,6 +64,15 @@ const ServiceContent = () => {
 								Rhinojohn Prime Metal also offers warehousing and storage
 								services for minerals through available customs bonded
 								warehouses and vaults...
+							</p>
+						</Link>
+						<Link to="/services-refinery" className="service-content-values-item">
+							<div className="service-content-card-image-seven"></div>
+							<h4 className="service-content-values-h3">Refinery</h4>
+							<p className="service-content-values-p">
+								Gold refinery is set to be constructed in Nairobi in Kenya, 
+								by end of year 2023, to offer small-scale and artisanal miners 
+								the means to add value from gold extracted ...
 							</p>
 						</Link>
 					</div>

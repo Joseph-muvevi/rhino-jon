@@ -1,13 +1,14 @@
 import React from 'react'
+import DashStorageTableAdminBanner from './DashStorageTableAdminBanner/DashStorageTableAdminBanner'
+import DashStorageTableAdminContent from './DashStorageTableAdminContent/DashStorageTableAdminContent'
 
 const DashStorageTableAdmin = () => {
-    return (
-        <div className="dash-general-enquiries">
-            <p>
-                I am the dash general enquiries
-            </p>
-        </div>
-    )
+	return (
+		<div className="dash-general">
+			<DashStorageTableAdminBanner/>
+			<DashStorageTableAdminContent/>
+		</div>
+	)
 }
 
 export default DashStorageTableAdmin

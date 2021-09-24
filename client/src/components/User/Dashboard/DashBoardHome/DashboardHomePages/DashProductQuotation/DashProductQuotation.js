@@ -1,11 +1,12 @@
 import React from 'react'
+import DashProductQuotationBanner from './DashProductQuotationBanner/DashProductQuotationBanner'
+import DashProductQuotationContent from './DashProductQuotationContent/DashProductQuotationContent'
 
 const DashProductQuotation = () => {
     return (
-        <div className="dash-general-enquiries">
-            <p>
-                I am the dash general enquiries
-            </p>
+        <div className="dash-general">
+            <DashProductQuotationBanner/>
+            <DashProductQuotationContent/>
         </div>
     )
 }

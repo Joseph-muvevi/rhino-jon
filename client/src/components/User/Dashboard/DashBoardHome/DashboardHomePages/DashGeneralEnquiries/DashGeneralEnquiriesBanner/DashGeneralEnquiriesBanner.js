@@ -3,10 +3,15 @@ import "../DashGeneralEnquiries.css"
 
 const DashGeneralEnquiriesBanner = () => {
 	return (
-		<div className="dash-gen-enquiries-banner">
-			<div className="dash-gen-enquiries-banner-content">
-				<h3 className="dash-gen-enquiries-h3">Contact us</h3>
-	 		</div>
+		<div className="dash-shipment-quotation-admin-banner">
+			<div className="dash-shipment-quotation-admin-banner-content">
+				<h3 className="dash-shipment-quotation-admin-banner-content-h3">
+					General Enquiries
+				</h3>
+				<p className="dash-shipment-quotation-admin-banner-p">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+				</p>
+			</div>
 		</div>
 	)
 }

@@ -5,14 +5,14 @@ import OceanContent from './OceanContent/OceanContent'
 import OceanFooter from './OceanFooter/OceanFooter'
 
 const Ocean = () => {
-    return (
-        <div className="storage">
-            <Navbar/>
-            <OceanBanner/>
-            <OceanContent/>
-            <OceanFooter/>
-        </div>
-    )
+	return (
+		<div className="storage">
+			<Navbar/>
+			<OceanBanner/>
+			<OceanContent/>
+			<OceanFooter/>
+		</div>
+	)
 }
 
 export default Ocean

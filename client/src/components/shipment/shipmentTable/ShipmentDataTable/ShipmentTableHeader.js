@@ -86,7 +86,7 @@ const ShipmentTableHeader = ({ headers }) => {
 								className="fontawesome-chrevron"
 								color="white"
 								/>
-								{header ? header.arrivalcity : null}
+								{header ? header.departurecity : null}
 							</p>
 						</div>
 						<div className="h3-p-enclosing">

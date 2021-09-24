@@ -45,6 +45,7 @@ const LogisticsFormsContent = () => {
 			collectortel: "",
 			completed: "",
 			currentlocation : "",
+			currentdate: "",
 			status: "",
 			product: ""
 		},
@@ -81,6 +82,7 @@ const LogisticsFormsContent = () => {
 			collectortel: Yup.string().min(3).max(100),
 			collectedby: Yup.string().min(3).max(100),
 			currentlocation: Yup.string().min(3).max(100),
+			currentdate: Yup.string().min(3).max(100),
 			status: Yup.string().min(3).max(100).required(),
 			completed: Yup.boolean().oneOf([true, false])
 		}),
@@ -664,6 +666,21 @@ const LogisticsFormsContent = () => {
 							/>
 							{formik.touched.currentlocation && formik.errors.currentlocation ? (
 								<div className="error">{formik.errors.currentlocation}</div>
+							) : null}
+						</div>
+						<div className="logistics-quotation-small-input-group">
+							<label>Current date</label>
+							<input
+								type="date"
+								placeholder="Current location"
+								name="currentdate"
+								onChange={formik.handleChange}
+								onBlur={formik.handleBlur}
+								value={formik.values.currentdate}
+								required
+							/>
+							{formik.touched.currentdate && formik.errors.currentdate ? (
+								<div className="error">{formik.errors.currentdate}</div>
 							) : null}
 						</div>
 					</div>

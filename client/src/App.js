@@ -31,6 +31,7 @@ import ServiceQuotation from "./components/Forms/ServiceQuotation/ServiceQuotati
 import LogisticsQuotation from "./components/Forms/LogisticsQuotation/LogisticsQuotation";
 import ShipmentTable from "./components/shipment/shipmentTable/ShipmentDataTable/ShipmentTable";
 import StorageTable from "./components/shipment/shipmentTable/StorageTable/StorageTable";
+import Refining from "./components/Home/Service/ServicePages/Refining/Refining";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           <Route path="/services-trade" component={Advisory} />
           <Route path="/service-type" component={ServiceType} />
           <Route path="/services-ocean" component={Ocean} />
+          <Route path="/services-refinery" component={Refining} />
           <Route path="/product-quotation" component={ProductQuotation} />
           <Route path="/storage-quotation" component={ServiceQuotation} />
           <Route path="/logistics-quotation" component={LogisticsQuotation} />

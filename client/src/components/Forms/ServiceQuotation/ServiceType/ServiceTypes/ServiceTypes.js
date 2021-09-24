@@ -31,7 +31,7 @@ const ServiceTypes = () => {
                         </div>
                         <div className="service-types-card-content">
                             <h3 className="service-types-card-h3">
-                                Transport Services
+                                Transport and Logistics Services
                             </h3>
                             <p className="service-types-card-p">
                                 Lorem Ipsum is simply dummy text of the printing and typesetting

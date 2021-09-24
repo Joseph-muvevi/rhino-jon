@@ -1,9 +1,9 @@
 .home{
-    min-height: 120vh !important;
+   height: 100vh;
 }
 
 .lower-nav{
-    margin-bottom: 10vh;
+    /* margin-bottom: 10vh; */
 }
 
 .home-navbar{

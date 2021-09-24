@@ -31,7 +31,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    max-width: 84vw;
+    max-width: 80vw;
     margin: auto;
     padding: 7px 5px;
     border-top-left-radius: 5px;
@@ -90,7 +90,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 80vw;
+    max-width: 80vw;
     margin: auto;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -116,8 +116,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-width: 84vw;
-    margin-left: 0px;
+    min-width: 80vw;
+    /* margin-left: 0px; */
     /* margin: auto;
     padding: 7px-3px; */
     /* padding-left: 10px;
