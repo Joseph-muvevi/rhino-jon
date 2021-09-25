@@ -1,5 +1,6 @@
 import { faAddressBook, faGem, faHeadphones, faHome, faMarker, faShippingFast } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { HashLink } from "react-router-hash-link"
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import "./Navbar.css"
@@ -11,42 +12,42 @@ const Navbar = () => {
             <div className="navbar-content">
                 <img src={logo} alt="Rhino Jon logo" className="navbar-logo"/>
                 <ul className="navbar-ul">
-                    <NavLink className="navbar-li" to="/">
+                    <HashLink className="navbar-li" to="/#home-banner">
                         <FontAwesomeIcon icon={faHome}/>
                         <div className="nav-trigger">
                             Home
                         </div>
-                    </NavLink>
-                    <NavLink className="navbar-li" to="/about">
+                    </HashLink>
+                    <HashLink className="navbar-li" to="/about#about-banner">
                         <FontAwesomeIcon icon={faAddressBook}/>
                         <div className="nav-trigger">
                             About
                         </div>
-                    </NavLink>
-                    <NavLink className="navbar-li" to="/products">
+                    </HashLink>
+                    <HashLink className="navbar-li" to="/products#product-banner">
                         <FontAwesomeIcon icon={faGem}/>
                         <div className="nav-trigger">
                             Products
                         </div>
-                    </NavLink>
-                    <NavLink className="navbar-li" to="/services">
+                    </HashLink>
+                    <HashLink className="navbar-li" to="/services#services-banner">
                         <FontAwesomeIcon icon={faShippingFast}/>
                         <div className="nav-trigger">
                             Services
                         </div>
-                    </NavLink>
-                    <NavLink className="navbar-li" to="/shipment">
+                    </HashLink>
+                    <HashLink className="navbar-li" to="/shipment#track-banner">
                         <FontAwesomeIcon icon={faMarker}/>
                         <div className="nav-trigger">
                             Track
                         </div>
-                    </NavLink>
-                    <NavLink className="navbar-li" to="/contact">
+                    </HashLink>
+                    <HashLink className="navbar-li" to="/contact#contact-banner">
                         <FontAwesomeIcon icon={faHeadphones}/>
                         <div className="nav-trigger">
                             Contact
                         </div>
-                    </NavLink>
+                    </HashLink>
                 </ul>
             </div>
         </div>

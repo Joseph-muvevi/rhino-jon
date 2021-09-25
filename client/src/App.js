@@ -6,7 +6,6 @@ import Service from "./components/Services/service";
 import Contact from "./components/Contact/contact";
 import Auth from "./components/Auth/auth";
 import Dashboard from "./components/User/Dashboard/dashboard";
-import Signup from "./components/User/Signup/signup";
 import NotFound from "./components/404/404";
 import AddShipment from "./components/User/addShipment/addShipment";
 import Quotation from "./components/User/quotation/quotation";
@@ -18,7 +17,7 @@ import Military from "./components/Home/Products/ProductPages/Military/Military"
 import Metals from "./components/Home/Products/ProductPages/Metals/metals";
 import Logistics from "./components/Home/Service/ServicePages/Logistics/Logistics";
 import Storage from "./components/Home/Service/ServicePages/Storage/Storage";
-import Tracking from "./components/Home/Service/ServicePages/Tracking/Tracking";
+// import Tracking from "./components/Home/Service/ServicePages/Tracking/Tracking";
 import Ocean from "./components/Home/Service/ServicePages/Ocean/Ocean";
 import Brokerage from "./components/Home/Service/ServicePages/Brokerage/Brokerage";
 import Air from "./components/Home/Service/ServicePages/Air/Air";
@@ -46,7 +45,6 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/auth" component={Auth} />
           <Route path="/dashboard" component={Dashboard} />
-          <Route path="/signup" component={Signup} />
           <Route path="/addshipment" component={AddShipment} />
           <Route path="/shipment" component={Shipment} />
           <Route path="/quotation" component={Quotation} />
@@ -57,7 +55,7 @@ function App() {
           <Route path="/products-metals" component={Metals} />
           <Route path="/services-logistics" component={Logistics} />
           <Route path="/services-storage" component={Storage} />
-          <Route path="/services-tracking" component={Tracking} />
+          {/* <Route path="/services-tracking" component={Tracking} /> */}
           <Route path="/services-customs" component={Brokerage} />
           <Route path="/services-air" component={Air} />
           <Route path="/services-land" component={Linkages} />

@@ -1,9 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "../Ocean.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCommentsDollar, faFileAlt, faPlaneDeparture, faShip, faShippingFast, faWarehouse } from '@fortawesome/free-solid-svg-icons'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faCommentsDollar,
+	faFileAlt,
+	faPlaneDeparture,
+	faShip,
+	faShippingFast,
+	faWarehouse,
+} from "@fortawesome/free-solid-svg-icons";
 
 const OceanContent = () => {
 	return (
@@ -43,42 +50,66 @@ const OceanContent = () => {
 							</div>
 						</div>
 						<div className="service-fontawesome-div">
-							<Link to="/services-trade" className="service-fontawesome-icon-card">
-								<p className="service-font-awesome-card-p">
-									Trade
-								</p>
-								<FontAwesomeIcon className="the-service-fontawesome-icon" icon={faCommentsDollar} />
-							</Link>
-							<Link to="/services-air" className="service-fontawesome-icon-card">
-								<p className="service-font-awesome-card-p">
-									Air
-								</p>
-								<FontAwesomeIcon className="the-service-fontawesome-icon" icon={faPlaneDeparture} />
-							</Link>
-							<Link to="/services-ocean"  className="service-fontawesome-icon-card">
-								<p className="service-font-awesome-card-p">
-									Sea
-								</p>
-								<FontAwesomeIcon className="the-service-fontawesome-icon" icon={faShip}/>
-							</Link>
-							<Link to="/services-land" className="service-fontawesome-icon-card">
-								<p className="service-font-awesome-card-p">
-									Land
-								</p>
-								<FontAwesomeIcon className="the-service-fontawesome-icon" icon={faShippingFast} />
-							</Link>
-							<Link to="/services-customs" className="service-fontawesome-icon-card">
-								<p className="service-font-awesome-card-p">
-									Customs
-								</p>
-								<FontAwesomeIcon className="the-service-fontawesome-icon" icon={faFileAlt}/>
-							</Link>
-							<Link to="/services-storage" className="service-fontawesome-icon-card">
-								<p className="service-font-awesome-card-p">
-									Warehouse
-								</p>
-								<FontAwesomeIcon className="the-service-fontawesome-icon" icon={faWarehouse}  />
-							</Link>
+							<HashLink
+								to="/services-trade"
+								className="service-fontawesome-icon-card"
+							>
+								<p className="service-font-awesome-card-p">Trade</p>
+								<FontAwesomeIcon
+									className="the-service-fontawesome-icon"
+									icon={faCommentsDollar}
+								/>
+							</HashLink>
+							<HashLink
+								to="/services-air"
+								className="service-fontawesome-icon-card"
+							>
+								<p className="service-font-awesome-card-p">Air</p>
+								<FontAwesomeIcon
+									className="the-service-fontawesome-icon"
+									icon={faPlaneDeparture}
+								/>
+							</HashLink>
+							<HashLink
+								to="/services-ocean"
+								className="service-fontawesome-icon-card"
+							>
+								<p className="service-font-awesome-card-p">Sea</p>
+								<FontAwesomeIcon
+									className="the-service-fontawesome-icon"
+									icon={faShip}
+								/>
+							</HashLink>
+							<HashLink
+								to="/services-land"
+								className="service-fontawesome-icon-card"
+							>
+								<p className="service-font-awesome-card-p">Land</p>
+								<FontAwesomeIcon
+									className="the-service-fontawesome-icon"
+									icon={faShippingFast}
+								/>
+							</HashLink>
+							<HashLink
+								to="/services-customs#brokerage-banner"
+								className="service-fontawesome-icon-card"
+							>
+								<p className="service-font-awesome-card-p">Customs</p>
+								<FontAwesomeIcon
+									className="the-service-fontawesome-icon"
+									icon={faFileAlt}
+								/>
+							</HashLink>
+							<HashLink
+								to="/services-storage"
+								className="service-fontawesome-icon-card"
+							>
+								<p className="service-font-awesome-card-p">Warehouse</p>
+								<FontAwesomeIcon
+									className="the-service-fontawesome-icon"
+									icon={faWarehouse}
+								/>
+							</HashLink>
 						</div>
 					</div>
 				</div>

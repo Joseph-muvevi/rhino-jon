@@ -2,13 +2,12 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin-left: 15vw;
 	min-height: 100vh;
 	padding-top: 20px
 }
 
 .dash-storage-table-admin-banner{
-	width: 80vw;
+	width: 78vw;
 	min-height: 30vh;
 	margin-top: 0px;
 	margin-left: auto;
@@ -26,8 +25,8 @@
 	font-family: Monda;
 	justify-content: flex-end;
 	align-items: flex-start;
-	width: 100%;
-	height: 100%
+	max-width: 100%;
+	min-height: 50vh;
 }
 
 .dash-storage-table-admin-banner-content-h3{
@@ -35,6 +34,6 @@
 }
 
 .dash-storage-table-admin-content{
-	margin-left: -13vw;
-	max-width: 80vw;
+	/* margin-left: -13vw; */
+	max-width: 78vw;
 }

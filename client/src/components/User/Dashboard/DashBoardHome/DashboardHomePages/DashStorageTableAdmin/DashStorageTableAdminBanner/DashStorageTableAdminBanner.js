@@ -3,7 +3,7 @@ import "../DashStorageTableAdmin.css"
 
 const DashStorageTableAdminBanner = () => {
 	return (
-		<div className="dash-storage-table-admin-banner">
+		<div className="dash-storage-table-admin-banner" id="storage-table">
 			<div className="dash-storage-table-admin-banner-content">
 				<h3 className="dash-storage-table-admin-banner-content-h3">
 					Dashboard storage admin table

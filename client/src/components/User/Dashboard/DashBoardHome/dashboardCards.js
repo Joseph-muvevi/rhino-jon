@@ -1,6 +1,6 @@
 import { faGem, faInfoCircle, faPlaneDeparture, faShippingFast, faTable, faWarehouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {Link} from "react-router-dom"
+import { HashLink } from "react-router-hash-link";
 import React, {useState, useEffect} from "react";
 import "../dashboard.css";
 import axios from "axios"
@@ -75,17 +75,10 @@ const DashboardCards = () => {
 		getProductQuotation()
 	}, [])
 
-	console.log("I am the storage data",storageData )
-	console.log("I am the logistics data",logdata )
-	console.log("I am the storage quotation data",storageQuotation )
-	console.log("I am the logistics quotation data",logquotation )
-	console.log("I am the product data",productQuotation )
-	console.log("I am the quotation data",quotation )
-
   return (
 		<div className="dashboard-cards">
 			<div className="dashboard-cards-container">
-				<Link  to="/dashboard/productstored" className="dashboard-card">
+				<HashLink  to="/dashboard/productstored#product-stored" className="dashboard-card">
 					<div className="dashboard-card-circle">
 						<FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faWarehouse}/>
 					</div>
@@ -95,9 +88,9 @@ const DashboardCards = () => {
 					<p className="dashboard-card-p">
 						Product Stored
 					</p>
-				</Link>
+				</HashLink>
 			
-				<Link to="/dashboard/productshipped" className="dashboard-card">
+				<HashLink to="/dashboard/productshipped#product-shipped" className="dashboard-card">
 					<div className="dashboard-card-circle">
 						<FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faPlaneDeparture}/>
 					</div>
@@ -107,9 +100,9 @@ const DashboardCards = () => {
 					<p className="dashboard-card-p">
 						Product Shipped
 					</p>
-				</Link>
+				</HashLink>
 			
-				<Link to="/dashboard/productquotation" className="dashboard-card">
+				<HashLink to="/dashboard/productquotation#product-quotation"className="dashboard-card">
 					<div className="dashboard-card-circle">
 						<FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faGem}/>
 					</div>
@@ -119,9 +112,9 @@ const DashboardCards = () => {
 					<p className="dashboard-card-p">
 						Product quotations
 					</p>
-				</Link>
+				</HashLink>
 			
-				<Link to ="/dashboard/generalenquiries" className="dashboard-card">
+				<HashLink to ="/dashboard/generalenquiries#product-enquiries"  className="dashboard-card">
 					<div className="dashboard-card-circle">
 						<FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faInfoCircle}/>
 					</div>
@@ -131,11 +124,11 @@ const DashboardCards = () => {
 					<p className="dashboard-card-p">
 						General Enquiries
 					</p>
-				</Link>
+				</HashLink>
 			
 			</div>
 			<div className="dashboard-cards-container">
-				<Link to="/dashboard/storagequotation" className="dashboard-card">
+				<HashLink to="/dashboard/storagequotation#storage-quotation"className="dashboard-card">
 					<div className="dashboard-card-circle">
 						<FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faWarehouse}/>
 					</div>
@@ -145,9 +138,9 @@ const DashboardCards = () => {
 					<p className="dashboard-card-p">
 						Storage quotation
 					</p>
-				</Link>
+				</HashLink>
 			
-				<Link to="/dashboard/shipmentquotation" className="dashboard-card">
+				<HashLink to="/dashboard/shipmentquotation#shipment-quotation" className="dashboard-card">
 					<div className="dashboard-card-circle">
 						<FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faShippingFast}/>
 					</div>
@@ -157,9 +150,9 @@ const DashboardCards = () => {
 					<p className="dashboard-card-p">
 						Shipment quotation
 					</p>
-				</Link>
+				</HashLink>
 			
-				<Link to="/dashboard/shipmenttable" className="dashboard-card">
+				<HashLink to="/dashboard/shipmenttable#shipment-table"className="dashboard-card">
 					<div className="dashboard-card-circle">
 						<FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faTable}/>
 					</div>
@@ -169,9 +162,9 @@ const DashboardCards = () => {
 					<p className="dashboard-card-p">
 						Shipment table
 					</p>
-				</Link>
+				</HashLink>
 			
-				<Link to="/dashboard/storagetable" className="dashboard-card">
+				<HashLink to="/dashboard/storagetable#storage-table" className="dashboard-card">
 					<div className="dashboard-card-circle">
 						<FontAwesomeIcon className="dashboard-card-icon" color="white" size="4x" icon={faTable}/>
 					</div>
@@ -181,7 +174,7 @@ const DashboardCards = () => {
 					<p className="dashboard-card-p">
 						Storage table
 					</p>
-				</Link>
+				</HashLink>
 			
 			</div>
 		</div>

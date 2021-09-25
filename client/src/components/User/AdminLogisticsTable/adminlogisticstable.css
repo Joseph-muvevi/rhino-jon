@@ -1,6 +1,5 @@
 .admin-logistics-table{
-    margin-left: 15vw;
-    /* padding-top: 50px; */
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -16,8 +15,8 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    max-width: 80vw;
-    margin: auto;
+    width: 78vw;
+    /* margin: auto; */
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -28,7 +27,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 80vw;
+    width: 78vw;
     border-bottom: none;
 }
 /* ===========THE TABLE CARD ================== */
@@ -44,8 +43,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80vw;
-    margin: auto;
+    width: 78vw;
+    /* margin: auto; */
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -70,67 +69,67 @@
  
 .logistics-content-table-content-topic-p-number{
     width: 50px;
-    /* background-color: black */;
+    /* background-color: black; */
 }
 
 .logistics-content-table-content-topic-p-track{
-    width: 150px;
-    /* background-color: red*/;
-    margin-left: 0px;
+    width: 145px;
+    /* background-color: red; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-p-fullnames{
-    width: 150px;
-    /* background-color: green*/;
-    margin-left: 0px;
+    width: 145px;
+    /* background-color: green; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-p-product{
-    width: 100px;
-    /* background-color: black */;
-    margin-left: 0px;
+    width: 95px;
+    /* background-color: black; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-p-address{
-    width: 150px;
-    /* background-color: red*/;
-    margin-left: 0px;
+    width: 100px;
+    /* background-color: red; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-p-weight{
     width: 150px;
-    /* background-color: green*/;
-    margin-left: 0px;
+    /* background-color: green; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-departure-city{
     width: 100px;
-    /* background-color: black */;
-    margin-left: 0px;
+    /* background-color: black; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-departure-country{
     width: 100px;
-    /* background-color: red*/;
-    margin-left: 0px;
+    /* background-color: red; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-arrival-city{
-    width: 150px;
-    /* background-color: green*/;
-    margin-left: 0px;
+    width: 145px;
+    /* background-color: green; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-arrival-country{
-    width: 100px;
-    /* background-color: black */;
-    margin-left: 0px;
+    width: 95px;
+    /* background-color: black; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-status{
-    width: 100px;
-    /* background-color: red*/;
-    margin-left: 0px;
+    width: 95px;
+    /* background-color: red; */
+    margin-left: 5px;
 }
 
 .logistics-content-table-content-topic-lower{

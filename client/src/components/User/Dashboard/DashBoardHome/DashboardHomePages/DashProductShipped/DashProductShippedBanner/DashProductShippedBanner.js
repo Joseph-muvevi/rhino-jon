@@ -3,7 +3,7 @@ import "../DashProductShipped.css"
 
 const DashProductShippedBanner = () => {
 	return (
-		<div className="dash-product-quotation-admin-banner">
+		<div className="dash-product-quotation-admin-banner"  id="product-shipped">
 			<div className="dash-product-quotation-admin-banner-content">
 				<h3 className="dash-product-quotation-admin-banner-content-h3">
 					Product Shipped

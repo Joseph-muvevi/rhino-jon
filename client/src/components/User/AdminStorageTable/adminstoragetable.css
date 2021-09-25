@@ -1,6 +1,6 @@
 .admin-storage-table{
-    margin-left: 15vw;
-    /* padding-top: 50px; */
+    margin-left: auto;
+    width: 82.5vw;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -8,7 +8,7 @@
 
 /* ==========the storage area=========== */
 
-.admin-storage-table-header{
+/* .admin-storage-table-header{
     background-color: rgb(19, 19, 17);
     color: white;
     font-family: Monda;
@@ -16,12 +16,12 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    max-width: 80vw;
-    margin: auto;
-    padding: 10px, 2xpx;
+    max-width: 78vw;
+    /* margin: auto; */
+    /* padding: 10px, 2xpx;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-}
+} */ 
 
 .admin-storage-table-header{
     background-color: rgb(19, 19, 17);
@@ -31,7 +31,7 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    max-width: 80vw;
+    max-width: 78vw;
     margin: auto;
     padding: 7px 5px;
     border-top-left-radius: 5px;
@@ -81,7 +81,7 @@
 }
 /* ===========THE TABLE CARD ================== */
 .admin-storage-table-card{
-    width: 84vw
+    width: 78vw
 }
 
 /* ========THE CONTENT SECTION=============== */
@@ -90,7 +90,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 80vw;
+    max-width: 78vw;
     margin: auto;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -116,18 +116,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-width: 80vw;
-    /* margin-left: 0px; */
-    /* margin: auto;
-    padding: 7px-3px; */
-    /* padding-left: 10px;
-    padding-right: 10px; */
+    width: 78vw;
 }
 
-.admin-storage-table-content-p{
+/* .admin-storage-table-content-p{
     width: 6vw;
     text-align: left;
-}
+} */
 
 
 .admin-storage-table-content-number{

@@ -4,7 +4,7 @@ import "../dashboard.css"
 
 const DashboardBanner = () => {
 	return (
-		<div className="dashboard-banner">
+		<div className="dashboard-banner" id="dashboard">
 			<div className="dashboard-banner-long">
 				<div className="dashboard-banner-long-content">
 					<h3 className="dashboard-banner-long-content-h3">
@@ -18,13 +18,13 @@ const DashboardBanner = () => {
 							<button>Add shipment</button>
 						</Link>
 						<Link to="/dashboard/logistics/edit/logisticsform">
-							<button>Edit shipment</button>
+							<button>Update shipment</button>
 						</Link>
 						<Link to="/dashboard/logistics-form">
 							<button>Add storage</button>
 						</Link>
 						<Link to="/dashboard/storage/edit/storageform">
-							<button>Edit storage</button>
+							<button>Update storage</button>
 						</Link>
 				   </div>
 				</div>

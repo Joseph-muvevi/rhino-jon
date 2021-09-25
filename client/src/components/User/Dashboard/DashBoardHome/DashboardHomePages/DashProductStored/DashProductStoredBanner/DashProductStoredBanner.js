@@ -3,7 +3,7 @@ import "../DashProductStored.css"
 
 const DashProductStoredBanner = () => {
 	return (
-		<div className="dash-product-stored-admin-banner">
+		<div className="dash-product-stored-admin-banner" id="product-stored">
 			<div className="dash-product-stored-admin-banner-content">
 				<h3 className="dash-product-stored-admin-banner-content-h3">
 					Product Stored

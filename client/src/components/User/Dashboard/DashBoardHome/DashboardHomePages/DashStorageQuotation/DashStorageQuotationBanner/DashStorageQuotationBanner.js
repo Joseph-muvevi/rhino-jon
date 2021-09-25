@@ -3,7 +3,7 @@ import "../DashStorageQuotation.css"
 
 const DashStorageQuotationBanner = () => {
 	return (
-		<div className="dash-storage-quotation-admin-banner">
+		<div className="dash-storage-quotation-admin-banner" id="storage-quotation" >
 			<div className="dash-storage-quotation-admin-banner-content">
 				<h3 className="dash-storage-quotation-admin-banner-content-h3">
 					Storage Quotation

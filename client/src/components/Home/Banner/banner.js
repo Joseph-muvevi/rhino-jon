@@ -4,7 +4,7 @@ import video from "../../../assets/Rhinojon background Laptop compressed.mp4";
 
 const Banner = () => {
   return (
-    <div className="the-homepage-banner">
+    <div className="the-homepage-banner" id="home-banner">
       <div className="the-homepage-banner">
 
         <video autoPlay loop  className="banner-video">

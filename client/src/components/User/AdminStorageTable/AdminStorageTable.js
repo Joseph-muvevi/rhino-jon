@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios"
 import AdminStorageContentTableCard from './AdminStorageContentTableCard'
+import "./adminstoragetable.css"
 
 const AdminStorageTable = () => {
 

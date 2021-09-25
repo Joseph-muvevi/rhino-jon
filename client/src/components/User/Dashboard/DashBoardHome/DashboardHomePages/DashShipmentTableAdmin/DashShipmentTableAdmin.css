@@ -2,18 +2,18 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin-left: 15vw;
+	/* margin-left: 17.5vw; */
 	min-height: 100vh;
 	padding-top: 20px
 }
 
 .dash-shipment-table-admin-banner{
-	width: 80vw;
+	width: 78vw;
 	min-height: 30vh;
 	margin-top: 0px;
 	margin-left: auto;
 	margin-right: auto;
-	/* margin-bottom: 20px; */
+	margin-bottom: 20px;
 	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.955), rgba(0, 0, 0, 0.784)), url(../../../../../../assets/landlogistics1.jpg);
 	border-radius: 5px;
 }
@@ -26,8 +26,8 @@
 	font-family: Monda;
 	justify-content: flex-end;
 	align-items: flex-start;
-	width: 100%;
-	height: 100%
+	max-width: 100%;
+	min-height: 50vh;
 }
 
 .dash-shipment-table-admin-banner-content-h3{
@@ -35,6 +35,7 @@
 }
 
 .dash-shipment-table-admin-content{
-	margin-left: -13vw;
-	max-width: 80vw;
+	/* margin-left: ; */
+	margin: auto;
+	width: 78vw;
 }

@@ -48,7 +48,7 @@ const AboutBanner = () => {
     return (
 
         
-    <Carousel className="about-image" {...settings} style={carouselSlides} >
+    <Carousel className="about-image" id = "about-banner" {...settings} style={carouselSlides} >
         <div>
             <img src={image1}  alt="Rhino john about sliders"/>
         </div>

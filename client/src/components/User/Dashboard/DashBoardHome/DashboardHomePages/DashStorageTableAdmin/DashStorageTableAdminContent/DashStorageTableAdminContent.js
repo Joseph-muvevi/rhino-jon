@@ -1,5 +1,6 @@
 import React from 'react'
 import AdminStorageTable from '../../../../../AdminStorageTable/AdminStorageTable'
+import "../DashStorageTableAdmin.css"
 
 const DashStorageTableAdminContent = () => {
 	return (

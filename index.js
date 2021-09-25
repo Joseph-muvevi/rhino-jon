@@ -9,7 +9,7 @@ const connection = require("./db");
 const cors = require("cors");
 
 // importing routes
-const signup = require("./routes/signup");
+// const signup = require("./routes/signup");
 const login = require("./routes/login");
 const user = require("./routes/user");
 const goods = require("./routes/goods");
@@ -47,7 +47,8 @@ app.use("/api/storagequotation", storagequotation);
 app.use("/api/storageshipment", storageshipment);
 app.use("/api/logisticsrecords", logisticsshipmentrecords);
 app.use("/api/logisticsquotation", logisticsquotation);
-app.use("/api/signup", admin);
+// app.use("/api/signup", admin);
+app.use("/api/admin", admin);
 
 // port
 const port = process.env.PORT || 8080;

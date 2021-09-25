@@ -23,16 +23,18 @@ import DashShipmentTableAdmin from './DashBoardHome/DashboardHomePages/DashShipm
 import DashStorageQuotation from './DashBoardHome/DashboardHomePages/DashStorageQuotation/DashStorageQuotation'
 import DashStorageTableAdmin from './DashBoardHome/DashboardHomePages/DashStorageTableAdmin/DashStorageTableAdmin'
 import DashProductStored from './DashBoardHome/DashboardHomePages/DashProductStored/DashProductStored'
+import Users from './Users/Users'
+import Adduser from './AddUser/Adduser'
 
 const Dashboard = () => {
 
 	// =============DONT DELETE=============
-	const tkt = localStorage.getItem("token")
-	console.log("my tkt of the dashboard is", tkt)
+	// const tkt = localStorage.getItem("token")
+	// console.log("my tkt of the dashboard is", tkt)
 
-	if (!tkt) {
-	    return <Redirect to="/auth"/>
-	}
+	// if (!tkt) {
+	//     return <Redirect to="/auth"/>
+	// }
 
 	
 	return (
@@ -45,8 +47,10 @@ const Dashboard = () => {
 			</div>
 			<Switch className="dashboard-main">
 				<Route path="/" exact component={Home}/>
-				<Route path="/dashboard/home" component={DashboardHome}/>
+				<Route path="/register" component={Adduser}/>
+				<Route path="/dashboard" exact component={DashboardHome}/>
 				<Route path="/dashboard/analitics" component={Analitics}/>
+				<Route path="/dashboard/users" component={Users}/>
 				<Route path="/dashboard/tables" component={DashTable}/>
 				<Route path="/dashboard/forms" component={DashForms}/>
 				<Route path="/dashboard/logistics-form" component={LogisticsForms}/>

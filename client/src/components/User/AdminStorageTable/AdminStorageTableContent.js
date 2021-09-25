@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import "./adminstoragetable.css"
 
 const AdminStorageTableContent = ({content, length}) => {
+
+	const [specificStorageItem, setSpecificStorageItem] = useState([""])
 
 	const detail = content
 	console.log("this is the result from table detail", detail)
@@ -10,7 +12,9 @@ const AdminStorageTableContent = ({content, length}) => {
 	return (
 		<div className="admin-storage-table-content">
 			<div className="admin-storage-unifier">
-
+			{
+				detail ? console.log("My uniques ID is", "http://localhost:8080/api/storageshipment" , detail._id): "No IDS yet"
+			}
 			
 					<div className="admin-storage-table-content-content">
 						<div className="admin-storage-table-content-upper">

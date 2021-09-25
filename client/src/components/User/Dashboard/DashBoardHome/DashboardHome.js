@@ -1,16 +1,15 @@
 import React from 'react'
 import DashboardBanner from './dashboardBanner'
 import DashboardCards from './dashboardCards'
-// import DashboardHomeTable from './DashboardHomeTable/dashboardhometable'
+import "../dashboard.css"
 
 
 const DashboardHome = () => {
 
     return (
-        <div className="dashboard-home">
-            <DashboardBanner />
-            <DashboardCards  />
-            {/* <DashboardHomeTable/> */}
+        <div className="dashboard-home" i>
+            <DashboardBanner/>
+            <DashboardCards/>
         </div>
     )
 }

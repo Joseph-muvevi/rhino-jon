@@ -3,7 +3,7 @@ import "../DashShipmentTableAdmin.css"
 
 const DashShipmentTableAdminBanner = () => {
 	return (
-		<div className="dash-shipment-table-admin-banner">
+		<div className="dash-shipment-table-admin-banner" id="shipment-table" >
 			<div className="dash-shipment-table-admin-banner-content">
 				<h3 className="dash-shipment-table-admin-banner-content-h3">
 					Dashboard shipment admin table

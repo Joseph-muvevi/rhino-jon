@@ -15,9 +15,9 @@ const UsersTable = () => {
     const tableData = useMemo(() => users, [users])
 
     useEffect(() => {
-        axios.get("http://localhost:8080/api/users")
+        axios.get("http://localhost:8080/api/admin")
             .then(res => setUsers(res.data))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err.response))
     }, [])
 
     const usersTableInstance = useTable({

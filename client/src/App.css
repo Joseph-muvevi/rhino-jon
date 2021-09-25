@@ -259,7 +259,8 @@ NavLink:focus{
 	display: flex;
 	font-family: Monda;
 	font-size: 18px;
-	margin-left: 5vw
+	margin-left: 5vw;
+	text-transform: capitalize;
 }
 
 .dash-tables{
@@ -293,6 +294,19 @@ NavLink:focus{
 
 .all-auth-labels{
 	padding-left: 10px
+}
+
+.error-section-register{
+	width: 78vw;
+	background-color: red;
+	border-radius: 5px;
+	box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.521);
+	padding: 5px 10px;
+	color: white;
+	display: flex;
+	justify-content: flex-start;
+	align-items:  center;
+	margin-bottom: 20px;
 }
 
 @media screen and (max-width: 900px){
